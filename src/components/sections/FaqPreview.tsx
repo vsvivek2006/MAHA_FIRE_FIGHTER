@@ -23,15 +23,15 @@ export function FaqPreview() {
         <div className="text-center space-y-2 mb-12">
           <div className="flex items-center justify-center gap-2">
             <HelpCircle className="w-4 h-4 text-red-500" />
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-slate-400">
-              06 // COMPLIANCE & TECHNICAL FAQ
+            <span className="text-xs font-bold tracking-wider uppercase text-slate-400">
+              Frequently Asked Questions
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Frequently Addressed Compliance Questions
+            Common Fire Safety &amp; Compliance Questions
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Essential clarity regarding NBC 2016 provisions, Delhi Fire Service inspection readiness, Fire NOC renewal, and preventative AMC intervals.
+            Essential clarity regarding NBC provisions, Delhi Fire Service compliance, Fire NOC renewal, and preventative maintenance schedules.
           </p>
         </div>
 
@@ -40,26 +40,26 @@ export function FaqPreview() {
           <Accordion type="single" collapsible defaultValue="item-0">
             {previewFaqs.map((faq, idx) => (
               <AccordionItem key={idx} value={`item-${idx}`} className="border-slate-800">
-                <AccordionTrigger className="text-slate-100 hover:text-red-400 text-xs sm:text-sm font-bold font-mono">
-                  <span className="flex items-center gap-2.5">
+                <AccordionTrigger className="text-slate-100 hover:text-red-400 text-xs sm:text-sm font-semibold">
+                  <span className="flex items-center gap-2.5 text-left">
                     <span className="text-red-500 font-bold">Q{idx + 1}:</span>
                     <span>{faq.question}</span>
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-300 text-xs sm:text-sm font-sans pl-6">
+                <AccordionContent className="text-slate-300 text-xs sm:text-sm font-normal pl-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-          <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+          <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
             <span className="text-slate-400">
-              Need technical clarification on specific building codes?
+              Have more questions about fire protection systems or inspections?
             </span>
-            <Button variant="outline" size="sm" asChild className="rounded-none">
+            <Button variant="outline" size="sm" asChild className="rounded-none text-xs font-semibold">
               <Link href="/faq">
-                <span>View All 10 Categorized FAQs</span>
+                <span>View All FAQs</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Link>
             </Button>

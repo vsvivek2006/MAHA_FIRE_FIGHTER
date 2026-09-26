@@ -30,7 +30,6 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +58,7 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent>
+      <DialogContent className="max-w-lg bg-[#0B1220] border-slate-700 text-white rounded-none p-6">
         {submitted ? (
           <div className="py-6 text-center space-y-4">
             <div className="w-14 h-14 bg-red-950/60 text-red-500 border border-red-800/60 rounded-none flex items-center justify-center mx-auto">
@@ -67,16 +66,16 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
             </div>
             <DialogHeader className="text-center sm:text-center">
               <DialogTitle className="text-xl font-bold text-white">
-                WhatsApp Audit Request Ready
+                Audit Request Details Ready
               </DialogTitle>
               <DialogDescription className="text-slate-300 text-xs mt-2 max-w-sm mx-auto">
-                We&apos;ve opened WhatsApp with your audit details pre-filled — just hit <span className="text-white font-semibold">Send</span> to connect with our senior fire protection engineering team directly.
+                We&apos;ve opened WhatsApp with your audit details pre-filled — please tap <span className="text-white font-semibold">Send</span> to connect with our team directly.
               </DialogDescription>
             </DialogHeader>
 
-            <div className="p-4 bg-slate-900 border border-slate-800 text-xs text-slate-400 text-left space-y-1 rounded-none">
-              <div className="font-semibold text-slate-200">Immediate Delhi NCR Project Inquiries:</div>
-              <div className="flex items-center gap-2 text-white font-mono text-xs pt-1">
+            <div className="p-4 bg-slate-900 border border-slate-800 text-xs text-slate-300 text-left space-y-1">
+              <div className="font-semibold text-slate-200">Call Us Directly:</div>
+              <div className="flex items-center gap-2 text-white text-xs pt-1">
                 <Phone className="w-3.5 h-3.5 text-red-500" />
                 <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-red-400 transition-colors">
                   {companyInfo.phones[0].display}
@@ -88,28 +87,28 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
               </div>
             </div>
 
-            <Button onClick={handleReset} variant="default" size="default" className="w-full">
+            <Button onClick={handleReset} variant="default" size="default" className="w-full rounded-none text-xs font-semibold">
               Close Window
             </Button>
           </div>
         ) : (
           <div>
             <DialogHeader className="space-y-1 mb-4 text-left">
-              <div className="text-[10px] font-mono font-bold text-red-500 uppercase tracking-widest flex items-center gap-1.5">
+              <div className="text-xs font-bold text-red-500 uppercase tracking-wider flex items-center gap-1.5">
                 <ShieldAlert className="w-3.5 h-3.5" />
-                Turnkey Technical Assessment • Delhi NCR
+                Complimentary Assessment • Delhi NCR
               </div>
               <DialogTitle className="text-xl font-extrabold text-white">
                 Request a Free Fire Safety Audit
               </DialogTitle>
               <DialogDescription className="text-xs text-slate-400">
-                Evaluation of premises against National Building Code (NBC) & Delhi Fire Service norms.
+                Evaluation of premises against National Building Code (NBC) &amp; local fire safety standards.
               </DialogDescription>
             </DialogHeader>
 
             <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
               <div>
-                <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-slate-300 mb-1">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -118,13 +117,13 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                   placeholder="e.g. Ramesh Sharma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-slate-900/90 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
+                  className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
                     Contact Number <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -134,11 +133,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                     placeholder="e.g. 9873514657"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-slate-900/90 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
+                    className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
                     Email Address
                   </label>
                   <input
@@ -146,75 +145,68 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                     placeholder="e.g. info@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-slate-900/90 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
+                    className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
                     Property Type
                   </label>
                   <select
                     value={formData.propertyType}
                     onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
-                    className="w-full bg-slate-900/90 border border-slate-700 px-3 py-2 text-white text-xs focus:outline-none focus:border-red-600 rounded-none"
+                    className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white text-xs focus:outline-none focus:border-red-600 rounded-none"
                   >
                     <option value="Industrial / Factory">Industrial / Factory</option>
                     <option value="Warehouse / Logistics">Warehouse / Logistics</option>
-                    <option value="Corporate Office">Corporate Office</option>
-                    <option value="Commercial Complex / Retail">Commercial Complex / Retail</option>
-                    <option value="Residential High-Rise">Residential High-Rise</option>
+                    <option value="Commercial Office / IT Park">Commercial Office / IT Park</option>
+                    <option value="Hospital / Healthcare">Hospital / Healthcare</option>
+                    <option value="Retail / Mall / Showroom">Retail / Mall / Showroom</option>
+                    <option value="Residential Society">Residential Society</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-medium text-slate-300 mb-1">
-                    Service Required
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    Primary System Required
                   </label>
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full bg-slate-900/90 border border-slate-700 px-3 py-2 text-white text-xs focus:outline-none focus:border-red-600 rounded-none"
+                    className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white text-xs focus:outline-none focus:border-red-600 rounded-none"
                   >
                     <option value="Free Fire Safety Audit">Free Fire Safety Audit</option>
                     <option value="Fire Hydrant System">Fire Hydrant System</option>
                     <option value="Fire Sprinkler System">Fire Sprinkler System</option>
                     <option value="Fire Alarm System">Fire Alarm System</option>
-                    <option value="Extinguisher Refilling/Sales">Extinguisher Refilling/Sales</option>
-                    <option value="Fire Training & Drills">Fire Training & Drills</option>
-                    <option value="Hydrant/Sprinkler AMC">Hydrant/Sprinkler AMC</option>
+                    <option value="Fire Extinguisher Refilling/Sales">Fire Extinguisher Refilling/Sales</option>
+                    <option value="Fire Safety Training & Drills">Fire Safety Training &amp; Drills</option>
+                    <option value="Fire NOC Compliance Guidance">Fire NOC Compliance Guidance</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-medium text-slate-300 mb-1">
-                  Location & Facility Specifications
+                <label className="block text-xs font-medium text-slate-300 mb-1">
+                  Additional Notes
                 </label>
                 <textarea
                   rows={2}
-                  placeholder="Mention area (Delhi/Noida/Gurgaon), building height, or specific compliance gaps..."
+                  placeholder="Facility location, size, or specific requirements..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-slate-900/90 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none resize-none"
+                  className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none resize-none"
                 />
               </div>
 
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full h-11"
-              >
-                {loading ? (
-                  <span>Registering Request...</span>
-                ) : (
-                  <>
-                    <Send className="w-3.5 h-3.5 mr-2" />
-                    Submit Audit Request
-                  </>
-                )}
-              </Button>
+              <div className="pt-2">
+                <Button type="submit" className="w-full h-11 rounded-none text-xs font-semibold">
+                  <Send className="w-3.5 h-3.5 mr-2" />
+                  <span>Submit Free Audit Request</span>
+                </Button>
+              </div>
             </form>
           </div>
         )}

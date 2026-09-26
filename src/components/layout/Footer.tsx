@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, ShieldCheck, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
 import { companyInfo, servicesData } from '@/data/site-content';
 
 export function Footer() {
@@ -27,132 +27,138 @@ export function Footer() {
                   <span>MAHA</span>
                   <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
                 </div>
-                <div className="text-[10px] text-slate-400 font-mono tracking-widest uppercase mt-1">
-                  Maha Enterprises • Fire Safety Engineering
+                <div className="text-[10px] text-slate-400 tracking-wider uppercase mt-1">
+                  Maha Enterprises • Fire Protection Systems
                 </div>
               </div>
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Providing end-to-end turnkey fire protection engineering across Delhi NCR for 15+ years. From industrial hydrant systems and automatic sprinklers to smart alarms and in-house extinguisher refilling.
+              Providing end-to-end fire protection systems across Delhi NCR. From industrial hydrant systems and automatic sprinklers to fire alarms, in-house extinguisher refilling, and safety drills.
             </p>
 
-            {/* Industrial Specs Stamp */}
-            <div className="grid grid-cols-2 gap-3 max-w-xs pt-1 font-mono">
+            {/* Credential Counters */}
+            <div className="grid grid-cols-2 gap-3 max-w-xs pt-1">
               <div className="p-3 bg-slate-900 border border-slate-800 rounded-none">
-                <div className="text-lg font-black text-white">{companyInfo.experienceYears}</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-wider">Years Field Experience</div>
+                <div className="text-lg font-bold text-white">{companyInfo.experienceYears}</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider">Years Field Experience</div>
               </div>
               <div className="p-3 bg-slate-900 border border-slate-800 rounded-none">
-                <div className="text-lg font-black text-red-500">{companyInfo.clientBase}</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-wider">Satisfied Client Base</div>
+                <div className="text-lg font-bold text-red-500">{companyInfo.clientBase}</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider">Satisfied Client Base</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-slate-400 pt-1 font-mono">
+            <div className="flex items-center gap-2 text-xs text-slate-400 pt-1">
               <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
-              <span>NBC 2016 & IS Standards Compliant Installations</span>
+              <span>NBC &amp; IS Standards Compliant Installations</span>
             </div>
           </div>
 
-          {/* Col 3: Engineered Systems */}
+          {/* Col 3: Services */}
           <div>
-            <h3 className="text-xs font-mono font-bold text-white uppercase tracking-widest mb-4">
-              Engineered Systems
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              Fire Safety Systems
             </h3>
-            <ul className="space-y-2.5 text-xs text-slate-400 font-mono">
+            <ul className="space-y-2.5 text-xs text-slate-400">
               {Object.values(servicesData).map((service) => (
                 <li key={service.slug}>
                   <Link 
                     href={`/${service.slug}`} 
                     className="hover:text-red-400 transition-colors flex items-center gap-1 group"
                   >
-                    <span>{service.idNumber} {service.navTitle}</span>
+                    <span>{service.navTitle}</span>
                   </Link>
                 </li>
               ))}
               <li className="pt-2">
                 <Link 
                   href="/services" 
-                  className="text-red-500 font-bold hover:underline flex items-center gap-1"
+                  className="text-red-500 font-semibold hover:underline flex items-center gap-1"
                 >
-                  <span>Complete Service Index</span>
+                  <span>All Services</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: NCR Coverage Hubs */}
+          {/* Col 4: NCR Service Areas */}
           <div>
-            <h3 className="text-xs font-mono font-bold text-white uppercase tracking-widest mb-4">
-              Regional Operations
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              Service Areas
             </h3>
             <ul className="space-y-2 text-xs text-slate-400">
               {companyInfo.serviceAreas.map((area) => (
-                <li key={area.name} className="flex items-start gap-1.5">
-                  <span className="font-mono text-red-500 text-[10px] mt-0.5">•</span>
-                  <div>
-                    <span className="font-bold text-slate-200">{area.name}</span>
-                    <span className="text-[11px] text-slate-500 block">{area.hub}</span>
-                  </div>
+                <li key={area.name} className="flex items-center gap-2">
+                  <span className="text-red-500 text-xs">•</span>
+                  <span className="font-medium text-slate-300">{area.name}</span>
                 </li>
               ))}
-              <li className="pt-2 text-[11px] text-slate-500 font-mono leading-tight">
-                Turnkey dispatch across Delhi, Noida, Gurgaon, Faridabad, & Ghaziabad.
+              <li className="pt-2 text-xs text-slate-500 leading-tight">
+                Turnkey fire safety installations and services across the entire Delhi-NCR region.
               </li>
             </ul>
           </div>
 
-          {/* Col 5: Direct Engineering Desk */}
+          {/* Col 5: Contact Details */}
           <div>
-            <h3 className="text-xs font-mono font-bold text-white uppercase tracking-widest mb-4">
-              Engineering Desk
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              Contact Us
             </h3>
             <div className="space-y-3 text-xs text-slate-400">
               <div>
-                <div className="text-[10px] font-mono uppercase text-slate-500">Dispatch Lines</div>
+                <div className="text-[10px] uppercase text-slate-500 font-semibold">Phone Numbers</div>
                 <a 
                   href={`tel:${companyInfo.phones[0].raw}`} 
-                  className="block text-white hover:text-red-400 font-mono font-bold text-sm mt-0.5"
+                  className="block text-white hover:text-red-400 font-semibold text-sm mt-0.5"
                 >
                   {companyInfo.phones[0].display}
                 </a>
                 <a 
                   href={`tel:${companyInfo.phones[1].raw}`} 
-                  className="block text-white hover:text-red-400 font-mono font-bold text-sm mt-0.5"
+                  className="block text-white hover:text-red-400 font-semibold text-sm mt-0.5"
                 >
                   {companyInfo.phones[1].display}
                 </a>
               </div>
 
               <div>
-                <div className="text-[10px] font-mono uppercase text-slate-500">Official Correspondence</div>
+                <div className="text-[10px] uppercase text-slate-500 font-semibold">Email</div>
                 <a 
                   href={`mailto:${companyInfo.email}`} 
-                  className="text-slate-300 hover:text-white break-all block mt-0.5 font-mono text-xs"
+                  className="text-slate-300 hover:text-white break-all block mt-0.5 text-xs"
                 >
                   {companyInfo.email}
                 </a>
               </div>
 
               <div>
-                <div className="text-[10px] font-mono uppercase text-slate-500">Headquarters</div>
+                <div className="text-[10px] uppercase text-slate-500 font-semibold">Office Address</div>
                 <p className="text-slate-300 mt-0.5">{companyInfo.address.formatted}</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Compliance */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        {/* Bottom Bar: Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} Maha Firefighters (Maha Enterprises). All rights reserved.
+            © 2025 Maha Firefighters (Maha Enterprises). All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/about-us" className="hover:text-slate-300 transition-colors">About Us</Link>
-            <Link href="/faq" className="hover:text-slate-300 transition-colors">Compliance FAQ</Link>
-            <Link href="/contact" className="hover:text-slate-300 transition-colors">Contact & Dispatch</Link>
+            <Link href="/about-us" className="hover:text-slate-300 transition-colors">
+              About Us
+            </Link>
+            <Link href="/services" className="hover:text-slate-300 transition-colors">
+              Services
+            </Link>
+            <Link href="/faq" className="hover:text-slate-300 transition-colors">
+              FAQ
+            </Link>
+            <Link href="/contact" className="hover:text-slate-300 transition-colors">
+              Contact
+            </Link>
           </div>
         </div>
       </div>

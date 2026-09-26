@@ -16,13 +16,13 @@ export function JsonLd({ schema }: JsonLdProps) {
 export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "FireProtectionService",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Maha Firefighters",
     "alternateName": "Maha Enterprises",
     "url": "https://mahafirefighters.com",
     "logo": "https://mahafirefighters.com/images/logo.jpeg",
-    "image": "https://mahafirefighters.com/images/hero.png",
-    "description": "Leading fire hydrant and sprinkler system contractors in Delhi NCR. Certified installation, AMC services, fire alarm systems, and in-house extinguisher refilling.",
+    "image": "https://mahafirefighters.com/images/hero.webp",
+    "description": "Leading fire hydrant and sprinkler system contractors in Delhi NCR. Turnkey installation, AMC services, fire alarm systems, and in-house extinguisher refilling.",
     "telephone": ["+91-9873514657", "+91-9873337442"],
     "email": "mahaenterprisesdelhi@gmail.com",
     "address": {
@@ -33,33 +33,13 @@ export function generateLocalBusinessSchema() {
       "postalCode": "110002",
       "addressCountry": "IN"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 28.6433,
-      "longitude": 77.2415
-    },
     "areaServed": [
       { "@type": "City", "name": "Delhi" },
       { "@type": "City", "name": "Noida" },
       { "@type": "City", "name": "Gurugram" },
       { "@type": "City", "name": "Faridabad" },
       { "@type": "City", "name": "Ghaziabad" }
-    ],
-    "priceRange": "$$",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
+    ]
   };
 }
 
@@ -70,12 +50,12 @@ export function generateServiceSchema(serviceName: string, serviceDescription: s
     "name": serviceName,
     "serviceType": "Fire Protection Service",
     "provider": {
-      "@type": "FireProtectionService",
+      "@type": "LocalBusiness",
       "name": "Maha Firefighters",
       "url": "https://mahafirefighters.com"
     },
     "areaServed": {
-      "@type": "State",
+      "@type": "AdministrativeArea",
       "name": "Delhi NCR"
     },
     "description": serviceDescription,

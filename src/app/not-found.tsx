@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldAlert, ArrowLeft, Phone, Flame } from 'lucide-react';
+import { ShieldAlert, ArrowLeft, Phone } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
 
 export default function NotFound() {

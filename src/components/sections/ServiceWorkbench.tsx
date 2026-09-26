@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, Activity, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronRight, Activity } from 'lucide-react';
 import { servicesData } from '@/data/site-content';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -20,19 +20,19 @@ export function ServiceWorkbench() {
         {/* Section Masthead */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-slate-800 mb-12">
           <div className="space-y-2 max-w-2xl">
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-500">
-              03 // ENGINEERED FIRE PROTECTION SYSTEMS
+            <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+              Core Fire Safety Systems
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Turnkey Design, Fabrication & Field Commissioning
+              Turnkey Design, Installation &amp; Field Maintenance
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Explore our core suppression, detection, and life-safety systems engineered specifically for commercial towers, manufacturing plants, and warehousing facilities across Delhi NCR.
+              Explore our core suppression, detection, and life-safety systems engineered for commercial buildings, factories, and warehouses across Delhi NCR.
             </p>
           </div>
-          <Button variant="outline" size="sm" asChild className="shrink-0 rounded-none font-mono">
+          <Button variant="outline" size="sm" asChild className="shrink-0 rounded-none text-xs font-semibold">
             <Link href="/services">
-              <span>View Full Services Index</span>
+              <span>View Full Services Catalog</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
             </Link>
           </Button>
@@ -44,8 +44,8 @@ export function ServiceWorkbench() {
             
             {/* Left Column: Numbered Service Directory */}
             <div className="lg:col-span-4 space-y-2">
-              <div className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest px-3 py-1">
-                Select System For Specifications:
+              <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-1">
+                Select System For Details:
               </div>
               <TabsList className="flex flex-col space-y-2 h-auto bg-transparent border-0 p-0 w-full justify-start items-stretch">
                 {servicesList.map((svc) => (
@@ -56,14 +56,14 @@ export function ServiceWorkbench() {
                   >
                     <div className="space-y-0.5 text-left">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs font-bold text-slate-500 group-data-[state=active]:text-red-500">
+                        <span className="text-xs font-bold text-red-500">
                           {svc.idNumber}
                         </span>
-                        <span className="text-xs font-bold uppercase tracking-wider font-mono">
+                        <span className="text-sm font-semibold text-white group-hover:text-red-400 transition-colors">
                           {svc.navTitle}
                         </span>
                       </div>
-                      <div className="text-[11px] text-slate-400 line-clamp-1 pl-6">
+                      <div className="text-xs text-slate-400 line-clamp-1 pl-6">
                         {svc.technicalCategory}
                       </div>
                     </div>
@@ -82,16 +82,16 @@ export function ServiceWorkbench() {
                     <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <Badge variant="safety">{svc.idNumber} // {svc.badge}</Badge>
+                          <Badge variant="safety">{svc.badge}</Badge>
                           <Badge variant="default">{svc.standardsCode}</Badge>
                         </div>
-                        <h3 className="text-2xl font-extrabold text-white tracking-tight mt-1">
+                        <h3 className="text-2xl font-bold text-white tracking-tight mt-1">
                           {svc.title}
                         </h3>
                       </div>
-                      <Button variant="default" size="sm" asChild className="rounded-none">
+                      <Button variant="default" size="sm" asChild className="rounded-none text-xs font-semibold">
                         <Link href={`/${svc.slug}`}>
-                          <span>Full Technical Page</span>
+                          <span>Dedicated Service Page</span>
                           <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                         </Link>
                       </Button>
@@ -109,8 +109,8 @@ export function ServiceWorkbench() {
                         />
                       </div>
                       <div className="md:col-span-7 space-y-3">
-                        <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
-                          Engineering Scope & Purpose:
+                        <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                          Scope &amp; Overview:
                         </div>
                         <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                           {svc.fullDesc}
@@ -120,8 +120,8 @@ export function ServiceWorkbench() {
 
                     {/* Technical Sub-Components / System Types */}
                     <div className="pt-4 border-t border-slate-800 space-y-3">
-                      <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
-                        Key System Components & Specifications:
+                      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                        Key Components &amp; System Types:
                       </div>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -138,7 +138,7 @@ export function ServiceWorkbench() {
                               <span className="w-1.5 h-1.5 bg-red-500" />
                               {t.name}
                             </div>
-                            <div className="text-[11px] text-slate-400 leading-tight">{t.desc}</div>
+                            <div className="text-xs text-slate-400 leading-tight">{t.desc}</div>
                           </div>
                         ))}
 
@@ -148,7 +148,7 @@ export function ServiceWorkbench() {
                               <span className="w-1.5 h-1.5 bg-red-500" />
                               {s.name}
                             </div>
-                            <div className="text-[11px] text-slate-400 leading-tight">{s.desc}</div>
+                            <div className="text-xs text-slate-400 leading-tight">{s.desc}</div>
                           </div>
                         ))}
 
@@ -158,7 +158,7 @@ export function ServiceWorkbench() {
                               <span className="w-1.5 h-1.5 bg-red-500" />
                               {a.type}
                             </div>
-                            <div className="text-[11px] text-slate-400 leading-tight">{a.desc}</div>
+                            <div className="text-xs text-slate-400 leading-tight">{a.desc}</div>
                           </div>
                         ))}
 
@@ -168,27 +168,24 @@ export function ServiceWorkbench() {
                               <span className="w-1.5 h-1.5 bg-red-500" />
                               {m.title}
                             </div>
-                            <div className="text-[11px] text-slate-400 leading-tight">{m.desc}</div>
+                            <div className="text-xs text-slate-400 leading-tight">{m.desc}</div>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* Preventative AMC Protocol Checklist */}
+                    {/* AMC Details */}
                     {svc.amcDetails && (
                       <div className="pt-4 border-t border-slate-800 space-y-3">
-                        <div className="flex items-center justify-between">
-                          <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-                            <Activity className="w-3.5 h-3.5 text-red-500" />
-                            Quarterly Preventative AMC Parameters:
-                          </div>
-                          <span className="text-[10px] font-mono text-emerald-400 font-bold">ACTIVE SERVICE CONTRACTS</span>
+                        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                          <Activity className="w-3.5 h-3.5 text-red-500" />
+                          Maintenance &amp; AMC Scope:
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
                           {svc.amcDetails.map((amc, idx) => (
                             <div key={idx} className="flex items-start gap-2">
-                              <span className="text-red-500 font-mono text-[10px] mt-0.5">•</span>
-                              <span className="text-[11px] text-slate-300 leading-tight">{amc}</span>
+                              <span className="text-red-500 text-xs mt-0.5">•</span>
+                              <span className="text-xs text-slate-300 leading-tight">{amc}</span>
                             </div>
                           ))}
                         </div>
@@ -197,14 +194,14 @@ export function ServiceWorkbench() {
 
                     {/* Bottom Direct CTA */}
                     <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
-                      <span className="text-xs font-mono text-slate-400">
-                        Ready for site mapping or system engineering?
+                      <span className="text-xs text-slate-400">
+                        Need system inspection or turnkey installation?
                       </span>
                       <Link
                         href={`/${svc.slug}`}
-                        className="text-xs font-mono font-bold text-red-400 hover:text-red-300 flex items-center gap-1"
+                        className="text-xs font-bold text-red-400 hover:text-red-300 flex items-center gap-1 transition-colors"
                       >
-                        <span>Read Full Specifications & Process</span>
+                        <span>View System Details</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>

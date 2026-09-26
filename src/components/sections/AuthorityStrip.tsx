@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Award, Factory, Wrench, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
 
 export function AuthorityStrip() {
@@ -8,14 +8,14 @@ export function AuthorityStrip() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-200 pb-8 mb-8">
           <div>
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-600">
-              02 // STATUTORY STANDARDS & COMPLIANCE FRAMEWORK
+            <span className="text-xs font-bold tracking-wider uppercase text-red-600">
+              Standards &amp; Statutory Compliance
             </span>
-            <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mt-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mt-1">
               Engineering Formulated to National Building Code (NBC) Specifications
             </h2>
           </div>
-          <div className="shrink-0 text-xs font-mono font-bold text-slate-500 uppercase">
+          <div className="shrink-0 text-xs font-semibold text-slate-600 uppercase tracking-wide">
             Delhi Fire Service Inspection Ready
           </div>
         </div>
@@ -28,7 +28,7 @@ export function AuthorityStrip() {
               className="p-5 border border-slate-200 bg-slate-50 hover:bg-white hover:border-slate-400 transition-colors"
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="font-mono text-xs font-bold text-red-600">
+                <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
                   {std.code}
                 </span>
                 <CheckCircle className="w-4 h-4 text-emerald-600" />

@@ -2,8 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, ShieldCheck, Wrench, ShieldAlert } from 'lucide-react';
-import { servicesData, companyInfo } from '@/data/site-content';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { servicesData } from '@/data/site-content';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { JsonLd, generateServiceSchema } from '@/components/seo/JsonLd';
@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge';
 
 export const metadata: Metadata = {
   title: "Reliable Fire Safety Systems in Delhi NCR | MAHA FIREFIGHTERS",
-  description: "With 15+ years of excellence, Maha Firefighters provides turnkey fire protection systems across Delhi NCR. Certified hydrant installations, automatic sprinklers, alarms, and in-house extinguisher refilling.",
+  description: "Maha Firefighters offers expert fire hydrant installations in Delhi NCR, automatic sprinklers, alarms, and extinguisher services for commercial and industrial spaces across Delhi NCR.",
   alternates: {
     canonical: "https://mahafirefighters.com/services",
   },
@@ -35,15 +35,15 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
             <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-slate-300">
-              TURNKEY ENGINEERING CATALOG • DELHI NCR
+            <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+              Our Services • Delhi NCR
             </span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Reliable Fire Safety Systems & Engineering in Delhi NCR
+            Reliable Fire Safety Systems in Delhi NCR
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            With 15+ years of excellence, Maha Firefighters is a leading name in fire safety across Delhi and NCR. We provide end-to-end fire fighting services, from advanced hydrant systems installations and fire sprinkler systems to expert audits and safety training.
+            With 15+ years of excellence, Maha Firefighters is a leading name in fire safety across Delhi and NCR. We provide end-to-end fire fighting services, from advanced hydrant systems installations and fire sprinkler systems to expert audits and training.
           </p>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                   <div className="absolute top-3 left-3 flex items-center gap-2">
-                    <Badge variant="safety">{service.idNumber} // {service.badge}</Badge>
+                    <Badge variant="safety">{service.badge}</Badge>
                   </div>
                 </div>
 
@@ -79,8 +79,8 @@ export default function ServicesPage() {
                 <div className={`lg:col-span-7 space-y-4 ${
                   isEven ? 'lg:order-1' : 'lg:order-2'
                 }`}>
-                  <div className="flex items-center gap-2 font-mono text-xs text-red-500 font-bold uppercase tracking-wider">
-                    <span>SYSTEM SPECIFICATION</span>
+                  <div className="flex items-center gap-2 text-xs text-red-500 font-semibold uppercase tracking-wider">
+                    <span>{service.technicalCategory}</span>
                     <span>•</span>
                     <span className="text-slate-400">{service.standardsCode}</span>
                   </div>
@@ -103,37 +103,37 @@ export default function ServicesPage() {
                     {service.types?.map((t, tIdx) => (
                       <div key={tIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span><strong className="text-white font-mono">{t.name}:</strong> {t.desc}</span>
+                        <span><strong className="text-white">{t.name}:</strong> {t.desc}</span>
                       </div>
                     ))}
                     {service.solutions?.map((s, sIdx) => (
                       <div key={sIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span><strong className="text-white font-mono">{s.name}:</strong> {s.desc}</span>
+                        <span><strong className="text-white">{s.name}:</strong> {s.desc}</span>
                       </div>
                     ))}
                     {service.agents?.map((a, aIdx) => (
                       <div key={aIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span><strong className="text-white font-mono">{a.type}:</strong> {a.desc}</span>
+                        <span><strong className="text-white">{a.type}:</strong> {a.desc}</span>
                       </div>
                     ))}
                     {service.modules?.map((m, mIdx) => (
                       <div key={mIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span><strong className="text-white font-mono">{m.title}:</strong> {m.desc}</span>
+                        <span><strong className="text-white">{m.title}:</strong> {m.desc}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="pt-4 flex flex-wrap items-center gap-3 font-mono">
-                    <Button variant="default" size="sm" asChild className="rounded-none">
+                  <div className="pt-4 flex flex-wrap items-center gap-3">
+                    <Button variant="default" size="sm" asChild className="rounded-none text-xs font-semibold">
                       <Link href={`/${service.slug}`}>
-                        <span>Full Dedicated Specifications</span>
+                        <span>View Detailed Specifications</span>
                         <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                       </Link>
                     </Button>
-                    <Button variant="outline" size="sm" asChild className="rounded-none">
+                    <Button variant="outline" size="sm" asChild className="rounded-none text-xs font-semibold">
                       <Link href="/contact">
                         <span>Request System Quote</span>
                       </Link>

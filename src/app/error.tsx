@@ -11,6 +11,9 @@ export default function ErrorBoundary({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  React.useEffect(() => {
+    console.error(error);
+  }, [error]);
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-[#070b13] bg-grid-pattern px-4 py-20 text-white">
       <div className="max-w-md w-full text-center space-y-6 p-8 rounded-3xl bg-[#0d1424] border border-[#1e2d45] shadow-2xl">

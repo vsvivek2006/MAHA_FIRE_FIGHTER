@@ -20,34 +20,34 @@ export function AuditCTA() {
               <div className="lg:col-span-8 space-y-4">
                 <div className="flex items-center gap-2">
                   <ShieldAlert className="w-4 h-4 text-red-500" />
-                  <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-500">
-                    COMPLIMENTARY INITIAL ASSESSMENT
+                  <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+                    Complimentary Initial Assessment
                   </span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
                   Protect Your Premises Before an Emergency Occurs
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-                  Book a free on-site fire safety audit for your factory, warehouse, commercial building, or residential complex in Delhi NCR. We identify compliance gaps, verify pump pressures, and inspect extinguishing systems.
+                  Book a free on-site fire safety audit for your factory, warehouse, commercial building, or residential complex in Delhi NCR. We identify compliance gaps, verify pump systems, and inspect extinguishing equipment.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 pt-2">
-                  <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
+                <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300 pt-2">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     Zero Cost, No Obligation
                   </span>
                   <span className="flex items-center gap-1.5 text-slate-300">
                     <CheckCircle2 className="w-3.5 h-3.5 text-red-500" />
-                    NBC 2016 & Delhi Fire Service Code Verification
+                    NBC Standards &amp; Delhi Fire Service Alignment
                   </span>
                 </div>
               </div>
 
-              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 font-mono">
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
                 <Button
                   variant="default"
                   size="lg"
                   onClick={() => setModalOpen(true)}
-                  className="w-full rounded-none h-12"
+                  className="w-full rounded-none h-12 text-xs font-semibold"
                 >
                   <ShieldAlert className="w-4 h-4 mr-2" />
                   <span>Request Free Fire Safety Audit</span>
@@ -58,7 +58,7 @@ export function AuditCTA() {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="w-full rounded-none h-12"
+                  className="w-full rounded-none h-12 text-xs font-semibold"
                 >
                   <a href={`tel:${companyInfo.phones[0].raw}`}>
                     <Phone className="w-4 h-4 mr-2 text-red-500" />

@@ -6,10 +6,7 @@ import {
   ShieldAlert, 
   Phone, 
   ArrowRight, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Building2, 
-  Flame 
+  Building2
 } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
 import { AuditModal } from '@/components/ui/AuditModal';
@@ -27,17 +24,17 @@ export function Hero() {
             
             {/* Left Column: Asymmetric Editorial Content */}
             <div className="lg:col-span-7 space-y-6">
-              {/* Technical Monospace Eyebrow */}
+              {/* Professional Eyebrow */}
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-                <span className="font-mono text-[11px] font-bold tracking-widest uppercase text-slate-300">
-                  01 // INDUSTRIAL FIRE PROTECTION • DELHI NCR
+                <span className="text-xs font-semibold tracking-wider uppercase text-slate-300">
+                  Industrial Fire Protection Systems • Delhi NCR
                 </span>
               </div>
 
               {/* Authoritative Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
-                Complete Fire Protection Systems for Safer Commercial & Industrial Buildings
+                Complete Fire Protection Systems for Safer Commercial &amp; Industrial Buildings
               </h1>
 
               {/* Exact Source Supporting Copy */}
@@ -47,7 +44,7 @@ export function Hero() {
 
               {/* Technical Standards Bar */}
               <div className="flex flex-wrap items-center gap-2 pt-1">
-                <Badge variant="compliance">NBC 2016 COMPLIANT</Badge>
+                <Badge variant="compliance">NBC COMPLIANT</Badge>
                 <Badge variant="default">IS: 3844 HYDRANTS</Badge>
                 <Badge variant="default">IS: 2190 EXTINGUISHERS</Badge>
                 <Badge variant="safety">IN-HOUSE REFILLING PLANT</Badge>
@@ -59,7 +56,7 @@ export function Hero() {
                   variant="default"
                   size="lg"
                   onClick={() => setModalOpen(true)}
-                  className="rounded-none h-12"
+                  className="rounded-none h-12 text-sm font-semibold"
                 >
                   <ShieldAlert className="w-4 h-4 mr-2" />
                   <span>Request Free Fire Safety Audit</span>
@@ -70,7 +67,7 @@ export function Hero() {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="rounded-none h-12"
+                  className="rounded-none h-12 text-sm font-semibold"
                 >
                   <a href={`tel:${companyInfo.phones[0].raw}`}>
                     <Phone className="w-4 h-4 mr-2 text-red-500" />
@@ -80,18 +77,18 @@ export function Hero() {
               </div>
 
               {/* Verifiable Credentials Rail */}
-              <div className="pt-6 border-t border-slate-800 grid grid-cols-3 gap-6 max-w-lg font-mono">
+              <div className="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-lg">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white">{companyInfo.experienceYears}</div>
-                  <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Years Field Experience</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-white">{companyInfo.experienceYears}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Years Field Experience</div>
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-black text-red-500">{companyInfo.clientBase}</div>
-                  <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Satisfied Client Base</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-red-500">{companyInfo.clientBase}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Satisfied Client Base</div>
                 </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-slate-200">100%</div>
-                  <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Turnkey Engineering</div>
+                <div className="col-span-2 sm:col-span-1">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-slate-200">Delhi NCR</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Regional Coverage</div>
                 </div>
               </div>
             </div>
@@ -102,8 +99,8 @@ export function Hero() {
                 {/* Visual Technical Masthead */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-slate-900 border border-slate-800">
                   <Image
-                    src="/images/hero.png"
-                    alt="Maha Firefighters Industrial Safety Installation"
+                    src="/images/hero.webp"
+                    alt="Maha Firefighters Industrial Safety Installation in Delhi NCR"
                     fill
                     className="object-cover"
                     priority
@@ -112,24 +109,24 @@ export function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
                   
                   {/* Technical Overlay Tag */}
-                  <div className="absolute bottom-3 left-3 right-3 p-3 bg-[#0B1220]/95 border border-slate-700 text-xs font-mono space-y-1">
+                  <div className="absolute bottom-3 left-3 right-3 p-3 bg-[#0B1220]/95 border border-slate-700 text-xs space-y-1">
                     <div className="flex items-center justify-between text-slate-200">
-                      <span className="font-bold text-white uppercase flex items-center gap-1.5 text-[11px]">
+                      <span className="font-bold text-white uppercase flex items-center gap-1.5 text-xs">
                         <Building2 className="w-3.5 h-3.5 text-red-500" />
-                        Industrial Turnkey Commissioning
+                        Turnkey Fire Safety Installation
                       </span>
-                      <span className="text-emerald-400 font-bold text-[10px]">VERIFIED NBC</span>
+                      <span className="text-slate-300 font-medium text-[11px]">Delhi NCR</span>
                     </div>
-                    <div className="text-[10px] text-slate-400 leading-tight">
-                      Hydrant manifolds • Automatic sprinkler grids • Addressable detection
+                    <div className="text-xs text-slate-400 leading-tight">
+                      Hydrant networks • Automatic sprinkler systems • Fire detection &amp; alarms
                     </div>
                   </div>
                 </div>
 
-                {/* Technical System Annotation */}
-                <div className="mt-2 p-2.5 bg-slate-900/90 border border-slate-800/80 text-[10px] font-mono text-slate-400 flex items-center justify-between">
-                  <span>DISPATCH: DELHI NCR CENTRAL</span>
-                  <span className="text-slate-200">DFS / IS: 3844 STANDARDS</span>
+                {/* Subtitle Annotation */}
+                <div className="mt-2 p-2.5 bg-slate-900/90 border border-slate-800/80 text-xs text-slate-400 flex items-center justify-between">
+                  <span>Daryaganj, New Delhi</span>
+                  <span className="text-slate-200">NBC &amp; IS Standards Aligned</span>
                 </div>
               </div>
             </div>

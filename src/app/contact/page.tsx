@@ -8,7 +8,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: "Maha Firefighters Contact - Fire Safety Experts | MAHA FIREFIGHTERS",
-  description: "Reach out to Maha Firefighters for reliable fire hydrant systems, alarms, and extinguisher services in Delhi NCR. Call +91-9873337442 or +91-9873514657.",
+  description: "Reach out to Maha Firefighters for reliable fire hydrant systems, alarms, and extinguisher services in Delhi NCR. Call +91-9873337442 or +91-9873514657. Trusted for 20 years.",
   alternates: {
     canonical: "https://mahafirefighters.com/contact",
   },
@@ -19,7 +19,7 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "mainEntity": {
-      "@type": "FireProtectionService",
+      "@type": "LocalBusiness",
       "name": "Maha Firefighters",
       "telephone": ["+91-9873514657", "+91-9873337442"],
       "email": "mahaenterprisesdelhi@gmail.com",
@@ -43,15 +43,15 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
             <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-slate-300">
-              DIRECT ENGINEERING DISPATCH & CONSULTATION
+            <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+              Get in Touch
             </span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Get in Touch with Maha Firefighters
+            Contact Maha Firefighters
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Reach out to Maha Firefighters for expert fire safety solutions, turnkey engineering, and free site audits in Delhi NCR. Serving industrial facilities, commercial towers, and factories.
+            Reach out to Maha Firefighters for expert fire safety solutions in Delhi NCR. Serving commercial spaces, factories, and industrial facilities.
           </p>
         </div>
       </section>
@@ -64,23 +64,23 @@ export default function ContactPage() {
             {/* Left Contact Information */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-2">
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-500">
-                  CENTRAL HEADQUARTERS
+                <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+                  Office &amp; Inquiries
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-                  Engineering Operations
+                  Get in Touch
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Our central engineering office and dispatch teams operate out of Daryaganj, New Delhi, coordinating turnkey projects and rapid deliveries across Delhi, Noida, Gurgaon, Faridabad, and Ghaziabad.
+                  Reach out to Maha Firefighters for reliable fire hydrant systems, alarms, and extinguisher services in Delhi NCR. Trusted for 20 years.
                 </p>
               </div>
 
               {/* Direct channels */}
-              <div className="space-y-3 font-mono text-xs">
+              <div className="space-y-3 text-xs">
                 <div className="p-4 bg-[#0B1220] border border-slate-800 space-y-1">
                   <div className="text-[10px] font-bold text-red-500 uppercase flex items-center gap-1.5">
                     <Phone className="w-3.5 h-3.5" />
-                    Direct Phone Hotlines
+                    Direct Phone Lines
                   </div>
                   <div className="space-y-1 pt-1">
                     <a 
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 <div className="p-4 bg-[#0B1220] border border-slate-800 space-y-1">
                   <div className="text-[10px] font-bold text-red-500 uppercase flex items-center gap-1.5">
                     <Mail className="w-3.5 h-3.5" />
-                    Electronic Mail
+                    Email
                   </div>
                   <a 
                     href={`mailto:${companyInfo.email}`}
@@ -114,13 +114,13 @@ export default function ContactPage() {
                 <div className="p-4 bg-[#0B1220] border border-slate-800 space-y-1">
                   <div className="text-[10px] font-bold text-red-500 uppercase flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5" />
-                    Headquarters
+                    Location
                   </div>
-                  <p className="text-sm font-bold text-white pt-1 font-sans">
+                  <p className="text-sm font-bold text-white pt-1">
                     {companyInfo.address.formatted}
                   </p>
-                  <p className="text-[11px] text-slate-500">
-                    Turnkey dispatch across Delhi, Noida, Gurugram, Faridabad, Ghaziabad
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Serving Delhi NCR with expert fire safety solutions for commercial spaces and factories.
                   </p>
                 </div>
 
@@ -137,11 +137,11 @@ export default function ContactPage() {
                   <div className="flex items-center gap-3">
                     <MessageSquare className="w-5 h-5 text-emerald-400" />
                     <div>
-                      <div className="text-xs font-bold text-emerald-300 font-mono uppercase">Instant WhatsApp Desk</div>
-                      <div className="text-[11px] text-slate-300 font-sans">Message our technical engineers directly</div>
+                      <div className="text-xs font-bold text-emerald-300 uppercase">WhatsApp Inquiry</div>
+                      <div className="text-xs text-slate-300">Message our team directly</div>
                     </div>
                   </div>
-                  <span className="text-xs font-bold text-emerald-400 font-mono">Chat →</span>
+                  <span className="text-xs font-bold text-emerald-400">Chat →</span>
                 </a>
               </div>
             </div>

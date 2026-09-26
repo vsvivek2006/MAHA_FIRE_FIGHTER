@@ -1,18 +1,16 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { 
   Phone, 
-  Mail, 
   MapPin, 
   ChevronDown, 
   Menu, 
   X, 
   ShieldAlert, 
-  Clock, 
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';
@@ -26,33 +24,35 @@ export function Header() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [auditModalOpen, setAuditModalOpen] = useState(false);
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
-  }, [pathname]);
+  }
 
   const navLinks = [
-    { name: 'Overview', href: '/' },
+    { name: 'Home', href: '/' },
     { 
-      name: 'Safety Systems', 
+      name: 'Services', 
       href: '/services',
       hasDropdown: true 
     },
-    { name: 'Company', href: '/about-us' },
-    { name: 'Compliance FAQ', href: '/faq' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' }
   ];
 
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-[#0B1220]">
-        {/* Top Utility & Dispatch Bar */}
+        {/* Top Utility Bar */}
         <div className="border-b border-slate-800/80 bg-[#070D18] text-slate-300 text-[11px] py-1.5 px-4 sm:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-4 sm:gap-6 flex-wrap font-mono">
-              <span className="flex items-center gap-1.5 text-red-500 font-bold uppercase tracking-wider text-[10px]">
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+              <span className="flex items-center gap-1.5 text-red-500 font-bold uppercase tracking-wider text-[11px]">
                 <span className="w-1.5 h-1.5 bg-red-500 rounded-none animate-pulse" />
-                <span>Delhi NCR Engineering Dispatch:</span>
+                <span>Delhi NCR Service Hotline:</span>
               </span>
               <a 
                 href={`tel:${companyInfo.phones[0].raw}`} 
@@ -70,14 +70,14 @@ export function Header() {
               </a>
             </div>
 
-            <div className="hidden lg:flex items-center gap-6 text-slate-400 font-mono text-[11px]">
+            <div className="hidden lg:flex items-center gap-6 text-slate-400 text-xs">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-3 h-3 text-slate-400" />
                 <span>{companyInfo.address.formatted}</span>
               </div>
-              <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
+              <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
                 <ShieldCheck className="w-3 h-3" />
-                <span>NBC 2016 & IS Standards</span>
+                <span>NBC &amp; IS Standards</span>
               </div>
               <a 
                 href={`mailto:${companyInfo.email}`} 
@@ -108,8 +108,8 @@ export function Header() {
                 <span>MAHA</span>
                 <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
               </div>
-              <div className="text-[10px] text-slate-400 font-mono tracking-widest uppercase mt-1">
-                Industrial Fire Protection Systems
+              <div className="text-[10px] text-slate-400 tracking-wider uppercase mt-1">
+                Fire Protection Systems Delhi NCR
               </div>
             </div>
           </Link>
@@ -129,7 +129,7 @@ export function Header() {
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center gap-1 px-3.5 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
+                      className={`flex items-center gap-1 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors ${
                         isActive || servicesDropdownOpen
                           ? 'text-white bg-slate-800'
                           : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -143,10 +143,10 @@ export function Header() {
 
                     {/* Mega Flyout */}
                     {servicesDropdownOpen && (
-                      <div className="absolute top-full left-0 w-88 pt-2 z-50">
+                      <div className="absolute top-full left-0 w-80 pt-2 z-50">
                         <div className="bg-[#0B1220] border border-slate-700 shadow-2xl p-2 rounded-none">
-                          <div className="px-3 py-1.5 text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest border-b border-slate-800 mb-1">
-                            Engineered Fire Suppression Systems
+                          <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-800 mb-1">
+                            Fire Protection Services
                           </div>
                           {Object.values(servicesData).map((service) => (
                             <Link
@@ -154,15 +154,15 @@ export function Header() {
                               href={`/${service.slug}`}
                               className="flex items-start gap-3 p-2.5 hover:bg-slate-800 text-slate-200 hover:text-white transition-colors group"
                             >
-                              <span className="font-mono text-xs font-bold text-red-500 mt-0.5">
+                              <span className="text-xs font-bold text-red-500 mt-0.5">
                                 {service.idNumber}
                               </span>
                               <div>
                                 <div className="text-xs font-bold text-white group-hover:text-red-400 transition-colors">
                                   {service.navTitle}
                                 </div>
-                                <div className="text-[11px] font-mono text-slate-400">
-                                  {service.standardsCode}
+                                <div className="text-[11px] text-slate-400">
+                                  {service.badge}
                                 </div>
                               </div>
                             </Link>
@@ -170,9 +170,9 @@ export function Header() {
                           <div className="mt-1 pt-1.5 border-t border-slate-800">
                             <Link
                               href="/services"
-                              className="flex items-center justify-between px-3 py-1.5 text-xs font-mono font-bold text-red-400 hover:text-red-300 transition-colors"
+                              className="flex items-center justify-between px-3 py-1.5 text-xs font-bold text-red-400 hover:text-red-300 transition-colors"
                             >
-                              <span>View Complete Engineering Catalog</span>
+                              <span>View Complete Services Page</span>
                               <ArrowRight className="w-3.5 h-3.5" />
                             </Link>
                           </div>
@@ -187,7 +187,7 @@ export function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-3.5 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
+                  className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors ${
                     isActive
                       ? 'text-white bg-slate-800'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -205,11 +205,11 @@ export function Header() {
               variant="outline"
               size="sm"
               asChild
-              className="hidden xl:inline-flex"
+              className="hidden xl:inline-flex text-xs font-semibold"
             >
               <a href={`tel:${companyInfo.phones[0].raw}`}>
                 <Phone className="w-3.5 h-3.5 mr-1.5 text-red-500" />
-                <span>Call Hotline</span>
+                <span>Call Us</span>
               </a>
             </Button>
 
@@ -217,6 +217,7 @@ export function Header() {
               variant="default"
               size="sm"
               onClick={() => setAuditModalOpen(true)}
+              className="text-xs font-semibold"
             >
               <ShieldAlert className="w-3.5 h-3.5 mr-1.5" />
               <span>Request Safety Audit</span>
@@ -238,59 +239,62 @@ export function Header() {
               className="p-1.5 text-slate-300 hover:text-white hover:bg-slate-800"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Slide Drawer */}
+        {/* Mobile Slide-down Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-800 bg-[#070D18] px-4 pt-3 pb-6 space-y-4">
-            <div className="space-y-1 font-mono text-xs uppercase font-bold">
+          <div className="lg:hidden border-t border-slate-800 bg-[#0B1220] px-4 py-6 space-y-4">
+            <nav className="flex flex-col space-y-1">
               <Link
                 href="/"
-                className={`block px-3 py-2 ${pathname === '/' ? 'bg-slate-800 text-red-400' : 'text-slate-300'}`}
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
               >
-                Overview
+                Home
               </Link>
-              <div className="py-2 pl-3 border-l-2 border-red-600 ml-2 space-y-1">
-                <div className="text-[10px] text-slate-500 uppercase tracking-widest mb-1">
-                  Engineered Systems
-                </div>
-                {Object.values(servicesData).map((service) => (
+              <Link
+                href="/services"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
+              >
+                Services Overview
+              </Link>
+              <div className="pl-4 space-y-1 border-l-2 border-slate-800 my-1">
+                {Object.values(servicesData).map((s) => (
                   <Link
-                    key={service.slug}
-                    href={`/${service.slug}`}
-                    className="block py-1 text-slate-300 text-xs hover:text-white"
+                    key={s.slug}
+                    href={`/${s.slug}`}
+                    className="block px-3 py-1.5 text-xs text-slate-400 hover:text-white"
                   >
-                    {service.idNumber} — {service.navTitle}
+                    {s.idNumber}. {s.navTitle}
                   </Link>
                 ))}
               </div>
               <Link
                 href="/about-us"
-                className={`block px-3 py-2 ${pathname === '/about-us' ? 'bg-slate-800 text-red-400' : 'text-slate-300'}`}
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
               >
-                Company Story
+                About Us
               </Link>
               <Link
                 href="/faq"
-                className={`block px-3 py-2 ${pathname === '/faq' ? 'bg-slate-800 text-red-400' : 'text-slate-300'}`}
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
               >
-                Compliance FAQ
+                FAQ
               </Link>
               <Link
                 href="/contact"
-                className={`block px-3 py-2 ${pathname === '/contact' ? 'bg-slate-800 text-red-400' : 'text-slate-300'}`}
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
               >
-                Contact & Dispatch
+                Contact
               </Link>
-            </div>
+            </nav>
 
-            <div className="pt-2 border-t border-slate-800 space-y-2">
+            <div className="pt-4 border-t border-slate-800 space-y-2">
               <a
                 href={`tel:${companyInfo.phones[0].raw}`}
-                className="w-full py-2.5 px-3 bg-slate-900 border border-slate-700 text-white flex items-center justify-center gap-2 text-xs font-mono font-bold"
+                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-white bg-slate-900 border border-slate-800"
               >
                 <Phone className="w-3.5 h-3.5 text-red-500" />
                 <span>Call {companyInfo.phones[0].display}</span>
@@ -302,10 +306,9 @@ export function Header() {
                   setMobileMenuOpen(false);
                   setAuditModalOpen(true);
                 }}
-                className="w-full"
+                className="w-full text-xs font-semibold"
               >
-                <ShieldAlert className="w-4 h-4 mr-2" />
-                <span>Request Free Fire Safety Audit</span>
+                Request Free Fire Safety Audit
               </Button>
             </div>
           </div>

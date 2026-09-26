@@ -33,11 +33,10 @@ export const companyInfo = {
   tagline: "Fire Hydrant and Sprinklers System Contractors in Delhi NCR",
   heroHeadline: "Complete Fire Protection Systems for Safer Commercial & Industrial Buildings",
   heroSubheadline: "From hydrant and sprinkler installations to fire alarms, extinguishers, audits and training, Maha Firefighters provides end-to-end fire safety solutions across Delhi NCR.",
-  // Contextual experience claims from source
   experienceYears: "15+",
   aboutExperienceYears: "Over 20 Years",
   clientBase: "250+",
-  establishedDetail: "Serving Delhi NCR for 15+ years with a portfolio of 250+ satisfied clients across industrial facilities, factories, and corporate offices.",
+  establishedDetail: "Serving Delhi & NCR for 15+ years with turnkey installations, maintenance, and compliance for corporate and industrial clients.",
   aboutEstablishedDetail: "Serving Delhi NCR with expert firefighting solutions for over 20 years.",
   phones: [
     { display: "+91-9873514657", raw: "+919873514657" },
@@ -53,40 +52,70 @@ export const companyInfo = {
     country: "India",
     formatted: "Daryaganj, New Delhi - 110002"
   },
-  operatingHours: "24/7 Emergency Support & Project Inquiries",
   serviceAreas: [
-    { name: "Delhi", hub: "Central Operations", desc: "Turnkey hydrant networks, commercial towers, government establishments & manufacturing zones." },
-    { name: "Noida", hub: "Industrial Sectors 1–150", desc: "High-density factory installations, warehousing parks & IT campus sprinkler infrastructure." },
-    { name: "Gurugram", hub: "Cyber Hub & Udyog Vihar", desc: "Corporate headquarters, multi-story commercial complexes & high-hazard manufacturing." },
-    { name: "Faridabad", hub: "Manufacturing Belt", desc: "Heavy engineering plants, foundry units, fabrication facilities & chemical storage." },
-    { name: "Ghaziabad", hub: "Sahibabad & Industrial Corridors", desc: "Extensive industrial pipeline networks, commercial warehouses & residential high-rises." }
+    { 
+      name: "Delhi", 
+      desc: "Turnkey hydrant installations, automatic sprinklers, alarm systems, and certified extinguisher refilling across Delhi." 
+    },
+    { 
+      name: "Noida", 
+      desc: "Complete fire fighting systems, factory installations, pump room setups, and compliance audits in Noida." 
+    },
+    { 
+      name: "Gurugram", 
+      desc: "Integrated fire safety solutions, automatic sprinkler grids, and fire protection equipment for commercial complexes in Gurugram." 
+    },
+    { 
+      name: "Faridabad", 
+      desc: "Industrial fire hydrant networks, piping fabrication, pump maintenance, and extinguisher services in Faridabad." 
+    },
+    { 
+      name: "Ghaziabad", 
+      desc: "Turnkey fire suppression systems, alarm panels, and in-house extinguisher refilling with pickup and delivery in Ghaziabad." 
+    }
   ],
   standards: [
-    { code: "NBC 2016", title: "National Building Code", desc: "System engineering and volumetric flow rates strictly meeting Part 4 Life Safety provisions." },
-    { code: "IS: 3844", title: "Internal Fire Hydrants", desc: "Indian standard code of practice for design, installation, and testing of hydrant networks." },
-    { code: "IS: 2190", title: "Portable Extinguishers", desc: "Indian standard for selection, placement, hydrostatic pressure testing (HPT), and recharging." },
-    { code: "DFS Standards", title: "Delhi Fire Service", desc: "Full statutory compliance alignment ensuring hassle-free Fire NOC issuance and periodic renewals." }
+    { 
+      code: "NBC", 
+      title: "National Building Code", 
+      desc: "System design, equipment specifications, and safety measures meeting National Building Code (NBC) guidelines." 
+    },
+    { 
+      code: "IS: 3844", 
+      title: "Internal Fire Hydrants", 
+      desc: "Indian standard code of practice for design, installation, and testing of internal fire hydrant systems." 
+    },
+    { 
+      code: "IS: 2190", 
+      title: "Portable Extinguishers", 
+      desc: "Indian standard code for selection, installation, maintenance, and hydrostatic pressure testing (HPT) of extinguishers." 
+    },
+    { 
+      code: "Delhi Fire Service", 
+      title: "Statutory Standards & Fire NOC", 
+      desc: "Bringing premises and equipment up to required standards for Delhi Fire Service approvals and Fire NOC processes." 
+    }
   ],
   coreDifferentiators: [
     {
       number: "01",
-      title: "Custom Hydraulic Engineering",
-      desc: "Hazard classification, pump head calculations, and pipe sizing mapped directly to architectural floor plans."
+      title: "Custom Engineering",
+      desc: "Bespoke system design and layouts tailored to the specific occupancy, floor plan, and hazard level of your facility."
     },
     {
       number: "02",
-      title: "Statutory & Regulatory Expertise",
-      desc: "Deep working knowledge of Delhi Fire Service norms, NBC guidelines, and local municipal bylaws."
+      title: "Regulatory Expertise",
+      desc: "Deep alignment with National Building Code (NBC) standards and local fire safety authority norms for Fire NOC compliance."
     },
     {
       number: "03",
-      title: "End-to-End Turnkey Execution",
-      desc: "From initial site mapping to equipment supply, pump room fabrication, pressure testing, and long-term AMC."
+      title: "End-to-End Service",
+      desc: "From initial site mapping to equipment supply, piping, pump room setup, commissioning, and long-term AMC maintenance."
     },
     {
       number: "04",
-      title: "In-House Infrastructure Leadership",
-      desc: "Advanced addressable detection panels, heavy-duty pumps, and dedicated in-house cylinder refilling plant."
+      title: "Technological Leadership",
+      desc: "Advanced addressable detection panels, automated sprinkler grids, heavy-duty pumps, and dedicated in-house refilling."
     }
   ]
 };
@@ -95,39 +124,39 @@ export const servicesData: Record<string, ServiceItem> = {
   "firehydrantsystems": {
     slug: "firehydrantsystems",
     idNumber: "01",
-    title: "Turn-Key Fire Hydrant Systems",
+    title: "Fire Hydrant System Installation & Maintenance in Delhi NCR",
     navTitle: "Fire Hydrant Systems",
     technicalCategory: "High-Pressure Water Suppression",
-    standardsCode: "IS: 3844 / NBC 2016",
+    standardsCode: "IS: 3844 / NBC Aligned",
     shortDesc: "Complete turnkey design, pump room setup, heavy-duty piping networks, and annual maintenance for industrial and commercial facilities.",
     fullDesc: "At Maha Firefighters, we specialize in the end-to-end design, installation, and maintenance of industrial-grade fire hydrant systems. With over 15 years of experience and a portfolio of 250+ satisfied clients, we ensure your premises are equipped with a powerful first line of defense against large-scale fire hazards.",
-    badge: "Heavy-Duty Suppression",
-    image: "/images/hydrant.png",
+    badge: "High-Pressure Suppression",
+    image: "/images/hydrant.webp",
     components: [
       "High-capacity main electric fire pumps, jockey pumps, and diesel engine backup pumps",
-      "Durable underground and overhead piping networks engineered for maximum hydraulic volume",
-      "Strategically placed ISI-marked landing valves, heavy-duty hose reel drums, and nozzles",
+      "Durable underground and overhead piping networks engineered for maximum water volume",
+      "Strategically placed ISI-marked landing valves, heavy-duty hose reels, and shut-off nozzles",
       "Heavy-duty weatherproof fire hose cabinets, branch pipes, and instant coupling connectors"
     ],
     amcDetails: [
       "Regular inspection of piping networks for corrosion, pressure drops, or leaks",
-      "Routine testing of pump automation, pressure switches, and control panel relays",
-      "Greasing of valves, unrolling and testing of canvas hoses for flexibility and pressure rating",
-      "Ensuring the entire system is locked in 'Auto' mode for instantaneous pressurized response"
+      "Routine testing of pump functionality, pressure gauges, and control panel automation",
+      "Greasing of valves, unrolling and checking canvas hoses for flexibility and readiness",
+      "Ensuring the entire system is locked in 'Auto' mode for immediate pressurized response"
     ],
     upgrades: "If you have an existing system failing safety inspections or code compliance, our technicians can repair, replace, or upgrade your infrastructure to bring it fully up to modern safety standards."
   },
   "firesprinklersystems": {
     slug: "firesprinklersystems",
     idNumber: "02",
-    title: "Automatic Fire Sprinkler Systems",
+    title: "Automatic Fire Sprinkler Systems in Delhi NCR",
     navTitle: "Fire Sprinkler Systems",
-    technicalCategory: "Autonomous Point-of-Origin Suppression",
-    standardsCode: "NBC Part 4 / NFPA Aligned",
+    technicalCategory: "Point-of-Origin Suppression",
+    standardsCode: "NBC Aligned",
     shortDesc: "24/7 unattended autonomous suppression that detects and suppresses fires at the exact point of origin before flame propagation.",
     fullDesc: "At Maha Firefighters, we provide state-of-the-art automatic fire sprinkler systems that offer the most reliable defense against fire. While alarms alert you and hydrants help you fight fire, a sprinkler system works automatically to suppress a fire at its point of origin—even when no one is on-site.",
-    badge: "24/7 Unattended Protection",
-    image: "/images/sprinkler.png",
+    badge: "Unattended Protection",
+    image: "/images/sprinkler.webp",
     types: [
       {
         name: "Wet Pipe Systems",
@@ -156,14 +185,14 @@ export const servicesData: Record<string, ServiceItem> = {
   "firealarmsystems": {
     slug: "firealarmsystems",
     idNumber: "03",
-    title: "Advanced Fire Alarm & Detection Systems",
+    title: "Advanced Fire Alarm & Detection Systems in Delhi NCR",
     navTitle: "Fire Alarm Systems",
-    technicalCategory: "Intelligent Early-Warning Detection",
-    standardsCode: "IS: 2189 / Addressable FACP",
+    technicalCategory: "Early-Warning Detection",
+    standardsCode: "Addressable & Conventional",
     shortDesc: "Early-warning intelligent detection panels, smoke/heat sensors, manual call points, and automated hooters for swift evacuation.",
     fullDesc: "At Maha Firefighters, we provide smart fire alarm solutions that act as the eyes and ears of your facility. From small offices to sprawling industrial complexes, our detection systems are designed to provide the earliest possible warning, allowing for safe evacuation and immediate response.",
     badge: "Early Warning Intelligence",
-    image: "/images/alarm.png",
+    image: "/images/alarm.webp",
     solutions: [
       {
         name: "Addressable Fire Alarm Systems",
@@ -185,7 +214,7 @@ export const servicesData: Record<string, ServiceItem> = {
       },
       {
         name: "Beam Detectors",
-        desc: "Long-range optical beam sensors designed for wide open, high-ceiling facilities such as warehouses, atriums, and airplane hangars."
+        desc: "Long-range optical beam sensors designed for wide open, high-ceiling facilities such as warehouses, atriums, and large manufacturing bays."
       },
       {
         name: "Manual Call Points (MCP)",
@@ -201,14 +230,14 @@ export const servicesData: Record<string, ServiceItem> = {
   "fire-extinguisher-refilling-service": {
     slug: "fire-extinguisher-refilling-service",
     idNumber: "04",
-    title: "Fire Extinguisher Sales & Refilling",
+    title: "Fire Extinguisher Sales & Refilling in Delhi NCR",
     navTitle: "Extinguisher Refilling & Sales",
-    technicalCategory: "Factory-Grade Recharging & HPT",
-    standardsCode: "IS: 2190 / Hydrostatic Certified",
+    technicalCategory: "In-House Factory Recharging & HPT",
+    standardsCode: "IS: 2190 / HPT Tested",
     shortDesc: "In-house factory refilling, Hydrostatic Pressure Testing (HPT), certified extinguishing agents, and fast pickup/delivery across Delhi NCR.",
     fullDesc: "Our in-house factory provides certified refilling, maintenance, and testing for all brands and classes of fire extinguishers. Don't let your safety expire—our specialized plant ensures complete readiness with genuine extinguishing agents, pressure certifications, and free pickup and drop across Delhi NCR.",
-    badge: "In-House Factory Plant",
-    image: "/images/extinguisher.png",
+    badge: "In-House Refilling Plant",
+    image: "/images/extinguisher.webp",
     agents: [
       {
         type: "ABC Dry Powder",
@@ -224,7 +253,7 @@ export const servicesData: Record<string, ServiceItem> = {
       },
       {
         type: "Clean Agent",
-        desc: "Specialized zero-ozone-depletion gas extinguishers for high-value server rooms, telecommunication centers, and medical device rooms."
+        desc: "Specialized gas extinguishers for high-value server rooms, telecommunication centers, and medical device rooms."
       }
     ],
     qualityAssurance: [
@@ -237,14 +266,14 @@ export const servicesData: Record<string, ServiceItem> = {
   "firesafetydrill": {
     slug: "firesafetydrill",
     idNumber: "05",
-    title: "Fire Safety Training & Emergency Drills",
+    title: "Fire Safety Training & Emergency Drills in Delhi NCR",
     navTitle: "Safety Training & Drills",
     technicalCategory: "Workforce Preparedness & PASS Training",
-    standardsCode: "NBC Evacuation Protocols",
+    standardsCode: "Hands-On Evacuation Protocols",
     shortDesc: "Hands-on PASS training, evacuation simulation, Fire Warden training, and infrastructure familiarization for your staff.",
     fullDesc: "Equipment is only as effective as the people who operate it. Empower your team with the skills to save lives. At Maha Firefighters, we believe that professional-grade fire systems require professional-grade training. We provide comprehensive, hands-on fire safety training programs designed to transform your employees into a confident, first-response team.",
-    badge: "Life-Saving Readiness",
-    image: "/images/drill.png",
+    badge: "Life-Safety Training",
+    image: "/images/drill.webp",
     modules: [
       {
         title: "Hands-On Fire Extinguisher Training",
@@ -270,7 +299,7 @@ export const faqsData: FAQItem[] = [
   {
     category: "General Services",
     question: "What areas do you serve for fire safety installations?",
-    answer: "We primarily serve the entire Delhi-NCR region, including Delhi, Noida, Gurugram, Faridabad, and Ghaziabad, providing turnkey solutions for both industrial and corporate sectors."
+    answer: "We primarily serve the entire Delhi-NCR region, including Noida, Gurugram, Faridabad, and Ghaziabad, providing turnkey solutions for both industrial and corporate sectors."
   },
   {
     category: "General Services",
@@ -314,49 +343,8 @@ export const faqsData: FAQItem[] = [
   }
 ];
 
-export const processSteps = [
-  {
-    step: "01",
-    phase: "ASSESSMENT",
-    title: "Site Assessment & Safety Audit",
-    desc: "Comprehensive on-site evaluation of your facility's hazard profile, layout, water reservoir accessibility, and existing equipment condition."
-  },
-  {
-    step: "02",
-    phase: "ANALYSIS",
-    title: "Requirement & Risk Analysis",
-    desc: "Identification of combustible materials, occupancy class, electrical hazards, and specific Delhi Fire Service and NBC compliance guidelines."
-  },
-  {
-    step: "03",
-    phase: "ENGINEERING",
-    title: "System Hydraulic Design",
-    desc: "Precise engineering calculation of required water flow, pressure head, pump sizing, pipe routing, and sensor coverage maps."
-  },
-  {
-    step: "04",
-    phase: "FABRICATION",
-    title: "Turnkey Installation",
-    desc: "In-house deployment of heavy-duty piping, pump room configuration, detection wiring, sprinkler grids, and landing valves."
-  },
-  {
-    step: "05",
-    phase: "COMMISSIONING",
-    title: "Testing & Commissioning",
-    desc: "Full hydrostatic pressure testing, alarm zone loop verification, pump auto-start validation, and system certification."
-  },
-  {
-    step: "06",
-    phase: "LIFECYCLE",
-    title: "Maintenance & AMC Support",
-    desc: "Quarterly preventative maintenance, sensor recalibration, valve exercise, and emergency response support to keep systems continuously ready."
-  }
-];
-
 export const verifiedTestimonial = {
   quote: "Maha Firefighters provided flawless fire safety installation for our factory. Highly reliable!",
   author: "Raj K.",
-  role: "Factory Operations Manager",
-  location: "Delhi NCR",
   rating: 5
 };

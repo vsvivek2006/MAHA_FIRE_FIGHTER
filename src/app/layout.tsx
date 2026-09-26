@@ -5,7 +5,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
 import { JsonLd, generateLocalBusinessSchema } from "@/components/seo/JsonLd";
-import { companyInfo } from "@/data/site-content";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "MAHA FIREFIGHTERS",
     images: [
       {
-        url: "/images/hero.png",
+        url: "/images/hero.webp",
         width: 1200,
         height: 630,
         alt: "Maha Firefighters Fire Protection Engineering Delhi NCR",
@@ -72,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Maha Firefighters | Fire Hydrant and Sprinklers System Contractors Delhi NCR",
     description: "Turnkey fire protection engineering, automatic sprinklers, alarms, and in-house extinguisher refilling across Delhi NCR.",
-    images: ["/images/hero.png"],
+    images: ["/images/hero.webp"],
   },
   icons: {
     icon: "/images/logo.jpeg",

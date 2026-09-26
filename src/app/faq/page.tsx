@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { HelpCircle, ChevronDown, ShieldCheck, ArrowRight } from 'lucide-react';
-import { faqsData, companyInfo } from '@/data/site-content';
+import { faqsData } from '@/data/site-content';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { JsonLd, generateFaqSchema } from '@/components/seo/JsonLd';
 import {
@@ -12,7 +11,7 @@ import {
 } from '@/components/ui/accordion';
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions (FAQ) | MAHA FIREFIGHTERS",
+  title: "FAQ | MAHA FIREFIGHTERS | FIRE HYDRANT AND SPRINKLERS SYSTEM CONTRACTOR IN DELHI NOIDA GURGAON NCR",
   description: "Answers to common questions regarding fire hydrant installations, automatic sprinklers, NBC compliance standards, Fire NOC support, and AMC services in Delhi NCR.",
   alternates: {
     canonical: "https://mahafirefighters.com/faq",
@@ -32,15 +31,15 @@ export default function FaqPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
             <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-slate-300">
-              KNOWLEDGE BASE & REGULATORY GUIDANCE
+            <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+              Questions &amp; Answers
             </span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
             Frequently Asked Questions
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Clear, authoritative answers regarding National Building Code (NBC) guidelines, Delhi Fire Service compliance, turnkey installations, and preventative maintenance schedules.
+            Essential information regarding National Building Code (NBC) standards, Delhi Fire Service compliance, Fire NOC guidance, and AMC maintenance intervals.
           </p>
         </div>
       </section>
@@ -52,7 +51,7 @@ export default function FaqPage() {
             const items = faqsData.filter(f => f.category === category);
             return (
               <div key={category} className="space-y-4">
-                <div className="flex items-center gap-3 border-b border-slate-800 pb-2 font-mono">
+                <div className="flex items-center gap-3 border-b border-slate-800 pb-2">
                   <span className="w-2 h-2 bg-red-500 rounded-none" />
                   <h2 className="text-base sm:text-lg font-bold text-white uppercase tracking-wider">
                     {category}
@@ -63,13 +62,13 @@ export default function FaqPage() {
                   <Accordion type="single" collapsible className="space-y-1">
                     {items.map((item, idx) => (
                       <AccordionItem key={idx} value={`item-${idx}`} className="border-slate-800">
-                        <AccordionTrigger className="text-slate-100 hover:text-red-400 text-xs sm:text-sm font-bold font-mono">
+                        <AccordionTrigger className="text-slate-100 hover:text-red-400 text-xs sm:text-sm font-semibold text-left">
                           <span className="flex items-center gap-2.5">
                             <span className="text-red-500 font-bold">Q:</span>
                             <span>{item.question}</span>
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-slate-300 text-xs sm:text-sm font-sans pl-6">
+                        <AccordionContent className="text-slate-300 text-xs sm:text-sm font-normal pl-6 leading-relaxed">
                           {item.answer}
                         </AccordionContent>
                       </AccordionItem>

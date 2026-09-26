@@ -8,7 +8,7 @@ import { CoverageSection } from '@/components/sections/CoverageSection';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { FaqPreview } from '@/components/sections/FaqPreview';
 import { ContactForm } from '@/components/forms/ContactForm';
-import { Phone, Mail, MapPin, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle2 } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function HomePage() {
       <ProcessSection />
       <CoverageSection />
       
-      {/* On-Page Engineering Desk & Direct Dispatch */}
+      {/* On-Page Direct Consultation */}
       <section className="py-20 bg-[#0B1220] border-b border-slate-800 text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -36,22 +36,22 @@ export default function HomePage() {
             {/* Left Info Column */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-2">
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-500">
-                  07 // DIRECT ENGINEERING INQUIRY
+                <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+                  Direct Inquiries &amp; Consultations
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-                  Consult Directly with Our Fire Safety Engineers
+                  Consult Directly with Our Fire Safety Team
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Whether you need a new turnkey fire hydrant system, automatic sprinkler grid, emergency extinguisher refilling, or a building safety compliance audit, our engineering desk is ready to respond.
+                  Whether you need a new turnkey fire hydrant system, automatic sprinkler grid, extinguisher refilling, or a building safety compliance audit, our team is ready to assist.
                 </p>
               </div>
 
-              <div className="space-y-3 font-mono text-xs">
+              <div className="space-y-3 text-xs">
                 <div className="p-4 bg-slate-900 border border-slate-800 flex items-start gap-3">
                   <Phone className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[10px] text-slate-500 uppercase">Direct Hotlines</div>
+                    <div className="text-[10px] text-slate-400 uppercase font-semibold">Direct Phone Lines</div>
                     <div className="text-sm font-bold text-white mt-0.5 space-x-3">
                       <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-red-400 transition-colors">
                         {companyInfo.phones[0].display}
@@ -67,7 +67,7 @@ export default function HomePage() {
                 <div className="p-4 bg-slate-900 border border-slate-800 flex items-start gap-3">
                   <Mail className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[10px] text-slate-500 uppercase">Official Business Email</div>
+                    <div className="text-[10px] text-slate-400 uppercase font-semibold">Official Business Email</div>
                     <a href={`mailto:${companyInfo.email}`} className="text-sm font-bold text-white hover:text-red-400 transition-colors block mt-0.5">
                       {companyInfo.email}
                     </a>
@@ -77,8 +77,8 @@ export default function HomePage() {
                 <div className="p-4 bg-slate-900 border border-slate-800 flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[10px] text-slate-500 uppercase">Headquarters</div>
-                    <div className="text-sm font-bold text-white mt-0.5 font-sans">
+                    <div className="text-[10px] text-slate-400 uppercase font-semibold">Office Location</div>
+                    <div className="text-sm font-bold text-white mt-0.5">
                       {companyInfo.address.formatted}
                     </div>
                   </div>
@@ -86,7 +86,7 @@ export default function HomePage() {
               </div>
 
               <div className="p-4 bg-slate-900 border border-slate-800 text-xs text-slate-300 space-y-1">
-                <div className="font-bold text-white flex items-center gap-1.5 font-mono text-[11px]">
+                <div className="font-bold text-white flex items-center gap-1.5 text-xs">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                   Statutory Fire NOC Compliance Assistance
                 </div>

@@ -1,16 +1,14 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
-import { ShieldCheck, ArrowRight } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { companyInfo, verifiedTestimonial } from '@/data/site-content';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: "Maha Firefighters: Trusted Fire Safety Experts | MAHA FIREFIGHTERS",
-  description: "Providing turnkey fire hydrant systems, automatic sprinklers, alarms, and in-house extinguisher services across Delhi NCR. Serving Delhi NCR with expert firefighting solutions for over 20 years.",
+  description: "Providing fire hydrant systems, alarms, and extinguisher services across Delhi NCR for over 20 years. Daryaganj, Delhi-110002.",
   alternates: {
     canonical: "https://mahafirefighters.com/about-us",
   },
@@ -45,12 +43,12 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
             <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-slate-300">
-              COMPANY PROFILE & ENGINEERING HERITAGE
+            <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+              About Maha Firefighters
             </span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            About Maha Firefighters
+            Trusted Fire Safety Experts in Delhi NCR
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             At MAHA FIRE FIGHTERS, we believe that Fire safety is not just a service—it is a promise. Based in the heart of the Delhi NCR region, we have established ourselves as a premier provider of integrated fire fighting systems and safety solutions.
@@ -66,11 +64,11 @@ export default function AboutPage() {
             {/* Story Text */}
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-3">
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-600">
-                  OUR COMMITMENT
+                <span className="text-xs font-bold tracking-wider uppercase text-red-600">
+                  Our Commitment
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                  Protecting Lives & Industrial Assets Across Delhi NCR
+                  Protecting Lives &amp; Assets Across Delhi NCR
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   From high-rise residential complexes in Gurgaon to sprawling industrial units in Noida, we protect lives and assets with cutting-edge technology and unwavering dedication by Providing END TO END Solution of fire fighting systems for your premises.
@@ -79,7 +77,7 @@ export default function AboutPage() {
 
               {/* Mission Card */}
               <div className="p-6 border border-slate-200 bg-slate-50 space-y-2">
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2 font-mono">
+                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-red-600" />
                   Our Mission
                 </h3>
@@ -88,11 +86,11 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Verified Source Statement */}
-              <div className="p-4 bg-slate-100 border border-slate-300 font-mono text-xs text-slate-700">
-                <div className="text-[10px] text-slate-500 uppercase font-bold">Historical Record</div>
+              {/* Location and Heritage */}
+              <div className="p-4 bg-slate-100 border border-slate-300 text-xs text-slate-700">
+                <div className="text-[10px] text-slate-500 uppercase font-bold">Our Location</div>
                 <div className="font-bold text-slate-900 mt-0.5">{companyInfo.aboutEstablishedDetail}</div>
-                <div className="text-[11px] text-slate-500 mt-1">Headquarters: {companyInfo.address.formatted}</div>
+                <div className="text-xs text-slate-600 mt-1">Daryaganj, Delhi-110002</div>
               </div>
             </div>
 
@@ -100,8 +98,8 @@ export default function AboutPage() {
             <div className="lg:col-span-5 space-y-6">
               <div className="relative aspect-[4/3] bg-slate-900 border border-slate-700 overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/audit.png"
-                  alt="Maha Firefighters Safety Audit Team"
+                  src="/images/audit.webp"
+                  alt="Maha Firefighters Safety Audit and Inspection in Delhi NCR"
                   fill
                   className="object-cover"
                   priority
@@ -109,15 +107,14 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Verified Testimonial */}
-              <div className="p-6 border border-slate-300 bg-slate-50 space-y-3 font-mono">
-                <div className="text-xs font-bold text-amber-600">★ ★ ★ ★ ★</div>
-                <p className="text-xs text-slate-800 italic leading-relaxed font-serif font-normal">
+              {/* Source-Supported Testimonial */}
+              <div className="p-6 border border-slate-300 bg-slate-50 space-y-3">
+                <div className="text-xs font-bold text-amber-500 tracking-widest">★ ★ ★ ★ ★</div>
+                <p className="text-xs sm:text-sm text-slate-800 italic leading-relaxed">
                   &quot;{verifiedTestimonial.quote}&quot;
                 </p>
-                <div className="pt-2 border-t border-slate-200 text-xs flex items-center justify-between">
-                  <span className="font-bold text-slate-900">{verifiedTestimonial.author}</span>
-                  <span className="text-slate-500 text-[11px]">{verifiedTestimonial.role}, {verifiedTestimonial.location}</span>
+                <div className="pt-2 border-t border-slate-200 text-xs font-bold text-slate-900">
+                  {verifiedTestimonial.author}
                 </div>
               </div>
             </div>
@@ -126,18 +123,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What Sets Us Apart — Non-Grid Engineering Timeline */}
+      {/* What Sets Us Apart */}
       <section className="py-20 bg-[#0F172A] border-b border-slate-800 text-white font-sans">
-        <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="space-y-2">
-            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-500">
-              CORE DIFFERENTIATORS
+            <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+              Core Differentiators
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-white">
               What Sets Us Apart?
             </h2>
             <p className="text-xs sm:text-sm text-slate-300">
-              In a region as fast-paced as Delhi NCR, you need a fire safety partner who is responsive and knowledgeable:
+              In a region as fast-paced as Delhi NCR, you need a fire safety partner who is responsive and knowledgeable. Our edge lies in:
             </p>
           </div>
 
@@ -145,23 +142,18 @@ export default function AboutPage() {
             {companyInfo.coreDifferentiators.map((diff, idx) => (
               <div
                 key={idx}
-                className="relative group p-6 sm:p-7 bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors"
+                className="relative p-6 sm:p-7 bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors"
               >
                 {/* Timeline node */}
-                <div className="absolute -left-[37px] sm:-left-[53px] top-6 w-7 h-7 sm:w-8 sm:h-8 bg-slate-950 border border-red-600 text-red-500 font-mono font-bold text-xs flex items-center justify-center">
+                <div className="absolute -left-[37px] sm:-left-[53px] top-6 w-7 h-7 sm:w-8 sm:h-8 bg-slate-950 border border-red-600 text-red-500 font-bold text-xs flex items-center justify-center">
                   {diff.number}
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[10px] font-bold text-red-500 uppercase tracking-widest">
-                      ADVANTAGE 0{idx + 1}
-                    </span>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white font-mono">
+                  <h3 className="text-xl font-bold text-white tracking-tight">
                     {diff.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                     {diff.desc}
                   </p>
                 </div>
