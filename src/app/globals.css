@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-command: #0b1220;
+    --bg-drafting: #0f172a;
+    --bg-light: #ffffff;
+    --bg-light-muted: #f8fafc;
+    --border-light: #e2e8f0;
+    --border-dark: #1e293b;
+    --border-dark-highlight: #334155;
+    --text-dark: #0f172a;
+    --text-dark-muted: #64748b;
+    --text-light: #f8fafc;
+    --text-light-muted: #94a3b8;
+    --safety-red: #c5221f;
+    --safety-red-hover: #a81b18;
+    --safety-amber: #d97706;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark light;
+  }
+
+  body {
+    background-color: var(--bg-command);
+    color: var(--text-light);
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #c5221f;
+    color: #ffffff;
+  }
+}
+
+/* Subtle engineering drafting grid */
+.bg-drafting-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-drafting-grid-light {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+/* Technical spec card borders - crisp, no neon */
+.spec-border {
+  border: 1px solid #1e293b;
+}
+
+.spec-border:hover {
+  border-color: #475569;
+}

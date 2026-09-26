@@ -1,0 +1,88 @@
+import React from 'react';
+import type { Metadata } from 'next';
+import { HelpCircle, ChevronDown, ShieldCheck, ArrowRight } from 'lucide-react';
+import { faqsData, companyInfo } from '@/data/site-content';
+import { AuditCTA } from '@/components/sections/AuditCTA';
+import { JsonLd, generateFaqSchema } from '@/components/seo/JsonLd';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions (FAQ) | MAHA FIREFIGHTERS",
+  description: "Answers to common questions regarding fire hydrant installations, automatic sprinklers, NBC compliance standards, Fire NOC support, and AMC services in Delhi NCR.",
+  alternates: {
+    canonical: "https://mahafirefighters.com/faq",
+  },
+};
+
+export default function FaqPage() {
+  const faqSchema = generateFaqSchema(faqsData);
+  const categories = Array.from(new Set(faqsData.map(f => f.category)));
+
+  return (
+    <>
+      <JsonLd schema={faqSchema} />
+
+      {/* FAQ Hero */}
+      <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
+          <div className="flex items-center justify-center gap-2">
+            <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
+            <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-slate-300">
+              KNOWLEDGE BASE & REGULATORY GUIDANCE
+            </span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Frequently Asked Questions
+          </h1>
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            Clear, authoritative answers regarding National Building Code (NBC) guidelines, Delhi Fire Service compliance, turnkey installations, and preventative maintenance schedules.
+          </p>
+        </div>
+      </section>
+
+      {/* Categorized FAQs with Accordions */}
+      <section className="py-20 bg-[#0F172A] border-b border-slate-800 text-white font-sans">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-14">
+          {categories.map((category) => {
+            const items = faqsData.filter(f => f.category === category);
+            return (
+              <div key={category} className="space-y-4">
+                <div className="flex items-center gap-3 border-b border-slate-800 pb-2 font-mono">
+                  <span className="w-2 h-2 bg-red-500 rounded-none" />
+                  <h2 className="text-base sm:text-lg font-bold text-white uppercase tracking-wider">
+                    {category}
+                  </h2>
+                </div>
+
+                <div className="border border-slate-800 bg-[#0B1220] p-6 rounded-none">
+                  <Accordion type="single" collapsible className="space-y-1">
+                    {items.map((item, idx) => (
+                      <AccordionItem key={idx} value={`item-${idx}`} className="border-slate-800">
+                        <AccordionTrigger className="text-slate-100 hover:text-red-400 text-xs sm:text-sm font-bold font-mono">
+                          <span className="flex items-center gap-2.5">
+                            <span className="text-red-500 font-bold">Q:</span>
+                            <span>{item.question}</span>
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-slate-300 text-xs sm:text-sm font-sans pl-6">
+                          {item.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <AuditCTA />
+    </>
+  );
+}
