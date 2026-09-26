@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Phone, MessageSquare, ShieldAlert } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
+import { buildWhatsAppLink } from '@/lib/whatsapp';
 import { AuditModal } from '@/components/ui/AuditModal';
 
 export function FloatingActions() {
@@ -21,7 +22,10 @@ export function FloatingActions() {
           </a>
 
           <a
-            href={`https://wa.me/919873514657?text=${encodeURIComponent('Hello Maha Firefighters, I am inquiring about fire protection systems and safety audits.')}`}
+            href={buildWhatsAppLink(
+              companyInfo.whatsapp,
+              'Hello Maha Firefighters, I am inquiring about fire protection systems and safety audits.'
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-1.5 py-2 px-2 bg-emerald-950/80 border border-emerald-800/80 text-emerald-300 rounded-none"

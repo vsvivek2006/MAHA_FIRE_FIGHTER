@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Phone, Mail, MapPin, MessageSquare } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
+import { buildWhatsAppLink } from '@/lib/whatsapp';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { JsonLd } from '@/components/seo/JsonLd';
 
@@ -125,7 +126,10 @@ export default function ContactPage() {
 
                 {/* WhatsApp Chat Card */}
                 <a
-                  href={`https://wa.me/919873514657?text=${encodeURIComponent('Hello Maha Firefighters, I am inquiring about fire protection systems and safety audits.')}`}
+                  href={buildWhatsAppLink(
+                    companyInfo.whatsapp,
+                    'Hello Maha Firefighters, I am inquiring about fire protection systems and safety audits.'
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-4 bg-emerald-950/80 border border-emerald-800 text-white hover:bg-emerald-900 transition-colors"

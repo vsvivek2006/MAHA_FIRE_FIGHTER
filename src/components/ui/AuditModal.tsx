@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2, ShieldAlert, Phone, Send } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
+import { buildWhatsAppLink } from '@/lib/whatsapp';
 import {
   Dialog,
   DialogContent,
@@ -33,11 +34,22 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 500);
+
+    const lines = [
+      'New Fire Safety Audit Request',
+      `Name: ${formData.name.trim()}`,
+      `Phone: ${formData.phone.trim()}`,
+      formData.email.trim() ? `Email: ${formData.email.trim()}` : null,
+      formData.propertyType ? `Property Type: ${formData.propertyType}` : null,
+      formData.service ? `Service Required: ${formData.service}` : null,
+      formData.message.trim() ? `Notes: ${formData.message.trim()}` : null,
+    ].filter(Boolean);
+
+    const message = lines.join('\n');
+    const link = buildWhatsAppLink(companyInfo.whatsapp, message);
+
+    window.open(link, '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
   };
 
   const handleReset = () => {
@@ -55,10 +67,10 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
             </div>
             <DialogHeader className="text-center sm:text-center">
               <DialogTitle className="text-xl font-bold text-white">
-                Audit Request Registered
+                WhatsApp Audit Request Ready
               </DialogTitle>
               <DialogDescription className="text-slate-300 text-xs mt-2 max-w-sm mx-auto">
-                Thank you, <span className="text-white font-semibold">{formData.name}</span>. A senior fire protection engineer will review your parameters and contact you at <span className="text-red-400 font-semibold">{formData.phone}</span>.
+                We&apos;ve opened WhatsApp with your audit details pre-filled — just hit <span className="text-white font-semibold">Send</span> to connect with our senior fire protection engineering team directly.
               </DialogDescription>
             </DialogHeader>
 

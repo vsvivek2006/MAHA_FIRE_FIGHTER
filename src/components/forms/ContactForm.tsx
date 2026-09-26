@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, Phone, ShieldAlert, Clock } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
+import { buildWhatsAppLink } from '@/lib/whatsapp';
 import { Button } from '@/components/ui/button';
 
 interface ContactFormProps {
@@ -25,11 +26,23 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 500);
+
+    const lines = [
+      'New Fire Safety Inquiry',
+      `Name: ${formData.name.trim()}`,
+      `Phone: ${formData.phone.trim()}`,
+      formData.email.trim() ? `Email: ${formData.email.trim()}` : null,
+      formData.propertyType ? `Property Type: ${formData.propertyType}` : null,
+      formData.service ? `Service Required: ${formData.service}` : null,
+      formData.location.trim() ? `Location: ${formData.location.trim()}` : null,
+      formData.message.trim() ? `Notes: ${formData.message.trim()}` : null,
+    ].filter(Boolean);
+
+    const message = lines.join('\n');
+    const link = buildWhatsAppLink(companyInfo.whatsapp, message);
+
+    window.open(link, '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
   };
 
   return (
@@ -39,9 +52,9 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
           <div className="w-14 h-14 bg-red-950/60 text-red-500 border border-red-800/60 rounded-none flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-bold text-white font-mono uppercase">Inquiry Successfully Registered</h3>
+          <h3 className="text-xl font-bold text-white font-mono uppercase">WhatsApp Dispatch Ready</h3>
           <p className="text-slate-300 text-xs sm:text-sm max-w-md mx-auto">
-            Thank you, <span className="text-white font-semibold">{formData.name}</span>. An authorized technical engineer from Maha Firefighters will contact you shortly at <span className="text-red-400 font-semibold">{formData.phone}</span>.
+            We&apos;ve opened WhatsApp with your details pre-filled — just hit <span className="text-white font-semibold">Send</span> to reach our engineering desk directly.
           </p>
           <div className="p-4 bg-slate-900 border border-slate-800 text-xs text-slate-400 max-w-sm mx-auto font-mono">
             Need immediate emergency dispatch or inspection today?

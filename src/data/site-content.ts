@@ -43,6 +43,7 @@ export const companyInfo = {
     { display: "+91-9873514657", raw: "+919873514657" },
     { display: "+91-9873337442", raw: "+919873337442" }
   ],
+  whatsapp: "919873514657",
   email: "mahaenterprisesdelhi@gmail.com",
   address: {
     locality: "Daryaganj",
