@@ -8,7 +8,6 @@ import { ContactForm } from '@/components/forms/ContactForm';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { JsonLd, generateServiceSchema } from '@/components/seo/JsonLd';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 
 const service = servicesData["firehydrantsystems"];
 
@@ -19,6 +18,25 @@ export const metadata: Metadata = {
     canonical: "https://mahafirefighters.com/firehydrantsystems",
   },
 };
+
+const hydrantComponents = [
+  {
+    title: "Fire Pumps & Automation",
+    desc: "High-capacity main electric fire pumps, jockey pumps, and diesel engine backup pumps for uninterrupted pressure."
+  },
+  {
+    title: "Piping Network & Ring Mains",
+    desc: "Durable underground and overhead piping networks engineered for maximum hydraulic volume without friction loss."
+  },
+  {
+    title: "Landing Valves & Hose Reels",
+    desc: "Strategically placed ISI-marked single/double landing valves, heavy-duty swinging hose reel drums, and shut-off nozzles."
+  },
+  {
+    title: "Hose Cabinets & Couplings",
+    desc: "Heavy-duty weatherproof fire hose cabinets, reinforced canvas hoses, branch pipes, and instant instantaneous coupling connectors."
+  }
+];
 
 export default function FireHydrantPage() {
   const schema = generateServiceSchema(
@@ -93,90 +111,140 @@ export default function FireHydrantPage() {
         </div>
       </section>
 
-      {/* Turnkey Installation Details */}
+      {/* 3-Stage Engineering Methodology */}
       <section className="py-20 bg-white text-slate-900 border-b border-slate-200 font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
           <div className="space-y-2">
             <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-600">
-              TURNKEY SCOPE & INFRASTRUCTURE
+              ENGINEERING METHODOLOGY
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
-              Turnkey Fire Hydrant Installation Components
+              Our Turnkey Fire Hydrant Methodology
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              We handle everything from initial site mapping to the final commissioning of the system.
+              From hydraulic calculations to final pressure testing, we engineer robust water suppression networks to IS: 3844 and NBC standards:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {service.components?.map((comp, idx) => (
-              <div
-                key={idx}
-                className="p-6 border border-slate-200 bg-slate-50 flex items-start gap-4"
-              >
-                <div className="p-2 bg-red-100 text-red-700 shrink-0 font-mono font-bold text-xs">
-                  0{idx + 1}
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-slate-900 mb-1 font-mono uppercase">
-                    Specification Item 0{idx + 1}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {comp}
-                  </p>
-                </div>
+          {/* Stage 01: Hydraulic Design & Pump Room Engineering */}
+          <div className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs font-bold text-red-600 bg-red-100 px-2 py-1">
+                STAGE 01
+              </span>
+              <h3 className="text-xl font-bold text-slate-900">
+                Hydraulic Design & Pump Room Engineering
+              </h3>
+            </div>
+            <p className="text-xs text-slate-600">
+              Every facility requires exact water volume and pressure calculations based on building height and floor hazard class:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+              <div className="p-4 bg-white border border-slate-200 space-y-1">
+                <h4 className="font-mono font-bold text-xs text-red-600 uppercase">
+                  Water Storage & Head Pressure
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Underground static storage reservoirs and overhead tanks calculated to sustain continuous firefighting duration per NBC requirements.
+                </p>
               </div>
-            ))}
+              <div className="p-4 bg-white border border-slate-200 space-y-1">
+                <h4 className="font-mono font-bold text-xs text-red-600 uppercase">
+                  Tri-Pump Configuration
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Main electric pump, diesel standby engine for power outages, and jockey pump for automated baseline network pressurization.
+                </p>
+              </div>
+              <div className="p-4 bg-white border border-slate-200 space-y-1">
+                <h4 className="font-mono font-bold text-xs text-red-600 uppercase">
+                  Riser & Ring Sizing
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Hydraulic ring-main pipe sizing engineered to prevent friction loss and guarantee minimum 3.5 bar pressure at remote landing valves.
+                </p>
+              </div>
+            </div>
           </div>
+
+          {/* Stage 02: Turnkey Infrastructure Installation */}
+          <div className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs font-bold text-red-600 bg-red-100 px-2 py-1">
+                STAGE 02
+              </span>
+              <h3 className="text-xl font-bold text-slate-900">
+                Turnkey Infrastructure Installation
+              </h3>
+            </div>
+            <p className="text-xs text-slate-600">
+              We handle end-to-end fabrication, welding, and installation with certified hardware components:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              {hydrantComponents.map((item, idx) => (
+                <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-4">
+                  <div className="p-2 bg-red-100 text-red-700 shrink-0 font-mono font-bold text-xs">
+                    0{idx + 1}
+                  </div>
+                  <div>
+                    <h4 className="font-mono font-bold text-xs text-red-600 uppercase mb-1">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stage 03: Testing, Commissioning & AMC */}
+          <div className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs font-bold text-red-600 bg-red-100 px-2 py-1">
+                STAGE 03
+              </span>
+              <h3 className="text-xl font-bold text-slate-900">
+                Inspection, Commissioning & AMC Maintenance
+              </h3>
+            </div>
+            <p className="text-xs text-slate-600">
+              A fire hydrant system is only useful if it works during an emergency. Our quarterly AMC protocol guarantees 24/7 readiness:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              {service.amcDetails?.map((amc, idx) => (
+                <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-3">
+                  <Activity className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                  <p className="text-xs text-slate-700 leading-relaxed">{amc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* AMC & Maintenance Contracts */}
+      {/* Upgrades Advisory */}
       <section className="py-20 bg-[#0F172A] border-b border-slate-800 text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="space-y-2">
-                <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-500">
-                  PREVENTATIVE MAINTENANCE PROTOCOLS
-                </span>
-                <h2 className="text-3xl font-extrabold tracking-tight text-white">
-                  Annual Maintenance Contracts (AMC)
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  A fire hydrant system is only useful if it works during an emergency. Our AMC services include comprehensive quarterly checks:
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                {service.amcDetails?.map((detail, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3 bg-slate-900 border border-slate-800">
-                    <Gauge className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-slate-300">{detail}</span>
-                  </div>
-                ))}
-              </div>
+          <div className="max-w-3xl mx-auto p-8 border border-slate-700 bg-slate-900 space-y-4 text-center sm:text-left">
+            <div className="p-2.5 w-fit bg-red-950 text-red-400 border border-red-800 font-mono text-xs font-bold uppercase mx-auto sm:mx-0">
+              System Upgrades & Inspections
             </div>
-
-            {/* Upgrades Advisory */}
-            <div className="lg:col-span-6">
-              <div className="p-8 border border-slate-700 bg-slate-900 space-y-4">
-                <div className="p-2.5 w-fit bg-red-950 text-red-400 border border-red-800 font-mono text-xs font-bold uppercase">
-                  System Upgrades & Inspections
-                </div>
-                <h3 className="text-xl font-bold text-white">
-                  Failing Fire Safety Audits or Old Infrastructure?
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {service.upgrades}
-                </p>
-                <Button variant="default" size="default" asChild className="rounded-none font-mono">
-                  <Link href="/contact">
-                    <span>Schedule Upgrade Inspection</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-                  </Link>
-                </Button>
-              </div>
+            <h3 className="text-2xl font-bold text-white tracking-tight">
+              Failing Fire Safety Audits or Old Infrastructure?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              {service.upgrades}
+            </p>
+            <div className="pt-2">
+              <Button variant="default" size="default" asChild className="rounded-none font-mono">
+                <Link href="/contact">
+                  <span>Schedule Upgrade Inspection</span>
+                  <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

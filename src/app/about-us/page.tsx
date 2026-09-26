@@ -126,9 +126,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What Sets Us Apart */}
+      {/* What Sets Us Apart — Non-Grid Engineering Timeline */}
       <section className="py-20 bg-[#0F172A] border-b border-slate-800 text-white font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-14">
           <div className="space-y-2">
             <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-red-500">
               CORE DIFFERENTIATORS
@@ -141,21 +141,30 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="relative pl-6 sm:pl-10 border-l-2 border-slate-800 space-y-8 sm:space-y-10">
             {companyInfo.coreDifferentiators.map((diff, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-[#0B1220] border border-slate-800 hover:border-slate-600 transition-colors space-y-3"
+                className="relative group p-6 sm:p-7 bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors"
               >
-                <div className="font-mono text-xs font-bold text-red-500">
+                {/* Timeline node */}
+                <div className="absolute -left-[37px] sm:-left-[53px] top-6 w-7 h-7 sm:w-8 sm:h-8 bg-slate-950 border border-red-600 text-red-500 font-mono font-bold text-xs flex items-center justify-center">
                   {diff.number}
                 </div>
-                <h3 className="text-base font-bold text-white font-mono">
-                  {diff.title}
-                </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  {diff.desc}
-                </p>
+
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[10px] font-bold text-red-500 uppercase tracking-widest">
+                      ADVANTAGE 0{idx + 1}
+                    </span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white font-mono">
+                    {diff.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+                    {diff.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
