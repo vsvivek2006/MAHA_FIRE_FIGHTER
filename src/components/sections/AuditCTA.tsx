@@ -5,6 +5,7 @@ import { ShieldAlert, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
 import { AuditModal } from '@/components/ui/AuditModal';
 import { Button } from '@/components/ui/button';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export function AuditCTA() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,7 +14,8 @@ export function AuditCTA() {
     <>
       <section className="py-16 bg-[#070D18] border-b border-slate-800 text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="border border-slate-700 bg-[#0B1220] p-8 sm:p-12 rounded-none">
+          <ScrollReveal animation="zoom-in" delay={50}>
+            <div className="border border-slate-700 bg-[#0B1220] p-8 sm:p-12 rounded-none">
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
@@ -68,10 +70,10 @@ export function AuditCTA() {
               </div>
 
             </div>
-
           </div>
-        </div>
-      </section>
+        </ScrollReveal>
+      </div>
+    </section>
 
       <AuditModal
         isOpen={modalOpen}

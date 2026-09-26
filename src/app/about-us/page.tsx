@@ -5,6 +5,8 @@ import { ShieldCheck } from 'lucide-react';
 import { companyInfo, verifiedTestimonial } from '@/data/site-content';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { CoreDifferentiatorsTimeline } from '@/components/sections/CoreDifferentiatorsTimeline';
 
 export const metadata: Metadata = {
   title: "Maha Firefighters: Trusted Fire Safety Experts | MAHA FIREFIGHTERS",
@@ -41,18 +43,20 @@ export default function AboutPage() {
       {/* About Hero */}
       <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
-          <div className="flex items-center justify-center gap-2">
-            <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-            <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
-              About Maha Firefighters
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Trusted Fire Safety Experts in Delhi NCR
-          </h1>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            At MAHA FIRE FIGHTERS, we believe that Fire safety is not just a service—it is a promise. Based in the heart of the Delhi NCR region, we have established ourselves as a premier provider of integrated fire fighting systems and safety solutions.
-          </p>
+          <ScrollReveal animation="fade-down" delay={50}>
+            <div className="flex items-center justify-center gap-2">
+              <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
+              <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+                About Maha Firefighters
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mt-2">
+              Trusted Fire Safety Experts in Delhi NCR
+            </h1>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto mt-3">
+              At MAHA FIRE FIGHTERS, we believe that Fire safety is not just a service—it is a promise. Based in the heart of the Delhi NCR region, we have established ourselves as a premier provider of integrated fire fighting systems and safety solutions.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -62,7 +66,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Story Text */}
-            <div className="lg:col-span-7 space-y-6">
+            <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-7 w-full space-y-6">
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-wider uppercase text-red-600">
                   Our Commitment
@@ -76,7 +80,7 @@ export default function AboutPage() {
               </div>
 
               {/* Mission Card */}
-              <div className="p-6 border border-slate-200 bg-slate-50 space-y-2">
+              <div className="p-6 border border-slate-200 bg-slate-50 space-y-2 hover:border-red-400 transition-colors">
                 <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-red-600" />
                   Our Mission
@@ -92,10 +96,10 @@ export default function AboutPage() {
                 <div className="font-bold text-slate-900 mt-0.5">{companyInfo.aboutEstablishedDetail}</div>
                 <div className="text-xs text-slate-600 mt-1">Daryaganj, Delhi-110002</div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Visual & Testimonial */}
-            <div className="lg:col-span-5 space-y-6">
+            <ScrollReveal animation="fade-left" delay={200} className="lg:col-span-5 w-full space-y-6">
               <div className="relative aspect-[4/3] bg-slate-900 border border-slate-700 overflow-hidden shadow-2xl">
                 <Image
                   src="/images/audit.webp"
@@ -117,7 +121,7 @@ export default function AboutPage() {
                   {verifiedTestimonial.author}
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -126,40 +130,21 @@ export default function AboutPage() {
       {/* What Sets Us Apart */}
       <section className="py-20 bg-[#0F172A] border-b border-slate-800 text-white font-sans">
         <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-12">
-          <div className="space-y-2">
-            <span className="text-xs font-bold tracking-wider uppercase text-red-500">
-              Core Differentiators
-            </span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-white">
-              What Sets Us Apart?
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
-              In a region as fast-paced as Delhi NCR, you need a fire safety partner who is responsive and knowledgeable. Our edge lies in:
-            </p>
-          </div>
+          <ScrollReveal animation="fade-down" delay={50}>
+            <div className="space-y-2">
+              <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+                Core Differentiators
+              </span>
+              <h2 className="text-3xl font-extrabold tracking-tight text-white">
+                What Sets Us Apart?
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300">
+                In a region as fast-paced as Delhi NCR, you need a fire safety partner who is responsive and knowledgeable. Our edge lies in:
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="relative pl-6 sm:pl-10 border-l-2 border-slate-800 space-y-8 sm:space-y-10">
-            {companyInfo.coreDifferentiators.map((diff, idx) => (
-              <div
-                key={idx}
-                className="relative p-6 sm:p-7 bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors"
-              >
-                {/* Timeline node */}
-                <div className="absolute -left-[37px] sm:-left-[53px] top-6 w-7 h-7 sm:w-8 sm:h-8 bg-slate-950 border border-red-600 text-red-500 font-bold text-xs flex items-center justify-center">
-                  {diff.number}
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-white tracking-tight">
-                    {diff.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    {diff.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <CoreDifferentiatorsTimeline />
         </div>
       </section>
 

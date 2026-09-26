@@ -5,6 +5,7 @@ import { companyInfo } from '@/data/site-content';
 import { buildWhatsAppLink } from '@/lib/whatsapp';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: "Maha Firefighters Contact - Fire Safety Experts | MAHA FIREFIGHTERS",
@@ -41,18 +42,20 @@ export default function ContactPage() {
       {/* Contact Hero */}
       <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
-          <div className="flex items-center justify-center gap-2">
-            <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-            <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
-              Get in Touch
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Contact Maha Firefighters
-          </h1>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Reach out to Maha Firefighters for expert fire safety solutions in Delhi NCR. Serving commercial spaces, factories, and industrial facilities.
-          </p>
+          <ScrollReveal animation="fade-down" delay={50}>
+            <div className="flex items-center justify-center gap-2">
+              <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
+              <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+                Get in Touch
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mt-2">
+              Contact Maha Firefighters
+            </h1>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto mt-3">
+              Reach out to Maha Firefighters for expert fire safety solutions in Delhi NCR. Serving commercial spaces, factories, and industrial facilities.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -62,7 +65,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Left Contact Information */}
-            <div className="lg:col-span-5 space-y-6">
+            <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-5 w-full space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-bold tracking-wider uppercase text-red-500">
                   Office &amp; Inquiries
@@ -144,12 +147,12 @@ export default function ContactPage() {
                   <span className="text-xs font-bold text-emerald-400">Chat →</span>
                 </a>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Right Contact Form */}
-            <div className="lg:col-span-7">
+            <ScrollReveal animation="fade-left" delay={200} className="lg:col-span-7 w-full">
               <ContactForm initialService="Free Fire Safety Audit" />
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>

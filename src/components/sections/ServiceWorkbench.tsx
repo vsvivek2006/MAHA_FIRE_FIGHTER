@@ -8,6 +8,7 @@ import { servicesData } from '@/data/site-content';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export function ServiceWorkbench() {
   const servicesList = Object.values(servicesData);
@@ -18,32 +19,35 @@ export function ServiceWorkbench() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Section Masthead */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-slate-800 mb-12">
-          <div className="space-y-2 max-w-2xl">
-            <span className="text-xs font-bold tracking-wider uppercase text-red-500">
-              Core Fire Safety Systems
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Turnkey Design, Installation &amp; Field Maintenance
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Explore our core suppression, detection, and life-safety systems engineered for commercial buildings, factories, and warehouses across Delhi NCR.
-            </p>
+        <ScrollReveal animation="fade-down" delay={50}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-slate-800 mb-12">
+            <div className="space-y-2 max-w-2xl">
+              <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+                Core Fire Safety Systems
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                Turnkey Design, Installation &amp; Field Maintenance
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Explore our core suppression, detection, and life-safety systems engineered for commercial buildings, factories, and warehouses across Delhi NCR.
+              </p>
+            </div>
+            <Button variant="outline" size="sm" asChild className="shrink-0 rounded-none text-xs font-semibold">
+              <Link href="/services">
+                <span>View Full Services Catalog</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+              </Link>
+            </Button>
           </div>
-          <Button variant="outline" size="sm" asChild className="shrink-0 rounded-none text-xs font-semibold">
-            <Link href="/services">
-              <span>View Full Services Catalog</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-            </Link>
-          </Button>
-        </div>
+        </ScrollReveal>
 
         {/* Accessible Radix Tabs Service Workbench */}
         <Tabs value={activeSlug} onValueChange={setActiveSlug} className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
             {/* Left Column: Numbered Service Directory */}
-            <div className="lg:col-span-4 space-y-2">
+            <ScrollReveal animation="fade-right" delay={150} className="lg:col-span-4 w-full">
+              <div className="space-y-2">
               <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-1">
                 Select System For Details:
               </div>
@@ -71,11 +75,13 @@ export function ServiceWorkbench() {
                   </TabsTrigger>
                 ))}
               </TabsList>
-            </div>
+              </div>
+            </ScrollReveal>
 
             {/* Right Column: Dynamic Engineering Workbench */}
-            <div className="lg:col-span-8">
-              {servicesList.map((svc) => (
+            <ScrollReveal animation="fade-left" delay={250} className="lg:col-span-8 w-full">
+              <div>
+                {servicesList.map((svc) => (
                 <TabsContent key={svc.slug} value={svc.slug} className="mt-0 focus-visible:ring-0">
                   <div className="border border-slate-700 bg-slate-950 p-6 sm:p-8 rounded-none space-y-6">
                     {/* Workbench Top Bar */}
@@ -209,7 +215,8 @@ export function ServiceWorkbench() {
                   </div>
                 </TabsContent>
               ))}
-            </div>
+              </div>
+            </ScrollReveal>
 
           </div>
         </Tabs>

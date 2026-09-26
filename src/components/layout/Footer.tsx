@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ShieldCheck, ArrowRight } from 'lucide-react';
 import { companyInfo, servicesData } from '@/data/site-content';
+import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 
 export function Footer() {
   return (
@@ -13,13 +14,13 @@ export function Footer() {
           {/* Col 1 & 2: Corporate Identity */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-10 h-10 rounded-none border border-slate-700 bg-slate-950 p-1">
+              <div className="relative w-10 h-10 rounded-sm bg-white p-0.5 shrink-0 border border-slate-700/80 shadow-sm flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/images/logo.jpeg"
+                  src="/images/logo.webp"
                   alt="Maha Firefighters Logo"
                   width={40}
                   height={40}
-                  className="object-contain w-full h-full rounded-none"
+                  className="object-contain w-full h-full"
                 />
               </div>
               <div>
@@ -40,11 +41,15 @@ export function Footer() {
             {/* Credential Counters */}
             <div className="grid grid-cols-2 gap-3 max-w-xs pt-1">
               <div className="p-3 bg-slate-900 border border-slate-800 rounded-none">
-                <div className="text-lg font-bold text-white">{companyInfo.experienceYears}</div>
+                <div className="text-lg font-bold text-white tabular-nums">
+                  <AnimatedCounter target={15} suffix="+" />
+                </div>
                 <div className="text-xs text-slate-400 uppercase tracking-wider">Years Field Experience</div>
               </div>
               <div className="p-3 bg-slate-900 border border-slate-800 rounded-none">
-                <div className="text-lg font-bold text-red-500">{companyInfo.clientBase}</div>
+                <div className="text-lg font-bold text-red-500 tabular-nums">
+                  <AnimatedCounter target={250} suffix="+" />
+                </div>
                 <div className="text-xs text-slate-400 uppercase tracking-wider">Satisfied Client Base</div>
               </div>
             </div>
@@ -146,12 +151,15 @@ export function Footer() {
           <div>
             © 2025 Maha Firefighters (Maha Enterprises). All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-wrap justify-center sm:justify-end">
             <Link href="/about-us" className="hover:text-slate-300 transition-colors">
               About Us
             </Link>
             <Link href="/services" className="hover:text-slate-300 transition-colors">
               Services
+            </Link>
+            <Link href="/blog" className="hover:text-slate-300 transition-colors">
+              Blog &amp; Guides
             </Link>
             <Link href="/faq" className="hover:text-slate-300 transition-colors">
               FAQ

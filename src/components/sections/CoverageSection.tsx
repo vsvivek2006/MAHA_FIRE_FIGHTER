@@ -3,6 +3,8 @@ import { Truck, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { companyInfo, verifiedTestimonial } from '@/data/site-content';
 import { Button } from '@/components/ui/button';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 
 export function CoverageSection() {
   return (
@@ -12,7 +14,7 @@ export function CoverageSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Regional Coverage */}
-          <div className="lg:col-span-7 space-y-6">
+          <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-7 w-full space-y-6">
             <div className="space-y-2">
               <span className="text-xs font-bold tracking-wider uppercase text-red-600">
                 Regional Service Coverage
@@ -25,19 +27,25 @@ export function CoverageSection() {
               </p>
             </div>
 
-            {/* Regional List */}
+            {/* Regional List with radar ping indicators */}
             <div className="border border-slate-200 divide-y divide-slate-200 bg-slate-50">
-              {companyInfo.serviceAreas.map((area) => (
-                <div key={area.name} className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              {companyInfo.serviceAreas.map((area, idx) => (
+                <div key={area.name} className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group hover:bg-white transition-colors">
                   <div className="space-y-0.5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-                      <span className="font-bold text-sm text-slate-900">
+                    <div className="flex items-center gap-2.5">
+                      <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600" />
+                      </span>
+                      <span className="font-bold text-sm text-slate-900 group-hover:text-red-600 transition-colors">
                         {area.name}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-600 pl-4">{area.desc}</p>
+                    <p className="text-xs text-slate-600 pl-5">{area.desc}</p>
                   </div>
+                  <span className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider pl-5 sm:pl-0">
+                    Active Hub 0{idx + 1}
+                  </span>
                 </div>
               ))}
             </div>
@@ -52,10 +60,10 @@ export function CoverageSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Source Testimonial & Company Overview */}
-          <div className="lg:col-span-5 space-y-6">
+          <ScrollReveal animation="fade-left" delay={200} className="lg:col-span-5 w-full space-y-6">
             {/* Testimonial Box */}
             <div className="p-8 border border-slate-300 bg-slate-50 space-y-4">
               <div className="flex items-center justify-between border-b border-slate-200 pb-3">
@@ -74,18 +82,22 @@ export function CoverageSection() {
               </div>
             </div>
 
-            {/* Fact Summary */}
+            {/* Fact Summary with Animated Counters */}
             <div className="p-6 bg-[#0B1220] text-white border border-slate-800 space-y-4">
               <div className="text-xs font-bold text-red-500 uppercase tracking-wider">
                 Proven Track Record
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <div className="text-3xl font-extrabold text-white">{companyInfo.experienceYears}</div>
+                  <div className="text-3xl font-extrabold text-white">
+                    <AnimatedCounter value={10} suffix="+" duration={1600} />
+                  </div>
                   <div className="text-xs text-slate-400 uppercase mt-0.5">Years Experience</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-extrabold text-red-500">{companyInfo.clientBase}</div>
+                  <div className="text-3xl font-extrabold text-red-500">
+                    <AnimatedCounter value={500} suffix="+" duration={2000} />
+                  </div>
                   <div className="text-xs text-slate-400 uppercase mt-0.5">Satisfied Clients</div>
                 </div>
               </div>
@@ -99,8 +111,7 @@ export function CoverageSection() {
                 </Link>
               </Button>
             </div>
-
-          </div>
+          </ScrollReveal>
 
         </div>
 

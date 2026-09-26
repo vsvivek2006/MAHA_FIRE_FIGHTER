@@ -1,0 +1,103 @@
+# MAHA FIREFIGHTERS — COMPLETE TECHNICAL SPECIFICATION & BUSINESS CONTEXT
+
+## Organization Overview
+- Legal Business Entity: Maha Enterprises
+- Brand Name: Maha Firefighters
+- Official Website: https://mahafirefighters.com
+- Industry: Fire Protection Engineering, Industrial Life Safety Contracting & Services
+- Experience: 15+ Years Field Experience
+- Verified Clients: 250+ Commercial & Industrial Facilities across Delhi NCR
+- Headquarters: 3594, Netaji Subhash Marg, Daryaganj, New Delhi, Delhi 110002, India
+- Operational Territory: National Capital Region (Delhi, Noida, Greater Noida, Gurugram, Faridabad, Ghaziabad)
+- Primary Contact Phone: +91 9873337442, +91 9873514657
+- Primary Email: mahafirefighters@gmail.com
+
+---
+
+## Engineering Standards & Regulatory Codes Followed
+All engineering layouts, installations, testing protocols, and AMC contracts strictly comply with Indian statutory standards:
+1. National Building Code of India (NBC 2016 Part 4): Life Safety and Fire Protection guidelines for commercial, institutional, industrial, and storage occupancies.
+2. IS 3844: Code of practice for installation and maintenance of internal fire hydrants and hose reels on premises.
+3. IS 15105: Design and installation of fixed automatic sprinkler fire extinguishing systems.
+4. IS 2189: Code of practice for selection, installation and maintenance of automatic fire detection and alarm systems.
+5. IS 2190: Selection, installation and maintenance of first-aid fire extinguishers.
+6. IS 1239 / IS 3589: Steel tubes, tubulars and other wrought steel fittings for high-pressure fire hydrant pipelines.
+7. Delhi Fire Service (DFS) & Haryana/UP Fire Department NOC norms.
+
+---
+
+## Detailed Service Specifications
+
+### 1. Fire Hydrant Systems (IS: 3844 Aligned)
+- Scope: High-capacity water-based manual fire suppression systems engineered to deliver pressurized water volume at any point within a facility.
+- Key Components:
+  - Main Electrical Fire Pump: High-head centrifugal pump delivering required flow (e.g. 2280 LPM / 2850 LPM).
+  - Standby Diesel Engine Pump: Autonomous automatic start backup to guarantee suppression even during complete power failure.
+  - Jockey Pump: Automatic pressure-sensing pump maintaining pipeline pressure (typically 7.0 bar) against minor leaks.
+  - Ring Main Piping: Heavy-duty underground and overhead ERW/seamless piping networks.
+  - Hydrant Landing Valves: Heavy-duty gunmetal/stainless steel oblique landing valves (single/double outlet, IS 5290).
+  - First-Aid Hose Reel Drums: 30-meter high-pressure braided rubber hose with shut-off nozzle.
+  - Weatherproof Fire Hose Cabinets: Reinforced MS/FRP cabinets housing synthetic canvas delivery hoses and copper branch pipes.
+- AMC Inclusions: Monthly pressure maintenance, quarterly valve greasing and flow discharge tests, packing gland checks, jockey pump start/cut-off calibrations, and hydro-testing.
+
+### 2. Automatic Fire Sprinkler Systems (IS: 15105 Aligned)
+- Scope: 24/7 unattended automatic fire detection and localized suppression engineered to extinguish fires at the point of origin before flashover occurs.
+- System Variations:
+  - Wet Pipe Systems: Permanently water-charged network for standard commercial, retail, and factory spaces.
+  - Dry Pipe / Pre-Action Systems: Compressed air/nitrogen-filled network for cold storage, data centers, and sensitive archives preventing accidental water release.
+  - Deluge Systems: Open sprinkler heads for high-hazard transformer bays and chemical processing areas.
+- Component Standards:
+  - Temperature ratings: 68°C (red liquid bulb standard), 79°C (yellow), 93°C (green).
+  - Pendent, upright, and horizontal sidewall configurations with UL/FM listed components.
+  - Zone Control Valves (ZCV) with flow switches and supervisory tamper switches.
+
+### 3. Advanced Fire Alarm & Detection Systems (IS: 2189 Aligned)
+- Scope: Earliest possible fire hazard detection providing audible and visual evacuation signaling and system interlocks.
+- System Configurations:
+  - Intelligent Addressable Alarm Systems: Pinpoint accuracy identifying the exact detector location, room, and floor; ideal for large multi-story buildings, campuses, and logistics parks.
+  - Conventional Fire Alarm Systems: Zone-based signaling optimal for small commercial offices, retail outlets, and standalone warehouses.
+- Detection Hardware:
+  - Optical Smoke Detectors: Dual-chamber sensing smoke particles before open flames ignite.
+  - Rate-of-Rise Heat Detectors: Sensing rapid ambient temperature escalations (>8°C/min) or fixed temperature limits (57°C / 90°C).
+  - Multi-Criteria Sensors: Combined smoke and thermal analysis minimizing false alarms in manufacturing environments.
+  - Manual Call Points (MCP): Glass-break or push-button stations for human evacuation triggers.
+  - Electronic Sounder-Strobes: High-decibel audio horns (90-110 dB) with high-intensity visual flashing xenon strobes.
+
+### 4. Fire Extinguisher Refilling & Sales (IS: 2190 Aligned)
+- In-House Production: Maha Firefighters operates a dedicated in-house refilling factory in Delhi NCR, eliminating third-party intermediaries and ensuring 100% genuine extinguishing media.
+- Extinguisher Classifications Handled:
+  - Class A/B/C Powder: MAP (Monoammonium Phosphate) 50% / 90% concentration.
+  - Carbon Dioxide (CO2): High-pressure liquefied gas leaving zero residue; ideal for electrical panels and server rooms.
+  - Mechanical Foam (AFFF): Aqueous film forming foam for Class B flammable liquids (solvents, diesel, paints).
+  - Clean Agent / HFC-227ea: Eco-friendly non-conductive gas for mission-critical IT infrastructure.
+  - Water CO2: Gas cartridge pressurized water for Class A solid combustibles (wood, paper, textiles).
+- Quality Assurance:
+  - Hydrostatic Pressure Testing (HPT) to 35 bar ensuring cylinder integrity.
+  - Replacement of defective discharge hoses, pressure gauges, safety pins, and O-rings.
+  - Mandatory statutory inspection tags stamped with next due date.
+  - Free doorstep pickup and delivery across Delhi NCR.
+
+### 5. Fire Safety Drills & Evacuation Training
+- Scope: Comprehensive hands-on fire safety training and emergency evacuation simulations.
+- Modules:
+  - P.A.S.S. Technique: Pull, Aim, Squeeze, Sweep live hands-on extinguisher operation.
+  - Emergency Evacuation Drill: Primary and secondary escape route planning, assembly point headcounts, and warden roles.
+  - Fixed System Familiarization: Instructing floor managers on manual call points, fire hose reels, and emergency pump activation.
+  - Statutory Documentation: Drill reports and participation certificates fulfilling annual factory inspection requirements.
+
+---
+
+## Website Architecture & URLs
+- Home: https://mahafirefighters.com
+- Services Directory: https://mahafirefighters.com/services
+- Fire Hydrant Systems: https://mahafirefighters.com/firehydrantsystems
+- Fire Sprinkler Systems: https://mahafirefighters.com/firesprinklersystems
+- Fire Alarm Systems: https://mahafirefighters.com/firealarmsystems
+- Fire Extinguisher Refilling: https://mahafirefighters.com/fire-extinguisher-refilling-service
+- Fire Safety Drills: https://mahafirefighters.com/firesafetydrill
+- About Us: https://mahafirefighters.com/about-us
+- FAQ: https://mahafirefighters.com/faq
+- Contact Desk: https://mahafirefighters.com/contact
+- Technical Blog: https://mahafirefighters.com/blog
+- Sitemap XML: https://mahafirefighters.com/sitemap.xml
+- Robots TXT: https://mahafirefighters.com/robots.txt

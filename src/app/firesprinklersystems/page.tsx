@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/forms/ContactForm';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { JsonLd, generateServiceSchema } from '@/components/seo/JsonLd';
 import { Button } from '@/components/ui/button';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 const service = servicesData["firesprinklersystems"];
 
@@ -31,10 +32,10 @@ export default function FireSprinklersPage() {
       <JsonLd schema={schema} />
 
       {/* Sprinkler Hero */}
-      <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans">
+      <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
+            <ScrollReveal animation="fade-right" className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
                 <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
@@ -52,30 +53,49 @@ export default function FireSprinklersPage() {
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button variant="default" size="default" asChild className="rounded-none text-xs font-semibold">
+                <Button variant="default" size="default" asChild className="rounded-none text-xs font-semibold hover:scale-[1.02] transition-transform">
                   <a href={`tel:${companyInfo.phones[0].raw}`}>
                     <Phone className="w-3.5 h-3.5 mr-1.5" />
                     <span>Call Hotline: {companyInfo.phones[0].display}</span>
                   </a>
                 </Button>
-                <Button variant="outline" size="default" asChild className="rounded-none text-xs font-semibold">
+                <Button variant="outline" size="default" asChild className="rounded-none text-xs font-semibold hover:scale-[1.02] transition-transform">
                   <Link href="/contact">
                     <span>Request Sprinkler Layout</span>
                   </Link>
                 </Button>
               </div>
-            </div>
 
-            <div className="lg:col-span-5 relative aspect-[4/3] bg-slate-950 border border-slate-700 overflow-hidden shadow-2xl">
-              <Image
-                src={service.image}
-                alt="Automatic Fire Sprinkler Systems Delhi NCR"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
-            </div>
+              <div className="pt-4 flex items-center gap-6 text-xs text-slate-400 border-t border-slate-800">
+                <div>
+                  <span className="font-bold text-white text-sm">IS: 15105</span> Design Standards
+                </div>
+                <div>
+                  <span className="font-bold text-red-500 text-sm">24/7</span> Automated Suppression
+                </div>
+                <div>
+                  <span className="font-bold text-emerald-400 text-sm">UL / FM</span> Listed Heads
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-5">
+              <div className="relative aspect-[4/3] bg-slate-950 border border-slate-700 overflow-hidden shadow-2xl group">
+                <Image
+                  src={service.image}
+                  alt="Automatic Fire Sprinkler Systems Delhi NCR"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-slate-300 flex items-center justify-between">
+                  <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-slate-800">RAPID RESPONSE HEADS</span>
+                  <span className="text-emerald-400 font-bold">AUTOMATIC ACTIVATION</span>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -83,7 +103,7 @@ export default function FireSprinklersPage() {
       {/* Sprinkler System Expertise */}
       <section className="py-20 bg-white text-slate-900 border-b border-slate-200 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
-          <div className="space-y-2">
+          <ScrollReveal animation="fade-up" className="space-y-2">
             <span className="text-xs font-bold tracking-wider uppercase text-red-600">
               Technical Expertise
             </span>
@@ -93,17 +113,17 @@ export default function FireSprinklersPage() {
             <p className="text-xs sm:text-sm text-slate-600">
               Every building has a different hazard level. We design systems based on your specific occupancy:
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* 1. Custom Design */}
-          <div className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4">
+          <ScrollReveal animation="fade-up" delay={100} className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4 hover:border-slate-300 transition-colors">
             <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
               <span className="w-2 h-2 bg-red-600" />
               1. Custom Design &amp; Engineering
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
               {service.types?.map((type, idx) => (
-                <div key={idx} className="p-4 bg-white border border-slate-200">
+                <div key={idx} className="p-4 bg-white border border-slate-200 hover:border-red-600/30 hover:shadow-sm transition-all">
                   <h4 className="font-bold text-sm text-slate-900 mb-1">
                     {type.name}
                   </h4>
@@ -113,10 +133,10 @@ export default function FireSprinklersPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* 2. Professional Installation */}
-          <div className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4">
+          <ScrollReveal animation="fade-up" delay={200} className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4 hover:border-slate-300 transition-colors">
             <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
               <span className="w-2 h-2 bg-red-600" />
               2. Professional Installation
@@ -126,16 +146,16 @@ export default function FireSprinklersPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
               {service.installationSpecs?.map((spec, idx) => (
-                <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-3">
+                <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-3 hover:border-emerald-600/30 hover:shadow-sm transition-all">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <p className="text-xs text-slate-700 leading-relaxed">{spec}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* 3. Inspection & AMC */}
-          <div className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4">
+          <ScrollReveal animation="fade-up" delay={300} className="p-6 sm:p-8 border border-slate-200 bg-slate-50 space-y-4 hover:border-slate-300 transition-colors">
             <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
               <span className="w-2 h-2 bg-red-600" />
               3. Inspection &amp; AMC Services
@@ -145,20 +165,22 @@ export default function FireSprinklersPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
               {service.amcDetails?.map((detail, idx) => (
-                <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-3">
+                <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-3 hover:border-red-600/30 hover:shadow-sm transition-all">
                   <Droplets className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                   <p className="text-xs text-slate-700 leading-relaxed">{detail}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Booking Form */}
       <section className="py-20 bg-[#0B1220] border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
-          <ContactForm initialService="Fire Sprinkler System" />
+          <ScrollReveal animation="fade-up">
+            <ContactForm initialService="Fire Sprinkler System" />
+          </ScrollReveal>
         </div>
       </section>
 

@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export function FaqPreview() {
   const previewFaqs = faqsData.slice(0, 5);
@@ -20,23 +21,26 @@ export function FaqPreview() {
       <div className="max-w-4xl mx-auto px-4 sm:px-8">
         
         {/* Masthead */}
-        <div className="text-center space-y-2 mb-12">
-          <div className="flex items-center justify-center gap-2">
-            <HelpCircle className="w-4 h-4 text-red-500" />
-            <span className="text-xs font-bold tracking-wider uppercase text-slate-400">
-              Frequently Asked Questions
-            </span>
+        <ScrollReveal animation="fade-down" delay={50}>
+          <div className="text-center space-y-2 mb-12">
+            <div className="flex items-center justify-center gap-2">
+              <HelpCircle className="w-4 h-4 text-red-500" />
+              <span className="text-xs font-bold tracking-wider uppercase text-slate-400">
+                Frequently Asked Questions
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+              Common Fire Safety &amp; Compliance Questions
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+              Essential clarity regarding NBC provisions, Delhi Fire Service compliance, Fire NOC renewal, and preventative maintenance schedules.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Common Fire Safety &amp; Compliance Questions
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Essential clarity regarding NBC provisions, Delhi Fire Service compliance, Fire NOC renewal, and preventative maintenance schedules.
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Accessible Accordion */}
-        <div className="border border-slate-800 bg-[#0B1220] p-6 sm:p-8 rounded-none">
+        <ScrollReveal animation="fade-up" delay={150}>
+          <div className="border border-slate-800 bg-[#0B1220] p-6 sm:p-8 rounded-none">
           <Accordion type="single" collapsible defaultValue="item-0">
             {previewFaqs.map((faq, idx) => (
               <AccordionItem key={idx} value={`item-${idx}`} className="border-slate-800">
@@ -65,6 +69,7 @@ export function FaqPreview() {
             </Button>
           </div>
         </div>
+      </ScrollReveal>
 
       </div>
     </section>

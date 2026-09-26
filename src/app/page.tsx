@@ -2,14 +2,17 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Hero } from '@/components/sections/Hero';
 import { AuthorityStrip } from '@/components/sections/AuthorityStrip';
+import { OperationalFootage } from '@/components/sections/OperationalFootage';
 import { ServiceWorkbench } from '@/components/sections/ServiceWorkbench';
 import { ProcessSection } from '@/components/sections/ProcessSection';
 import { CoverageSection } from '@/components/sections/CoverageSection';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { FaqPreview } from '@/components/sections/FaqPreview';
+import { BlogPreview } from '@/components/sections/BlogPreview';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { Phone, Mail, MapPin, CheckCircle2 } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: "Fire Hydrant and Sprinklers System Contractors In Delhi NCR | MAHA FIREFIGHTERS",
@@ -24,6 +27,7 @@ export default function HomePage() {
     <>
       <Hero />
       <AuthorityStrip />
+      <OperationalFootage />
       <ServiceWorkbench />
       <ProcessSection />
       <CoverageSection />
@@ -34,7 +38,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Info Column */}
-            <div className="lg:col-span-5 space-y-6">
+            <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-5 w-full space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-bold tracking-wider uppercase text-red-500">
                   Direct Inquiries &amp; Consultations
@@ -94,17 +98,18 @@ export default function HomePage() {
                   We bring your fire protection equipment up to Delhi Fire Service standards for smooth Fire NOC approvals and renewals.
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Right Form Column */}
-            <div className="lg:col-span-7">
+            <ScrollReveal animation="fade-left" delay={200} className="lg:col-span-7 w-full">
               <ContactForm initialService="Free Fire Safety Audit" />
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
       </section>
 
+      <BlogPreview />
       <FaqPreview />
       <AuditCTA />
     </>

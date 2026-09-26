@@ -20,7 +20,7 @@ export function generateLocalBusinessSchema() {
     "name": "Maha Firefighters",
     "alternateName": "Maha Enterprises",
     "url": "https://mahafirefighters.com",
-    "logo": "https://mahafirefighters.com/images/logo.jpeg",
+    "logo": "https://mahafirefighters.com/images/logo.png",
     "image": "https://mahafirefighters.com/images/hero.webp",
     "description": "Leading fire hydrant and sprinkler system contractors in Delhi NCR. Turnkey installation, AMC services, fire alarm systems, and in-house extinguisher refilling.",
     "telephone": ["+91-9873514657", "+91-9873337442"],

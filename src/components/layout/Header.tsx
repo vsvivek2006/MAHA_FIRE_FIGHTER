@@ -39,6 +39,7 @@ export function Header() {
       hasDropdown: true 
     },
     { name: 'About Us', href: '/about-us' },
+    { name: 'Blog', href: '/blog' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' }
   ];
@@ -49,14 +50,15 @@ export function Header() {
         {/* Top Utility Bar */}
         <div className="border-b border-slate-800/80 bg-[#070D18] text-slate-300 text-[11px] py-1.5 px-4 sm:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
-              <span className="flex items-center gap-1.5 text-red-500 font-bold uppercase tracking-wider text-[11px]">
+            <div className="flex items-center gap-2 sm:gap-6 flex-wrap">
+              <span className="flex items-center gap-1.5 text-red-500 font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">
                 <span className="w-1.5 h-1.5 bg-red-500 rounded-none animate-pulse" />
-                <span>Delhi NCR Service Hotline:</span>
+                <span className="hidden sm:inline">Delhi NCR Service Hotline:</span>
+                <span className="sm:hidden">Hotline:</span>
               </span>
               <a 
                 href={`tel:${companyInfo.phones[0].raw}`} 
-                className="hover:text-white font-semibold transition-colors flex items-center gap-1"
+                className="hover:text-white font-semibold transition-colors flex items-center gap-1 text-[11px] sm:text-xs"
               >
                 <Phone className="w-3 h-3 text-red-500" />
                 {companyInfo.phones[0].display}
@@ -90,20 +92,20 @@ export function Header() {
         </div>
 
         {/* Corporate Navigation */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-          {/* Logo & Corporate Identity */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-none border border-slate-700 bg-slate-950 p-1 shrink-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 sm:py-3.5 flex items-center justify-between">
+          {/* Logo & Corporate Identity - On mobile only logo icon is shown to prevent horizontal overflow; full brand shown on sm+ */}
+          <Link href="/" className="flex items-center gap-3 group" aria-label="Maha Firefighters Home">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-sm bg-white p-0.5 shrink-0 border border-slate-700/80 shadow-sm flex items-center justify-center overflow-hidden">
               <Image
-                src="/images/logo.jpeg"
+                src="/images/logo.webp"
                 alt="Maha Firefighters Logo"
                 width={40}
                 height={40}
-                className="object-contain w-full h-full rounded-none"
+                className="object-contain w-full h-full"
                 priority
               />
             </div>
-            <div>
+            <div className="hidden sm:block">
               <div className="font-extrabold tracking-tight text-white text-base sm:text-lg leading-none">
                 <span>MAHA</span>
                 <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
@@ -246,7 +248,29 @@ export function Header() {
 
         {/* Mobile Slide-down Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-800 bg-[#0B1220] px-4 py-6 space-y-4">
+          <div className="lg:hidden border-t border-slate-800 bg-[#0B1220] px-4 py-5 space-y-4">
+            {/* Mobile Branding inside drawer */}
+            <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
+              <div className="relative w-10 h-10 rounded-sm bg-white p-0.5 shrink-0 border border-slate-700/80 shadow-sm flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/logo.webp"
+                  alt="Maha Firefighters Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <div>
+                <div className="font-extrabold tracking-tight text-white text-base leading-none">
+                  <span>MAHA</span>
+                  <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
+                </div>
+                <div className="text-[10px] text-slate-400 tracking-wider uppercase mt-1">
+                  Fire Protection Systems Delhi NCR
+                </div>
+              </div>
+            </div>
+
             <nav className="flex flex-col space-y-1">
               <Link
                 href="/"
@@ -276,6 +300,12 @@ export function Header() {
                 className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
               >
                 About Us
+              </Link>
+              <Link
+                href="/blog"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
+              >
+                Blog &amp; Knowledge Base
               </Link>
               <Link
                 href="/faq"

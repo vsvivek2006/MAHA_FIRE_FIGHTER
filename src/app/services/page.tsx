@@ -9,6 +9,7 @@ import { ContactForm } from '@/components/forms/ContactForm';
 import { JsonLd, generateServiceSchema } from '@/components/seo/JsonLd';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: "Reliable Fire Safety Systems in Delhi NCR | MAHA FIREFIGHTERS",
@@ -33,18 +34,20 @@ export default function ServicesPage() {
       {/* Services Hero */}
       <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 max-w-3xl text-center space-y-4">
-          <div className="flex items-center justify-center gap-2">
-            <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-            <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
-              Our Services • Delhi NCR
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Reliable Fire Safety Systems in Delhi NCR
-          </h1>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            With 15+ years of excellence, Maha Firefighters is a leading name in fire safety across Delhi and NCR. We provide end-to-end fire fighting services, from advanced hydrant systems installations and fire sprinkler systems to expert audits and training.
-          </p>
+          <ScrollReveal animation="fade-down" delay={50}>
+            <div className="flex items-center justify-center gap-2">
+              <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
+              <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+                Our Services • Delhi NCR
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mt-2">
+              Reliable Fire Safety Systems in Delhi NCR
+            </h1>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto mt-3">
+              With 15+ years of excellence, Maha Firefighters is a leading name in fire safety across Delhi and NCR. We provide end-to-end fire fighting services, from advanced hydrant systems installations and fire sprinkler systems to expert audits and training.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -54,11 +57,15 @@ export default function ServicesPage() {
           {services.map((service, idx) => {
             const isEven = idx % 2 === 1;
             return (
-              <div
+              <ScrollReveal 
                 key={service.slug}
-                id={service.slug}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center p-6 sm:p-10 border border-slate-800 bg-[#0B1220] rounded-none"
+                animation={isEven ? "fade-left" : "fade-right"}
+                delay={100}
               >
+                <div
+                  id={service.slug}
+                  className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center p-6 sm:p-10 border border-slate-800 bg-[#0B1220] hover:border-slate-700 transition-all rounded-none shadow-md"
+                >
                 {/* Visual Frame */}
                 <div className={`lg:col-span-5 relative aspect-[16/11] bg-slate-900 border border-slate-700 overflow-hidden ${
                   isEven ? 'lg:order-2' : 'lg:order-1'
@@ -141,15 +148,18 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </div>
-            );
-          })}
+            </ScrollReveal>
+          );
+        })}
         </div>
       </section>
 
       {/* Booking Form Section */}
       <section className="py-20 bg-[#0B1220] border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
-          <ContactForm initialService="Fire Hydrant System" />
+          <ScrollReveal animation="zoom-in" delay={100}>
+            <ContactForm initialService="Fire Hydrant System" />
+          </ScrollReveal>
         </div>
       </section>
 

@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
+import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
+import { RouteScrollReset } from "@/components/navigation/RouteScrollReset";
 import { JsonLd, generateLocalBusinessSchema } from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -74,10 +76,18 @@ export const metadata: Metadata = {
     images: ["/images/hero.webp"],
   },
   icons: {
-    icon: "/images/logo.jpeg",
-    shortcut: "/images/logo.jpeg",
-    apple: "/images/logo.jpeg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/images/logo.png", type: "image/png", sizes: "344x344" }
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+    ],
   },
+  manifest: "/site.webmanifest",
   alternates: {
     canonical: "https://mahafirefighters.com",
   },
@@ -99,6 +109,8 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-[#0a0e17] text-gray-100 antialiased selection:bg-red-600 selection:text-white pb-14 sm:pb-0"
         suppressHydrationWarning
       >
+        <RouteScrollReset />
+        <ScrollProgressBar />
         <Header />
         <main className="flex-1">
           {children}
