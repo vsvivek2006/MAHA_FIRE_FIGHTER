@@ -229,7 +229,7 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
           <Cpu className="w-3.5 h-3.5 text-[#C5221F]" />
           Engine &amp; Reasoning Model
         </label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
           {AVAILABLE_MODELS.map((model) => {
             const isSelected = selectedModel === model.id;
             return (

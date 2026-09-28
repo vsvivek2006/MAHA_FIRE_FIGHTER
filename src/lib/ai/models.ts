@@ -15,7 +15,7 @@ export const AVAILABLE_MODELS: AIModelOption[] = [
     name: "OpenAI GPT-OSS 120B",
     provider: "OpenAI",
     badge: "Recommended • Flagship",
-    description: "Deep engineering substance, varied human cadence, statutory compliance precision",
+    description: "Deep analytical substance, varied human editorial cadence, elite SEO strategy",
     contextWindow: "131k",
     speed: "~6s",
     isDefault: true,
@@ -28,6 +28,15 @@ export const AVAILABLE_MODELS: AIModelOption[] = [
     description: "Sub-3s generation speed, punchy conversion structure, agile technical guides",
     contextWindow: "131k",
     speed: "~2.5s",
+  },
+  {
+    id: "groq/compound-mini",
+    name: "Groq Compound Mini",
+    provider: "Groq",
+    badge: "Agentic Reasoning",
+    description: "Strict structural and link compliance, balanced long-form framework",
+    contextWindow: "131k",
+    speed: "~10s",
   },
 ];
 
