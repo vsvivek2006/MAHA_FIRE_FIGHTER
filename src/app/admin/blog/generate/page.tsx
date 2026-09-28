@@ -1,15 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Copy, Check, Eye, Code, Tag, FileText, Sparkles, BookOpen } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowLeft, Copy, Check, Eye, Code, Tag, FileText, Sparkles, BookOpen, LogOut, LogIn, UserCheck } from "lucide-react";
 import { AIGeneratorPanel } from "@/components/admin/AIGeneratorPanel";
+import { createClient } from "@/lib/supabase/client";
 import type { GenerateBlogPostOutput } from "@/lib/ai/generateBlogPost";
 
 export default function BlogAIGeneratePage() {
+  const router = useRouter();
   const [generatedPost, setGeneratedPost] = useState<GenerateBlogPostOutput | null>(null);
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data }: { data: { user: { email?: string } | null } }) => {
+      if (data?.user?.email) {
+        setUserEmail(data.user.email);
+      }
+    });
+  }, []);
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    setUserEmail(null);
+    router.push("/admin/login");
+  };
 
   const handleCopy = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
@@ -36,6 +56,12 @@ export default function BlogAIGeneratePage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-[#C5221F] bg-red-50 px-2.5 py-0.5 rounded-full border border-red-200">
                   AI Editorial Studio
                 </span>
+                {userEmail && (
+                  <span className="text-[11px] font-mono text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full flex items-center gap-1 border border-gray-200">
+                    <UserCheck className="w-3 h-3 text-green-600" />
+                    {userEmail}
+                  </span>
+                )}
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-[#1D1E20] tracking-tight mt-1">
                 Fire Safety Blog Generator
@@ -46,13 +72,34 @@ export default function BlogAIGeneratePage() {
             </div>
           </div>
 
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-bold text-gray-700 hover:text-[#C5221F] px-3.5 py-2 rounded-lg bg-white border border-gray-300 shadow-sm"
-          >
-            <BookOpen className="w-3.5 h-3.5" />
-            View Live Knowledge Base
-          </Link>
+          <div className="flex items-center gap-2">
+            {userEmail ? (
+              <button
+                type="button"
+                onClick={handleSignOut}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-600 hover:text-red-600 px-3 py-2 rounded-lg bg-white border border-gray-300 shadow-sm transition-colors cursor-pointer"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                href="/admin/login"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#C5221F] hover:bg-[#a51a18] px-3.5 py-2 rounded-lg shadow-sm transition-colors"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                Admin Login
+              </Link>
+            )}
+
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-xs font-bold text-gray-700 hover:text-[#C5221F] px-3.5 py-2 rounded-lg bg-white border border-gray-300 shadow-sm"
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              View Knowledge Base
+            </Link>
+          </div>
         </div>
 
         {/* AI Generator Panel */}
