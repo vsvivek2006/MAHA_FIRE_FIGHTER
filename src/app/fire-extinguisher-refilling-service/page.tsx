@@ -32,23 +32,23 @@ export default function ExtinguisherRefillingPage() {
       <JsonLd schema={schema} />
 
       {/* Extinguisher Hero */}
-      <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans overflow-hidden">
+      <section className="py-16 sm:py-20 bg-gray-900 border-b border-gray-800 text-white font-sans overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <ScrollReveal animation="fade-right" className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-                <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+                <span className="text-xs font-bold tracking-wider uppercase text-gray-300">
                   Extinguisher Refilling &amp; Sales • Delhi NCR
                 </span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Fire Extinguisher Refilling Service Delhi/NCR
               </h1>
-              <div className="inline-block px-3 py-1 bg-red-950 text-red-400 border border-red-800 text-xs font-bold uppercase">
+              <div className="inline-block px-3 py-1 bg-red-600 text-white border border-red-700 text-xs font-bold uppercase rounded-full">
                 Our In-House Refilling Plant • Free Pickup &amp; Drop Delhi NCR
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                 Professional refilling in our in-house factory. All types &amp; brands. Fast pickup &amp; delivery. Don&apos;t let your safety expire. Expert refilling &amp; sales at the best rates in Delhi/NCR. We ensure your extinguishers work when it matters with genuine materials.
               </p>
 
@@ -66,7 +66,7 @@ export default function ExtinguisherRefillingPage() {
                 </Button>
               </div>
 
-              <div className="pt-4 flex items-center gap-6 text-xs text-slate-400 border-t border-slate-800">
+              <div className="pt-4 flex items-center gap-6 text-xs text-gray-400 border-t border-gray-700">
                 <div>
                   <span className="font-bold text-white text-sm">IS: 2190</span> Recertification
                 </div>
@@ -80,7 +80,7 @@ export default function ExtinguisherRefillingPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-5">
-              <div className="relative aspect-[4/3] bg-slate-950 border border-slate-700 overflow-hidden shadow-2xl group">
+              <div className="relative aspect-[4/3] bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden shadow-2xl group">
                 <Image
                   src={service.image}
                   alt="Fire Extinguisher Refilling Service Delhi NCR"
@@ -90,8 +90,8 @@ export default function ExtinguisherRefillingPage() {
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-slate-300 flex items-center justify-between">
-                  <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-slate-800">IN-HOUSE REFILLING PLANT</span>
+                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-gray-300 flex items-center justify-between">
+                  <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-gray-700">IN-HOUSE REFILLING PLANT</span>
                   <span className="text-emerald-400 font-bold">100% PRESSURE TESTED</span>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function ExtinguisherRefillingPage() {
       </section>
 
       {/* Booking Form */}
-      <section className="py-20 bg-[#0B1220] border-b border-slate-800">
+      <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <ScrollReveal animation="fade-up">
             <ContactForm initialService="Fire Extinguisher Refilling/Sales" />

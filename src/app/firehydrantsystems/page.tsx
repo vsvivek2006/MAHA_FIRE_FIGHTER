@@ -52,13 +52,13 @@ export default function FireHydrantPage() {
       <JsonLd schema={schema} />
 
       {/* Service Hero */}
-      <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans overflow-hidden">
+      <section className="py-16 sm:py-20 bg-gray-900 border-b border-gray-800 text-white font-sans overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <ScrollReveal animation="fade-right" className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-                <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+                <span className="text-xs font-bold tracking-wider uppercase text-gray-300">
                   Fire Hydrant Systems • Delhi NCR
                 </span>
               </div>
@@ -68,7 +68,7 @@ export default function FireHydrantPage() {
               <p className="text-base sm:text-lg text-red-500 font-semibold">
                 Protecting Your Assets with Robust, High-Pressure Fire Suppression Solutions.
               </p>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                 At Maha Firefighters, we specialize in the end-to-end design, installation, and maintenance of industrial-grade fire hydrant systems. With over 15 years of experience and a portfolio of 250+ satisfied clients, we ensure your premises are equipped with a powerful first line of defense against large-scale fire hazards.
               </p>
 
@@ -86,7 +86,7 @@ export default function FireHydrantPage() {
                 </Button>
               </div>
 
-              <div className="pt-4 flex items-center gap-6 text-xs text-slate-400 border-t border-slate-800">
+              <div className="pt-4 flex items-center gap-6 text-xs text-gray-400 border-t border-gray-700">
                 <div>
                   <span className="font-bold text-white text-sm tabular-nums">
                     <AnimatedCounter target={15} suffix="+" />
@@ -104,7 +104,7 @@ export default function FireHydrantPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-5">
-              <div className="relative aspect-[4/3] bg-slate-950 border border-slate-700 overflow-hidden shadow-2xl group">
+              <div className="relative aspect-[4/3] bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden shadow-2xl group">
                 <Image
                   src={service.image}
                   alt="Fire Hydrant System Installation Delhi NCR"
@@ -114,8 +114,8 @@ export default function FireHydrantPage() {
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-slate-300 flex items-center justify-between">
-                  <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-slate-800">PRESSURIZED WATER SUPPRESSION</span>
+                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-gray-300 flex items-center justify-between">
+                  <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-gray-700">PRESSURIZED WATER SUPPRESSION</span>
                   <span className="text-red-400 font-bold">NBC COMPLIANT</span>
                 </div>
               </div>
@@ -194,17 +194,17 @@ export default function FireHydrantPage() {
       </section>
 
       {/* Upgrades Advisory */}
-      <section className="py-20 bg-[#0F172A] border-b border-slate-800 text-white font-sans overflow-hidden">
+      <section className="py-20 bg-gray-900 border-b border-gray-700 text-white font-sans overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <ScrollReveal animation="zoom-in" duration={600} className="max-w-3xl mx-auto p-8 border border-slate-700 bg-slate-900 space-y-4 text-center sm:text-left shadow-2xl relative">
+          <ScrollReveal animation="zoom-in" duration={600} className="max-w-3xl mx-auto p-8 border border-gray-700 bg-gray-800 space-y-4 text-center sm:text-left shadow-2xl relative rounded-2xl">
             <div className="absolute top-0 right-0 w-24 h-24 bg-red-600/5 rounded-full blur-2xl pointer-events-none" />
-            <div className="p-2 w-fit bg-red-950 text-red-400 border border-red-800 text-xs font-bold uppercase mx-auto sm:mx-0">
+            <div className="p-2 w-fit bg-red-900/80 text-red-300 border border-red-700 text-xs font-bold uppercase mx-auto sm:mx-0 rounded">
               System Repairs &amp; Upgrades
             </div>
             <h3 className="text-2xl font-bold text-white tracking-tight">
               Failing Fire Safety Audits or Old Infrastructure?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
               {service.upgrades}
             </p>
             <div className="pt-2">
@@ -220,7 +220,7 @@ export default function FireHydrantPage() {
       </section>
 
       {/* Booking Form */}
-      <section className="py-20 bg-[#0B1220] border-b border-slate-800">
+      <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <ScrollReveal animation="fade-up">
             <ContactForm initialService="Fire Hydrant System" />

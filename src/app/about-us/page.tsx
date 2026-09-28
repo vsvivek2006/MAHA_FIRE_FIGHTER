@@ -1,123 +1,156 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, CheckCircle2, ShieldCheck } from 'lucide-react';
-import { companyInfo } from '@/data/site-content';
+import Link from 'next/link';
+import { MapPin, Phone } from 'lucide-react';
 import { siteTheme } from '@/config/theme';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: "About Us | MAHA FIREFIGHTERS Delhi NCR",
+  title: "About Us | Maha Firefighters: Trusted Fire Safety Experts",
   description: "Providing fire hydrant systems, alarms, and extinguisher services across Delhi NCR for over 20 years. Daryaganj, Delhi-110002.",
   alternates: {
     canonical: "https://mahafirefighters.com/about-us",
   },
 };
 
-export default function AboutPage() {
-  const points = [
-    { title: "Custom Engineering", desc: "Tailored fire suppression setups meeting exact floor geometry and industrial load requirements." },
-    { title: "Regulatory Expertise", desc: "100% compliance with National Building Code (NBC) and Delhi Fire Service norms for seamless Fire NOC approvals." },
-    { title: "End-to-End Service", desc: "Turnkey lifecycle from initial site assessment and hydraulic design to installation, testing, and quarterly AMC." },
-    { title: "Technological Leadership", desc: "Advanced addressable panels, multi-sensor detection, and high-pressure automatic deluge valves." }
-  ];
+// 6-photo grid exactly matching live site gallery
+const galleryPhotos = [
+  { src: '/images/extinguisher.webp', alt: 'ISI Certified Refilling Centre' },
+  { src: '/images/hydrant.webp', alt: 'Fire Hydrant System Experts' },
+  { src: '/images/alarm.webp', alt: 'Advanced Alarm Systems' },
+  { src: '/images/drill.webp', alt: 'Emergency Preparedness Training' },
+  { src: '/images/about-team.png', alt: 'Team of Fire Safety Experts' },
+  { src: '/images/sprinkler.webp', alt: 'Fire Safety Solutions' },
+];
 
+const differentiators = [
+  {
+    title: "Custom Engineering",
+    desc: "Tailored fire suppression setups meeting exact floor geometry and industrial load requirements.",
+  },
+  {
+    title: "Regulatory Expertise",
+    desc: "100% compliance with National Building Code (NBC) and Delhi Fire Service norms for seamless Fire NOC approvals.",
+  },
+  {
+    title: "End-to-End Service",
+    desc: "Turnkey lifecycle from initial site assessment and hydraulic design to installation, testing, and quarterly AMC.",
+  },
+  {
+    title: "Technological Leadership",
+    desc: "Advanced addressable panels, multi-sensor detection, and high-pressure automatic deluge valves.",
+  },
+];
+
+export default function AboutPage() {
   return (
     <div className="w-full">
-      {/* SECTION 1: CLEAN WHITE ABOUT BLOCK MATCHING LIVE SITE */}
-      <section className="py-20 lg:py-28 bg-white text-[#1D1E20]">
+
+      {/* ── SECTION 1: ABOUT BLOCK ── */}
+      <section className="py-16 sm:py-20 lg:py-28 bg-white text-[#1D1E20]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            {/* Left Content Column */}
-            <div className="lg:col-span-6 space-y-8">
-              
-              {/* Main Heading */}
-              <ScrollReveal animation="fade-right" delay={100}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+            {/* LEFT: Text Content */}
+            <div className="space-y-8">
+
+              <ScrollReveal animation="fade-right" delay={80}>
                 <div className="space-y-4">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#C5221F] tracking-tight uppercase">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#C5221F] tracking-tight uppercase leading-tight">
                     ABOUT MAHA FIREFIGHTERS
                   </h1>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    At <strong>MAHA FIRE FIGHTERS</strong>, we believe that Fire safety is not just a service—it is a promise. Based in the heart of the <strong>Delhi NCR</strong> region, we have established ourselves as a premier provider of integrated fire fighting systems and safety solutions. From high-rise residential complexes in Gurgaon to sprawling industrial units in Noida, we protect lives and assets with cutting-edge technology and unwavering dedication by Providing END TO END Solution of fire fighting systems for your premises.
+                    At <strong>MAHA FIRE FIGHTERS</strong>, we believe that Fire safety is not just a service—it
+                    is a promise. Based in the heart of the <strong>Delhi NCR</strong> region, we have
+                    established ourselves as a premier provider of integrated fire fighting systems and safety
+                    solutions. From high-rise residential complexes in Gurgaon to sprawling industrial units in
+                    Noida, we protect lives and assets with cutting-edge technology and unwavering dedication
+                    by Providing END TO END Solution of fire fighting systems for your premises.
                   </p>
                 </div>
               </ScrollReveal>
 
-              {/* Our Mission */}
-              <ScrollReveal animation="fade-up" delay={200}>
-                <div className="space-y-3">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1E20] tracking-tight">
-                    Our Mission
-                  </h2>
+              <ScrollReveal animation="fade-up" delay={180}>
+                <div className="space-y-2">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1E20]">Our Mission</h2>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Our mission is to create fire-resilient environments by providing world-class fire detection, suppression, and prevention systems. We aim to be the most trusted name in the industry by delivering projects that exceed <strong>National Building Code (NBC)</strong> standards and local fire safety regulations.
+                    Our mission is to create fire-resilient environments by providing world-class fire
+                    detection, suppression, and prevention systems. We aim to be the most trusted name in the
+                    industry by delivering projects that exceed <strong>National Building Code (NBC)</strong>{' '}
+                    standards and local fire safety regulations.
                   </p>
                 </div>
               </ScrollReveal>
 
-              {/* What Sets Us Apart? */}
-              <ScrollReveal animation="fade-up" delay={300}>
+              <ScrollReveal animation="fade-up" delay={280}>
                 <div className="space-y-3">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1E20] tracking-tight">
-                    What Sets Us Apart?
-                  </h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1E20]">What Sets Us Apart?</h2>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    In a region as fast-paced as Delhi NCR, you need a fire safety partner who is responsive and knowledgeable. Our edge lies in:
+                    In a region as fast-paced as Delhi NCR, you need a fire safety partner who is responsive
+                    and knowledgeable. Our edge lies in:
                   </p>
-
-                  <div className="space-y-2 pt-2">
-                    {points.map((pt) => (
-                      <div key={pt.title} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-800 font-medium">
-                        <span className="text-[#C5221F] font-bold mt-0.5">•</span>
+                  <ul className="space-y-2 pt-1">
+                    {differentiators.map((pt) => (
+                      <li key={pt.title} className="flex items-start gap-2.5 text-sm sm:text-base">
+                        <span className="text-[#C5221F] font-bold mt-0.5 shrink-0">•</span>
                         <span>
-                          <strong className="text-[#1D1E20] font-bold">{pt.title}:</strong>{' '}
-                          <span className="text-gray-600 font-normal">{pt.desc}</span>
+                          <strong className="text-[#1D1E20]">{pt.title}:</strong>{' '}
+                          <span className="text-gray-600">{pt.desc}</span>
                         </span>
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </ScrollReveal>
 
-              {/* Direct CTAs */}
-              <ScrollReveal animation="fade-up" delay={400}>
-                <div className="pt-4 flex flex-wrap items-center gap-4">
+              <ScrollReveal animation="fade-up" delay={380}>
+                <div className="flex flex-wrap items-center gap-4 pt-2">
                   <a
                     href={`tel:${siteTheme.branding.phones[0].raw}`}
-                    className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#C5221F] text-white font-semibold text-sm tracking-wider uppercase hover:bg-[#A71B18] shadow-md transition-all"
+                    className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#C5221F] text-white font-semibold text-sm tracking-wider uppercase hover:bg-[#A71B18] shadow-md transition-all duration-300"
                   >
-                    Call Now: {siteTheme.branding.phones[0].display}
+                    CALL NOW: {siteTheme.branding.phones[0].display}
                   </a>
-                  <a
+                  <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-gray-300 text-[#1D1E20] font-semibold text-sm tracking-wider uppercase hover:border-[#1D1E20] hover:bg-gray-50 transition-all"
+                    className="inline-flex items-center justify-center px-7 py-3.5 rounded-full border-2 border-gray-300 text-[#1D1E20] font-semibold text-sm tracking-wider uppercase hover:border-[#1D1E20] hover:bg-gray-50 transition-all duration-300"
                   >
-                    Contact Team
-                  </a>
+                    CONTACT TEAM
+                  </Link>
                 </div>
               </ScrollReveal>
 
             </div>
 
-            {/* Right Photo Column */}
-            <div className="lg:col-span-6 sticky top-28">
-              <ScrollReveal animation="fade-left" delay={200}>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                  <div className="relative aspect-[4/5] sm:aspect-square w-full">
-                    <Image
-                      src="/images/about-team.png"
-                      alt="Maha Firefighters Team and System Testing Delhi NCR"
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      priority
-                    />
-                  </div>
-                  <div className="p-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between text-xs text-gray-600">
-                    <span className="font-semibold text-[#1D1E20]">15+ Years Delhi NCR Operations</span>
-                    <span>NBC &amp; IS Standards Compliant</span>
-                  </div>
+            {/* RIGHT: 6-Photo Grid — exact match of live site */}
+            <div className="lg:sticky lg:top-28">
+              <ScrollReveal animation="fade-left" delay={150}>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {galleryPhotos.map((photo, idx) => (
+                    <div
+                      key={idx}
+                      className="relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 shadow-sm group"
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 768px) 45vw, 22vw"
+                      />
+                      {/* Caption overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 px-2 py-1.5 bg-black/50 backdrop-blur-[2px]">
+                        <p className="text-[10px] font-semibold text-white/90 truncate">{photo.alt}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Footer labels matching live site */}
+                <div className="mt-3 flex items-center justify-between text-xs text-gray-500 font-medium px-1">
+                  <span>15+ Years Delhi NCR Operations</span>
+                  <span>NBC &amp; IS Standards Compliant</span>
                 </div>
               </ScrollReveal>
             </div>
@@ -126,16 +159,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 2: DARK LOCATION SECTION MATCHING LIVE SITE */}
-      <section className="py-20 lg:py-24 bg-[#16202A] text-white border-t border-slate-800">
+      {/* ── SECTION 2: LOCATION — dark bg exactly matching live site ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#1C232A] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Location Info */}
-            <div className="lg:col-span-6 space-y-6">
-              <ScrollReveal animation="fade-right" delay={100}>
-                <div className="space-y-3">
-                  <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left: Location Info */}
+            <div className="space-y-6">
+              <ScrollReveal animation="fade-right" delay={80}>
+                <div className="space-y-2">
+                  <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                     Our Location
                   </h2>
                   <p className="text-base text-gray-300">
@@ -144,50 +177,71 @@ export default function AboutPage() {
                 </div>
               </ScrollReveal>
 
-              <ScrollReveal animation="fade-up" delay={200}>
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl space-y-4">
+              <ScrollReveal animation="fade-up" delay={180}>
+                <div className="space-y-4 p-6 bg-white/5 border border-white/10 rounded-2xl">
+                  {/* Address */}
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-[#C5221F] shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-[#C5221F] shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs uppercase font-bold tracking-wider text-gray-400">Headquarters Address</div>
-                      <div className="text-base font-bold text-white mt-1">Daryaganj, Delhi-110002</div>
-                      <div className="text-xs text-gray-400 mt-1">Delhi, Noida, Gurugram, Faridabad, Ghaziabad</div>
+                      <p className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                        Headquarters Address
+                      </p>
+                      <p className="text-base font-bold text-white mt-1">Daryaganj, Delhi-110002</p>
+                      <p className="text-xs text-gray-400 mt-0.5">
+                        Delhi, Noida, Gurugram, Faridabad, Ghaziabad
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 pt-3 border-t border-white/10">
-                    <Phone className="w-5 h-5 text-[#C5221F] shrink-0 mt-1" />
+                  {/* Phone */}
+                  <div className="flex items-start gap-3 pt-4 border-t border-white/10">
+                    <Phone className="w-5 h-5 text-[#C5221F] shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs uppercase font-bold tracking-wider text-gray-400">Phone Support</div>
-                      <div className="text-sm font-bold text-white mt-1 space-x-3">
-                        <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400">
+                      <p className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                        Phone Support
+                      </p>
+                      <p className="text-sm font-bold text-white mt-1 flex flex-wrap gap-3">
+                        <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors">
                           {siteTheme.branding.phones[0].display}
                         </a>
-                        <span>•</span>
-                        <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400">
+                        <span className="text-gray-500">•</span>
+                        <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400 transition-colors">
                           {siteTheme.branding.phones[1].display}
                         </a>
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
               </ScrollReveal>
+
+              {/* Testimonial card — from live site */}
+              <ScrollReveal animation="fade-up" delay={280}>
+                <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10">
+                  {/* Red shape accent (mimics live site) */}
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-[#C5221F]/20 rounded-full blur-xl pointer-events-none" />
+                  <p className="text-yellow-400 text-lg mb-3">★★★★★</p>
+                  <p className="text-sm text-gray-200 leading-relaxed italic">
+                    "Maha Firefighters provided flawless fire safety installation for our factory. Highly reliable!"
+                  </p>
+                  <p className="mt-3 text-xs font-bold text-gray-400">— Raj K.</p>
+                </div>
+              </ScrollReveal>
             </div>
 
-            {/* Right Map Embed / Graphic Card */}
-            <div className="lg:col-span-6">
-              <ScrollReveal animation="fade-left" delay={200}>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-[16/10]">
+            {/* Right: Google Maps embed */}
+            <div>
+              <ScrollReveal animation="fade-left" delay={150}>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
                   <iframe
                     title="Maha Firefighters Headquarters Daryaganj Delhi"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14006.136423985559!2d77.23467615!3d28.64364125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd21f8a8459b%3A0xe54ef84fcf1fefc!2sDaryaganj%2C%20New%20Delhi%2C%20Delhi%20110002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    src="https://maps.google.com/maps?q=delhi%20daryaganj&t=m&z=13&ie=UTF8&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen={false}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full opacity-90"
+                    className="w-full h-full"
                   />
                 </div>
               </ScrollReveal>
@@ -196,6 +250,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

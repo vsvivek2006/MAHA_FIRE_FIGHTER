@@ -32,13 +32,13 @@ export default function FireDrillPage() {
       <JsonLd schema={schema} />
 
       {/* Drill Hero */}
-      <section className="py-16 sm:py-20 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans overflow-hidden">
+      <section className="py-16 sm:py-20 bg-gray-900 border-b border-gray-800 text-white font-sans overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <ScrollReveal animation="fade-right" className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
-                <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+                <span className="text-xs font-bold tracking-wider uppercase text-gray-300">
                   Safety Training &amp; Drills • Delhi NCR
                 </span>
               </div>
@@ -48,7 +48,7 @@ export default function FireDrillPage() {
               <p className="text-base sm:text-lg text-red-500 font-semibold">
                 Equipment is only as effective as the people who operate it. Empower your team with the skills to save lives.
               </p>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
                 At Maha Firefighters, we believe that professional-grade fire systems require professional-grade training. We provide comprehensive, hands-on fire safety training programs designed to transform your employees into a confident, first-response team.
               </p>
 
@@ -66,7 +66,7 @@ export default function FireDrillPage() {
                 </Button>
               </div>
 
-              <div className="pt-4 flex items-center gap-6 text-xs text-slate-400 border-t border-slate-800">
+              <div className="pt-4 flex items-center gap-6 text-xs text-gray-400 border-t border-gray-700">
                 <div>
                   <span className="font-bold text-white text-sm">NBC 2016</span> Part 4 Evacuation
                 </div>
@@ -80,7 +80,7 @@ export default function FireDrillPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-5">
-              <div className="relative aspect-[4/3] bg-slate-950 border border-slate-700 overflow-hidden shadow-2xl group">
+              <div className="relative aspect-[4/3] bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden shadow-2xl group">
                 <Image
                   src={service.image}
                   alt="Fire Safety Training and Drills Delhi NCR"
@@ -90,8 +90,8 @@ export default function FireDrillPage() {
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-slate-300 flex items-center justify-between">
-                  <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-slate-800">EMERGENCY DRILL SIMULATION</span>
+                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-gray-300 flex items-center justify-between">
+                  <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-gray-700">EMERGENCY DRILL SIMULATION</span>
                   <span className="text-red-400 font-bold">LIFE-SAFETY PROTOCOLS</span>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export default function FireDrillPage() {
       </section>
 
       {/* Booking Form */}
-      <section className="py-20 bg-[#0B1220] border-b border-slate-800">
+      <section className="py-20 bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <ScrollReveal animation="fade-up">
             <ContactForm initialService="Fire Safety Training & Drills" />
