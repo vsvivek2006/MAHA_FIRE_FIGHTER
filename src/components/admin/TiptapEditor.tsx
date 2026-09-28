@@ -41,6 +41,7 @@ export const TiptapEditor = memo(function TiptapEditor({
         heading: {
           levels: [2, 3],
         },
+        link: false,
       }),
       LinkExtension.configure({
         openOnClick: false,
