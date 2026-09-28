@@ -12,8 +12,6 @@ import {
   Eye,
   EyeOff,
   Flame,
-  KeyRound,
-  CheckCircle2,
 } from "lucide-react";
 import { toast } from "sonner";
 import { createClient } from "@/lib/supabase/client";
@@ -23,8 +21,8 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const redirectTo = searchParams.get("redirectTo") || "/admin/blog/generate";
 
-  const [email, setEmail] = useState("admin@mahafirefighters.com");
-  const [password, setPassword] = useState("MahaFire@Admin#2026Secure!");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -37,7 +35,7 @@ function LoginForm() {
     try {
       const supabase = createClient();
       const { data, error } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
+        email: email.trim().toLowerCase(),
         password,
       });
 
@@ -52,9 +50,19 @@ function LoginForm() {
       router.push(redirectTo);
       router.refresh();
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Failed to sign in";
-      setErrorMessage(msg);
-      toast.error("Login Failed", { description: msg });
+      // Generic message — never expose why auth failed (user enumeration prevention)
+      const rawMsg = err instanceof Error ? err.message : "";
+      const isInvalidCreds =
+        rawMsg.toLowerCase().includes("invalid") ||
+        rawMsg.toLowerCase().includes("credentials") ||
+        rawMsg.toLowerCase().includes("password");
+
+      const safeMsg = isInvalidCreds
+        ? "Invalid email or password. Please try again."
+        : "Sign in failed. Please try again or contact support.";
+
+      setErrorMessage(safeMsg);
+      toast.error("Login Failed", { description: safeMsg });
     } finally {
       setIsLoading(false);
     }
@@ -81,28 +89,25 @@ function LoginForm() {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4 sm:px-0">
         <div className="bg-white py-8 px-6 shadow-xl shadow-gray-200/50 rounded-2xl border border-gray-200 sm:px-10 space-y-6">
-          
-          {/* Quick Credential Box for Convenience */}
-          <div className="p-3.5 rounded-xl bg-red-50/70 border border-red-100 text-xs text-gray-700 space-y-1.5">
-            <div className="flex items-center gap-1.5 font-bold text-[#C5221F]">
-              <KeyRound className="w-3.5 h-3.5" />
-              <span>Created Admin Credentials:</span>
-            </div>
-            <div className="font-mono text-[11px] space-y-0.5 text-gray-600 bg-white/80 p-2 rounded-lg border border-red-100">
-              <p><span className="text-gray-400">Email:</span> admin@mahafirefighters.com</p>
-              <p><span className="text-gray-400">Pass:</span> MahaFire@Admin#2026Secure!</p>
-            </div>
+
+          {/* Security Badge */}
+          <div className="flex items-center gap-2 p-3 rounded-xl bg-green-50 border border-green-100 text-xs text-green-700">
+            <ShieldCheck className="w-4 h-4 shrink-0 text-green-600" />
+            <span className="font-medium">Secured admin portal — authorized personnel only</span>
           </div>
 
           {errorMessage && (
-            <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700 font-medium">
+            <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700 font-medium" role="alert">
               {errorMessage}
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-4" noValidate>
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+              <label
+                htmlFor="admin-email"
+                className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5"
+              >
                 Admin Email
               </label>
               <div className="relative rounded-lg shadow-sm">
@@ -110,18 +115,23 @@ function LoginForm() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <input
+                  id="admin-email"
                   type="email"
+                  autoComplete="username"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@mahafirefighters.com"
+                  placeholder="Enter admin email"
                   className="w-full pl-9 pr-3.5 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 text-xs sm:text-sm focus:outline-none focus:border-[#C5221F] focus:ring-1 focus:ring-[#C5221F] transition-all"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+              <label
+                htmlFor="admin-password"
+                className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5"
+              >
                 Password
               </label>
               <div className="relative rounded-lg shadow-sm">
@@ -129,17 +139,20 @@ function LoginForm() {
                   <Lock className="w-4 h-4" />
                 </div>
                 <input
+                  id="admin-password"
                   type={showPassword ? "text" : "password"}
+                  autoComplete="current-password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••••••"
+                  placeholder="Enter password"
                   className="w-full pl-9 pr-10 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 text-xs sm:text-sm focus:outline-none focus:border-[#C5221F] focus:ring-1 focus:ring-[#C5221F] transition-all"
                 />
                 <button
                   type="button"
+                  aria-label={showPassword ? "Hide password" : "Show password"}
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 cursor-pointer"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -149,8 +162,9 @@ function LoginForm() {
             <div className="pt-2">
               <button
                 type="submit"
+                id="admin-login-submit"
                 disabled={isLoading}
-                className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#C5221F] hover:bg-[#a51a18] shadow-md shadow-red-200 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="w-full py-2.5 px-4 rounded-lg font-bold text-xs sm:text-sm text-white bg-[#C5221F] hover:bg-[#a51a18] shadow-md shadow-red-200 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <>
