@@ -15,6 +15,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { companyInfo, servicesData } from '@/data/site-content';
+import { siteTheme } from '@/config/theme';
 import { AuditModal } from '@/components/ui/AuditModal';
 import { Button } from '@/components/ui/button';
 
@@ -46,46 +47,45 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-[#0B1220]">
-        {/* Top Utility Bar */}
-        <div className="border-b border-slate-800/80 bg-[#070D18] text-slate-300 text-[11px] py-1.5 px-4 sm:px-8">
+      <header className="sticky top-0 z-40 w-full border-b border-[var(--theme-border-subtle)] bg-[var(--theme-bg-header)] backdrop-blur-md">
+        {/* Top Utility Bar (Live Site: CaLL NOW 9873514657/9873337442) */}
+        <div className="border-b border-[var(--theme-border-subtle)] bg-[var(--theme-bg-topbar)] text-slate-300 text-[11px] py-1.5 px-4 sm:px-8">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 sm:gap-6 flex-wrap">
-              <span className="flex items-center gap-1.5 text-red-500 font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">
-                <span className="w-1.5 h-1.5 bg-red-500 rounded-none animate-pulse" />
-                <span className="hidden sm:inline">Delhi NCR Service Hotline:</span>
-                <span className="sm:hidden">Hotline:</span>
+              <span className="flex items-center gap-1.5 text-[var(--theme-primary)] font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">
+                <span className="w-1.5 h-1.5 bg-[var(--theme-primary)] rounded-none animate-pulse" />
+                <span>{siteTheme.branding.topBarNotice}</span>
               </span>
               <a 
-                href={`tel:${companyInfo.phones[0].raw}`} 
+                href={`tel:${siteTheme.branding.phones[0].raw}`} 
                 className="hover:text-white font-semibold transition-colors flex items-center gap-1 text-[11px] sm:text-xs"
               >
-                <Phone className="w-3 h-3 text-red-500" />
-                {companyInfo.phones[0].display}
+                <Phone className="w-3 h-3 text-[var(--theme-primary)]" />
+                {siteTheme.branding.phones[0].display}
               </a>
               <a 
-                href={`tel:${companyInfo.phones[1].raw}`} 
+                href={`tel:${siteTheme.branding.phones[1].raw}`} 
                 className="hidden md:flex items-center gap-1 hover:text-white font-semibold transition-colors"
               >
-                <Phone className="w-3 h-3 text-red-500" />
-                {companyInfo.phones[1].display}
+                <Phone className="w-3 h-3 text-[var(--theme-primary)]" />
+                {siteTheme.branding.phones[1].display}
               </a>
             </div>
 
             <div className="hidden lg:flex items-center gap-6 text-slate-400 text-xs">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-3 h-3 text-slate-400" />
-                <span>{companyInfo.address.formatted}</span>
+                <span>{siteTheme.branding.address}</span>
               </div>
               <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
                 <ShieldCheck className="w-3 h-3" />
                 <span>NBC &amp; IS Standards</span>
               </div>
               <a 
-                href={`mailto:${companyInfo.email}`} 
+                href={`mailto:${siteTheme.branding.email}`} 
                 className="hover:text-white transition-colors"
               >
-                {companyInfo.email}
+                {siteTheme.branding.email}
               </a>
             </div>
           </div>
@@ -93,7 +93,7 @@ export function Header() {
 
         {/* Corporate Navigation */}
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 sm:py-3.5 flex items-center justify-between">
-          {/* Logo & Corporate Identity - On mobile only logo icon is shown to prevent horizontal overflow; full brand shown on sm+ */}
+          {/* Logo & Corporate Identity */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="Maha Firefighters Home">
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-sm bg-white p-0.5 shrink-0 border border-slate-700/80 shadow-sm flex items-center justify-center overflow-hidden">
               <Image
@@ -108,10 +108,10 @@ export function Header() {
             <div className="hidden sm:block">
               <div className="font-extrabold tracking-tight text-white text-base sm:text-lg leading-none">
                 <span>MAHA</span>
-                <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
+                <span className="text-[var(--theme-primary)] ml-1">FIREFIGHTERS</span>
               </div>
               <div className="text-[10px] text-slate-400 tracking-wider uppercase mt-1">
-                Fire Protection Systems Delhi NCR
+                {siteTheme.branding.tagline}
               </div>
             </div>
           </Link>

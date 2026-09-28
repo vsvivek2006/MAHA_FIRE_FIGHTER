@@ -58,10 +58,10 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-lg bg-[#0B1220] border-slate-700 text-white rounded-none p-6">
+      <DialogContent className="max-w-lg bg-[var(--theme-bg-surface-elevated)] border-[var(--theme-border-medium)] text-white rounded-none p-6">
         {submitted ? (
           <div className="py-6 text-center space-y-4">
-            <div className="w-14 h-14 bg-red-950/60 text-red-500 border border-red-800/60 rounded-none flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 bg-[var(--theme-primary-subtle)] text-[var(--theme-primary)] border border-[var(--theme-primary-border)] rounded-none flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <DialogHeader className="text-center sm:text-center">
@@ -73,15 +73,15 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
               </DialogDescription>
             </DialogHeader>
 
-            <div className="p-4 bg-slate-900 border border-slate-800 text-xs text-slate-300 text-left space-y-1">
+            <div className="p-4 bg-[var(--theme-bg-surface-subtle)] border border-[var(--theme-border-subtle)] text-xs text-slate-300 text-left space-y-1">
               <div className="font-semibold text-slate-200">Call Us Directly:</div>
               <div className="flex items-center gap-2 text-white text-xs pt-1">
-                <Phone className="w-3.5 h-3.5 text-red-500" />
-                <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-red-400 transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[var(--theme-primary)]" />
+                <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-[var(--theme-primary)] transition-colors">
                   {companyInfo.phones[0].display}
                 </a>
                 <span>/</span>
-                <a href={`tel:${companyInfo.phones[1].raw}`} className="hover:text-red-400 transition-colors">
+                <a href={`tel:${companyInfo.phones[1].raw}`} className="hover:text-[var(--theme-primary)] transition-colors">
                   {companyInfo.phones[1].display}
                 </a>
               </div>
@@ -94,7 +94,7 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
         ) : (
           <div>
             <DialogHeader className="space-y-1 mb-4 text-left">
-              <div className="text-xs font-bold text-red-500 uppercase tracking-wider flex items-center gap-1.5">
+              <div className="text-xs font-bold text-[var(--theme-primary)] uppercase tracking-wider flex items-center gap-1.5">
                 <ShieldAlert className="w-3.5 h-3.5" />
                 Complimentary Assessment • Delhi NCR
               </div>
@@ -109,7 +109,7 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
             <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
               <div>
                 <label className="block text-xs font-medium text-slate-300 mb-1">
-                  Full Name <span className="text-red-500">*</span>
+                  Full Name <span className="text-[var(--theme-primary)]">*</span>
                 </label>
                 <input
                   type="text"
@@ -117,14 +117,14 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                   placeholder="e.g. Ramesh Sharma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
+                  className="w-full bg-[var(--theme-bg-surface-subtle)] border border-[var(--theme-border-medium)] px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[var(--theme-primary)] rounded-none"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-medium text-slate-300 mb-1">
-                    Contact Number <span className="text-red-500">*</span>
+                    Contact Number <span className="text-[var(--theme-primary)]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -133,7 +133,7 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                     placeholder="e.g. 9873514657"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-slate-900 border border-slate-700 px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"
+                    className="w-full bg-[var(--theme-bg-surface-subtle)] border border-[var(--theme-border-medium)] px-3 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[var(--theme-primary)] rounded-none"
                   />
                 </div>
                 <div>

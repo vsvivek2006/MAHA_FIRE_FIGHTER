@@ -3,14 +3,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ShieldCheck, ArrowRight } from 'lucide-react';
 import { companyInfo, servicesData } from '@/data/site-content';
+import { siteTheme } from '@/config/theme';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 
 export function Footer() {
   return (
-    <footer className="bg-[#070D18] border-t border-slate-800 text-slate-300 pt-16 pb-12 font-sans">
+    <footer className="bg-[var(--theme-bg-footer)] border-t border-[var(--theme-border-subtle)] text-slate-300 pt-16 pb-12 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[var(--theme-border-subtle)]">
           {/* Col 1 & 2: Corporate Identity */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/" className="flex items-center gap-3">
@@ -26,10 +27,10 @@ export function Footer() {
               <div>
                 <div className="font-extrabold tracking-tight text-white text-lg leading-none">
                   <span>MAHA</span>
-                  <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
+                  <span className="text-[var(--theme-primary)] ml-1">FIREFIGHTERS</span>
                 </div>
                 <div className="text-[10px] text-slate-400 tracking-wider uppercase mt-1">
-                  Maha Enterprises • Fire Protection Systems
+                  {siteTheme.branding.legalName} • Fire Protection Systems
                 </div>
               </div>
             </Link>
@@ -40,17 +41,17 @@ export function Footer() {
 
             {/* Credential Counters */}
             <div className="grid grid-cols-2 gap-3 max-w-xs pt-1">
-              <div className="p-3 bg-slate-900 border border-slate-800 rounded-none">
+              <div className="p-3 bg-[var(--theme-bg-surface-subtle)] border border-[var(--theme-border-subtle)] rounded-none">
                 <div className="text-lg font-bold text-white tabular-nums">
                   <AnimatedCounter target={15} suffix="+" />
                 </div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider">Years Field Experience</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider">{siteTheme.branding.experienceLabel}</div>
               </div>
-              <div className="p-3 bg-slate-900 border border-slate-800 rounded-none">
-                <div className="text-lg font-bold text-red-500 tabular-nums">
+              <div className="p-3 bg-[var(--theme-bg-surface-subtle)] border border-[var(--theme-border-subtle)] rounded-none">
+                <div className="text-lg font-bold text-[var(--theme-primary)] tabular-nums">
                   <AnimatedCounter target={250} suffix="+" />
                 </div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider">Satisfied Client Base</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider">{siteTheme.branding.clientLabel}</div>
               </div>
             </div>
 

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ShieldAlert, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { companyInfo } from '@/data/site-content';
+import { siteTheme } from '@/config/theme';
 import { AuditModal } from '@/components/ui/AuditModal';
 import { Button } from '@/components/ui/button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -12,25 +13,26 @@ export function AuditCTA() {
 
   return (
     <>
-      <section className="py-16 bg-[#070D18] border-b border-slate-800 text-white font-sans">
+      <section className="py-16 bg-[var(--theme-bg-surface-subtle)] border-b border-[var(--theme-border-subtle)] text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <ScrollReveal animation="zoom-in" delay={50}>
-            <div className="border border-slate-700 bg-[#0B1220] p-8 sm:p-12 rounded-none">
+            <div className="border border-[var(--theme-border-medium)] bg-[var(--theme-bg-surface)] p-8 sm:p-12 rounded-none">
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               <div className="lg:col-span-8 space-y-4">
                 <div className="flex items-center gap-2">
-                  <ShieldAlert className="w-4 h-4 text-red-500" />
-                  <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+                  <ShieldAlert className="w-4 h-4 text-[var(--theme-primary)]" />
+                  <span className="text-xs font-bold tracking-wider uppercase text-[var(--theme-primary)]">
                     Complimentary Initial Assessment
                   </span>
                 </div>
+                {/* Live site exact match: For a Free Estimate | Fire Audit */}
                 <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                  Protect Your Premises Before an Emergency Occurs
+                  {siteTheme.branding.estimateHeadline}
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-                  Book a free on-site fire safety audit for your factory, warehouse, commercial building, or residential complex in Delhi NCR. We identify compliance gaps, verify pump systems, and inspect extinguishing equipment.
+                  Book a free on-site fire safety audit for your factory, warehouse, commercial building, or residential complex in Delhi NCR. {siteTheme.branding.estimateCallText}.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300 pt-2">
                   <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
@@ -38,7 +40,7 @@ export function AuditCTA() {
                     Zero Cost, No Obligation
                   </span>
                   <span className="flex items-center gap-1.5 text-slate-300">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-red-500" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[var(--theme-primary)]" />
                     NBC Standards &amp; Delhi Fire Service Alignment
                   </span>
                 </div>

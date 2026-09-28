@@ -11,7 +11,7 @@ import { FaqPreview } from '@/components/sections/FaqPreview';
 import { BlogPreview } from '@/components/sections/BlogPreview';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { Phone, Mail, MapPin, CheckCircle2 } from 'lucide-react';
-import { companyInfo } from '@/data/site-content';
+import { siteTheme } from '@/config/theme';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
@@ -33,14 +33,14 @@ export default function HomePage() {
       <CoverageSection />
       
       {/* On-Page Direct Consultation */}
-      <section className="py-20 bg-[#0B1220] border-b border-slate-800 text-white font-sans">
+      <section className="py-20 bg-[var(--theme-bg-page)] border-b border-[var(--theme-border-subtle)] text-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Info Column */}
             <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-5 w-full space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-bold tracking-wider uppercase text-red-500">
+                <span className="text-xs font-bold tracking-wider uppercase text-[var(--theme-primary)]">
                   Direct Inquiries &amp; Consultations
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
@@ -52,44 +52,44 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3 text-xs">
-                <div className="p-4 bg-slate-900 border border-slate-800 flex items-start gap-3">
-                  <Phone className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div className="p-4 bg-[var(--theme-bg-surface)] border border-[var(--theme-border-subtle)] flex items-start gap-3">
+                  <Phone className="w-4 h-4 text-[var(--theme-primary)] shrink-0 mt-0.5" />
                   <div>
                     <div className="text-[10px] text-slate-400 uppercase font-semibold">Direct Phone Lines</div>
                     <div className="text-sm font-bold text-white mt-0.5 space-x-3">
-                      <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-red-400 transition-colors">
-                        {companyInfo.phones[0].display}
+                      <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-[var(--theme-primary)] transition-colors">
+                        {siteTheme.branding.phones[0].display}
                       </a>
                       <span>•</span>
-                      <a href={`tel:${companyInfo.phones[1].raw}`} className="hover:text-red-400 transition-colors">
-                        {companyInfo.phones[1].display}
+                      <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-[var(--theme-primary)] transition-colors">
+                        {siteTheme.branding.phones[1].display}
                       </a>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4 bg-slate-900 border border-slate-800 flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div className="p-4 bg-[var(--theme-bg-surface)] border border-[var(--theme-border-subtle)] flex items-start gap-3">
+                  <Mail className="w-4 h-4 text-[var(--theme-primary)] shrink-0 mt-0.5" />
                   <div>
                     <div className="text-[10px] text-slate-400 uppercase font-semibold">Official Business Email</div>
-                    <a href={`mailto:${companyInfo.email}`} className="text-sm font-bold text-white hover:text-red-400 transition-colors block mt-0.5">
-                      {companyInfo.email}
+                    <a href={`mailto:${siteTheme.branding.email}`} className="text-sm font-bold text-white hover:text-[var(--theme-primary)] transition-colors block mt-0.5">
+                      {siteTheme.branding.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="p-4 bg-slate-900 border border-slate-800 flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div className="p-4 bg-[var(--theme-bg-surface)] border border-[var(--theme-border-subtle)] flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-[var(--theme-primary)] shrink-0 mt-0.5" />
                   <div>
                     <div className="text-[10px] text-slate-400 uppercase font-semibold">Office Location</div>
                     <div className="text-sm font-bold text-white mt-0.5">
-                      {companyInfo.address.formatted}
+                      {siteTheme.branding.address}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="p-4 bg-slate-900 border border-slate-800 text-xs text-slate-300 space-y-1">
+              <div className="p-4 bg-[var(--theme-bg-surface)] border border-[var(--theme-border-subtle)] text-xs text-slate-300 space-y-1">
                 <div className="font-bold text-white flex items-center gap-1.5 text-xs">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                   Statutory Fire NOC Compliance Assistance

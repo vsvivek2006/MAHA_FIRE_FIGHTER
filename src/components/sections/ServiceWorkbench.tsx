@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, CheckCircle2, ChevronRight, Activity } from 'lucide-react';
 import { servicesData } from '@/data/site-content';
+import { siteTheme } from '@/config/theme';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -15,24 +16,24 @@ export function ServiceWorkbench() {
   const [activeSlug, setActiveSlug] = useState<string>(servicesList[0].slug);
 
   return (
-    <section className="py-20 bg-[#0B1220] border-b border-slate-800 text-white font-sans">
+    <section className="py-20 bg-[var(--theme-bg-page)] border-b border-[var(--theme-border-subtle)] text-white font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
-        {/* Section Masthead */}
+        {/* Section Masthead - Live Site Exact Match */}
         <ScrollReveal animation="fade-down" delay={50}>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-slate-800 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-[var(--theme-border-subtle)] mb-12">
             <div className="space-y-2 max-w-2xl">
-              <span className="text-xs font-bold tracking-wider uppercase text-red-500">
-                Core Fire Safety Systems
+              <span className="text-xs font-bold tracking-wider uppercase text-[var(--theme-primary)]">
+                Our Services
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-                Turnkey Design, Installation &amp; Field Maintenance
+                Turnkey Fire Safety Systems &amp; Maintenance
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Explore our core suppression, detection, and life-safety systems engineered for commercial buildings, factories, and warehouses across Delhi NCR.
+                Serving Delhi &amp; NCR for {siteTheme.branding.experienceYears} Years Maha Firefighters delivers premier fire safety solutions across the Delhi-NCR region. We specialize in turnkey installations, maintenance, and compliance for corporate and industrial clients.
               </p>
             </div>
-            <Button variant="outline" size="sm" asChild className="shrink-0 rounded-none text-xs font-semibold">
+            <Button variant="outline" size="sm" asChild className="shrink-0 rounded-none text-xs font-semibold border-[var(--theme-border-medium)]">
               <Link href="/services">
                 <span>View Full Services Catalog</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
@@ -56,14 +57,14 @@ export function ServiceWorkbench() {
                   <TabsTrigger
                     key={svc.slug}
                     value={svc.slug}
-                    className="w-full text-left p-4 border transition-all flex items-center justify-between group rounded-none h-auto data-[state=active]:bg-slate-900 data-[state=active]:border-red-600 data-[state=active]:text-white data-[state=inactive]:bg-[#0E1626] data-[state=inactive]:border-slate-800 data-[state=inactive]:text-slate-400 hover:text-slate-200 hover:border-slate-700"
+                    className="w-full text-left p-4 border transition-all flex items-center justify-between group rounded-none h-auto data-[state=active]:bg-[var(--theme-bg-surface-elevated)] data-[state=active]:border-[var(--theme-primary)] data-[state=active]:text-white data-[state=inactive]:bg-[var(--theme-bg-surface-subtle)] data-[state=inactive]:border-[var(--theme-border-subtle)] data-[state=inactive]:text-slate-400 hover:text-slate-200 hover:border-slate-700"
                   >
                     <div className="space-y-0.5 text-left">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-red-500">
+                        <span className="text-xs font-bold text-[var(--theme-primary)]">
                           {svc.idNumber}
                         </span>
-                        <span className="text-sm font-semibold text-white group-hover:text-red-400 transition-colors">
+                        <span className="text-sm font-semibold text-white group-hover:text-[var(--theme-primary)] transition-colors">
                           {svc.navTitle}
                         </span>
                       </div>
@@ -71,7 +72,7 @@ export function ServiceWorkbench() {
                         {svc.technicalCategory}
                       </div>
                     </div>
-                    <ChevronRight className="w-4 h-4 transition-transform text-slate-600 group-data-[state=active]:text-red-500 group-data-[state=active]:translate-x-1 group-hover:text-slate-400" />
+                    <ChevronRight className="w-4 h-4 transition-transform text-slate-600 group-data-[state=active]:text-[var(--theme-primary)] group-data-[state=active]:translate-x-1 group-hover:text-slate-400" />
                   </TabsTrigger>
                 ))}
               </TabsList>

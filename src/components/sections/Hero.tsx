@@ -8,7 +8,7 @@ import {
   ArrowRight, 
   Building2
 } from 'lucide-react';
-import { companyInfo } from '@/data/site-content';
+import { siteTheme } from '@/config/theme';
 import { AuditModal } from '@/components/ui/AuditModal';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -20,7 +20,7 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative bg-[#0B1220] border-b border-slate-800 bg-drafting-grid pt-10 pb-16 lg:py-20 overflow-hidden">
+      <section className="relative bg-[var(--theme-bg-page)] border-b border-[var(--theme-border-subtle)] bg-drafting-grid pt-10 pb-16 lg:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             
@@ -29,24 +29,24 @@ export function Hero() {
               {/* Professional Eyebrow */}
               <ScrollReveal animation="fade-down" delay={50}>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-red-600 rounded-none shrink-0" />
+                  <span className="w-2 h-2 bg-[var(--theme-primary)] rounded-none shrink-0" />
                   <span className="text-xs font-semibold tracking-wider uppercase text-slate-300">
-                    Industrial Fire Protection Systems • Delhi NCR
+                    {siteTheme.branding.heroEyebrow}
                   </span>
                 </div>
               </ScrollReveal>
 
-              {/* Authoritative Headline */}
+              {/* Authoritative Headline - Live Site Exact Match */}
               <ScrollReveal animation="fade-up" delay={150}>
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
-                  Complete Fire Protection Systems for Safer Commercial &amp; Industrial Buildings
+                  {siteTheme.branding.heroHeadline}
                 </h1>
               </ScrollReveal>
 
               {/* Exact Source Supporting Copy */}
               <ScrollReveal animation="fade-up" delay={250}>
                 <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-                  {companyInfo.heroSubheadline}
+                  {siteTheme.branding.heroSubheadline}
                 </p>
               </ScrollReveal>
 
@@ -78,30 +78,34 @@ export function Hero() {
                     variant="outline"
                     size="lg"
                     asChild
-                    className="rounded-none h-12 text-sm font-semibold"
+                    className="rounded-none h-12 text-sm font-semibold border-[var(--theme-border-medium)]"
                   >
-                    <a href={`tel:${companyInfo.phones[0].raw}`}>
-                      <Phone className="w-4 h-4 mr-2 text-red-500" />
-                      <span>Call {companyInfo.phones[0].display}</span>
+                    <a href={`tel:${siteTheme.branding.phones[0].raw}`}>
+                      <Phone className="w-4 h-4 mr-2 text-[var(--theme-primary)]" />
+                      <span>Call {siteTheme.branding.phones[0].display}</span>
                     </a>
                   </Button>
                 </div>
               </ScrollReveal>
 
-              {/* Verifiable Credentials Rail */}
+              {/* Verifiable Credentials Rail - Exact 15+ Years and 250+ Clients */}
               <ScrollReveal animation="fade-up" delay={550}>
-                <div className="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-lg">
+                <div className="pt-6 border-t border-[var(--theme-border-subtle)] grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-lg">
                   <div>
                     <div className="text-2xl sm:text-3xl font-extrabold text-white">
-                      <AnimatedCounter value={10} suffix="+" duration={1600} />
+                      <AnimatedCounter value={15} suffix="+" duration={1600} />
                     </div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Years Field Experience</div>
+                    <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">
+                      {siteTheme.branding.experienceLabel}
+                    </div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-red-500">
-                      <AnimatedCounter value={500} suffix="+" duration={2000} />
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[var(--theme-primary)]">
+                      <AnimatedCounter value={250} suffix="+" duration={2000} />
                     </div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Satisfied Client Base</div>
+                    <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5">
+                      {siteTheme.branding.clientLabel}
+                    </div>
                   </div>
                   <div className="col-span-2 sm:col-span-1">
                     <div className="text-2xl sm:text-3xl font-extrabold text-slate-200">Delhi NCR</div>

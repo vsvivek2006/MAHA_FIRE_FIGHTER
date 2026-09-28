@@ -1,44 +1,76 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --bg-command: #0b1220;
-    --bg-drafting: #0f172a;
-    --bg-light: #ffffff;
-    --bg-light-muted: #f8fafc;
-    --border-light: #e2e8f0;
-    --border-dark: #1e293b;
-    --border-dark-highlight: #334155;
-    --text-dark: #0f172a;
-    --text-dark-muted: #64748b;
-    --text-light: #f8fafc;
-    --text-light-muted: #94a3b8;
-    --safety-red: #c5221f;
-    --safety-red-hover: #a81b18;
-    --safety-amber: #d97706;
-  }
+@theme {
+  --color-primary: var(--theme-primary);
+  --color-primary-hover: var(--theme-primary-hover);
+  --color-primary-subtle: var(--theme-primary-subtle);
+  --color-primary-border: var(--theme-primary-border);
 
-  html {
-    color-scheme: dark light;
-  }
+  --color-bg-page: var(--theme-bg-page);
+  --color-bg-topbar: var(--theme-bg-topbar);
+  --color-bg-header: var(--theme-bg-header);
+  --color-bg-surface: var(--theme-bg-surface);
+  --color-bg-surface-elevated: var(--theme-bg-surface-elevated);
+  --color-bg-surface-subtle: var(--theme-bg-surface-subtle);
+  --color-bg-footer: var(--theme-bg-footer);
 
-  @media (prefers-reduced-motion: no-preference) {
-    :root:has(:target) {
-      scroll-behavior: smooth;
-    }
-  }
+  --color-text-primary: var(--theme-text-primary);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-text-subtle: var(--theme-text-subtle);
 
-  body {
-    background-color: var(--bg-command);
-    color: var(--text-light);
-    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    overflow-x: hidden;
-  }
+  --color-border-subtle: var(--theme-border-subtle);
+  --color-border-medium: var(--theme-border-medium);
+  --color-border-highlight: var(--theme-border-highlight);
+}
 
-  ::selection {
-    background-color: #c5221f;
-    color: #ffffff;
+:root {
+  --theme-primary: #D32F2F;
+  --theme-primary-hover: #B71C1C;
+  --theme-primary-subtle: rgba(211, 47, 47, 0.12);
+  --theme-primary-border: rgba(211, 47, 47, 0.35);
+
+  --theme-bg-page: #0A0E17;
+  --theme-bg-topbar: #000000;
+  --theme-bg-header: rgba(11, 18, 32, 0.95);
+  --theme-bg-surface: #101826;
+  --theme-bg-surface-elevated: #162236;
+  --theme-bg-surface-subtle: #0D1420;
+  --theme-bg-footer: #070C14;
+
+  --theme-text-primary: #FFFFFF;
+  --theme-text-secondary: #E2E8F0;
+  --theme-text-muted: #94A3B8;
+  --theme-text-subtle: #64748B;
+
+  --theme-border-subtle: rgba(255, 255, 255, 0.08);
+  --theme-border-medium: rgba(255, 255, 255, 0.16);
+  --theme-border-highlight: rgba(211, 47, 47, 0.45);
+
+  --safety-red: var(--theme-primary);
+  --safety-red-hover: var(--theme-primary-hover);
+}
+
+html {
+  color-scheme: dark light;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:has(:target) {
+    scroll-behavior: smooth;
   }
+}
+
+body {
+  background-color: var(--theme-bg-page);
+  color: var(--theme-text-secondary);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--theme-primary);
+  color: #ffffff;
 }
 
 /* Subtle engineering drafting grid */
@@ -58,43 +90,42 @@
 
 /* Technical spec card borders - crisp, no neon */
 .spec-border {
-  border: 1px solid #1e293b;
+  border: 1px solid var(--theme-border-subtle);
 }
 
 .spec-border:hover {
-  border-color: #475569;
+  border-color: var(--theme-border-medium);
 }
 
 /* Engineering HUD Glass Panels */
 .hud-panel {
-  background: rgba(11, 18, 32, 0.78);
+  background: var(--theme-bg-surface);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(51, 65, 85, 0.65);
+  border: 1px solid var(--theme-border-subtle);
 }
 
 .hud-panel:hover {
-  border-color: rgba(239, 68, 68, 0.5);
-  box-shadow: 0 8px 32px -8px rgba(239, 68, 68, 0.15);
+  border-color: var(--theme-primary-border);
+  box-shadow: 0 8px 32px -8px rgba(211, 47, 47, 0.2);
 }
 
 /* Subtle pulse glow for live operational status */
 @keyframes radar-pulse {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    box-shadow: 0 0 0 8px rgba(211, 47, 47, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
   }
 }
 
 .animate-radar-pulse {
   animation: radar-pulse 2s infinite;
 }
-

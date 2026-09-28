@@ -93,6 +93,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { siteTheme } from "@/config/theme";
+
 export default function RootLayout({
   children,
 }: {
@@ -100,13 +102,36 @@ export default function RootLayout({
 }) {
   const localBusinessSchema = generateLocalBusinessSchema();
 
+  const themeCss = `
+    :root {
+      --theme-primary: ${siteTheme.colors.primary};
+      --theme-primary-hover: ${siteTheme.colors.primaryHover};
+      --theme-primary-subtle: ${siteTheme.colors.primarySubtle};
+      --theme-primary-border: ${siteTheme.colors.primaryBorder};
+      --theme-bg-page: ${siteTheme.colors.bgPage};
+      --theme-bg-topbar: ${siteTheme.colors.bgTopBar};
+      --theme-bg-header: ${siteTheme.colors.bgHeader};
+      --theme-bg-surface: ${siteTheme.colors.bgSurface};
+      --theme-bg-surface-elevated: ${siteTheme.colors.bgSurfaceElevated};
+      --theme-bg-surface-subtle: ${siteTheme.colors.bgSurfaceSubtle};
+      --theme-bg-footer: ${siteTheme.colors.bgFooter};
+      --theme-text-primary: ${siteTheme.colors.textPrimary};
+      --theme-text-secondary: ${siteTheme.colors.textSecondary};
+      --theme-text-muted: ${siteTheme.colors.textMuted};
+      --theme-border-subtle: ${siteTheme.colors.borderSubtle};
+      --theme-border-medium: ${siteTheme.colors.borderMedium};
+      --theme-border-highlight: ${siteTheme.colors.borderHighlight};
+    }
+  `;
+
   return (
     <html lang="en" className={`${inter.variable} h-full dark`} suppressHydrationWarning>
       <head>
+        <style id="site-theme-variables" dangerouslySetInnerHTML={{ __html: themeCss }} />
         <JsonLd schema={localBusinessSchema} />
       </head>
       <body 
-        className="min-h-full flex flex-col bg-[#0a0e17] text-gray-100 antialiased selection:bg-red-600 selection:text-white pb-14 sm:pb-0"
+        className="min-h-full flex flex-col bg-[var(--theme-bg-page)] text-[var(--theme-text-secondary)] antialiased selection:bg-[var(--theme-primary)] selection:text-white pb-14 sm:pb-0"
         suppressHydrationWarning
       >
         <RouteScrollReset />

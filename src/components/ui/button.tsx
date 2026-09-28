@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[#C5221F] text-white hover:bg-[#A81B18] shadow-sm",
+          "bg-[var(--theme-primary)] text-white hover:bg-[var(--theme-primary-hover)] shadow-sm",
         secondary:
           "bg-slate-800 text-white hover:bg-slate-700 border border-slate-700",
         outline:
@@ -19,9 +19,9 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-slate-800 hover:text-white text-slate-300",
         link:
-          "text-[#C5221F] underline-offset-4 hover:underline lowercase font-medium tracking-normal",
+          "text-[var(--theme-primary)] underline-offset-4 hover:underline lowercase font-medium tracking-normal",
         emergency:
-          "bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-500 hover:to-red-600 border border-red-500/40 shadow-sm",
+          "bg-[var(--theme-primary)] text-white hover:bg-[var(--theme-primary-hover)] border border-[var(--theme-primary-border)] shadow-sm",
       },
       size: {
         default: "h-10 px-5 py-2",

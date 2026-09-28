@@ -10,7 +10,7 @@ const badgeVariants = cva(
         default:
           "border-slate-700 bg-slate-900/80 text-slate-300",
         safety:
-          "border-red-900/60 bg-red-950/60 text-red-400",
+          "border-[var(--theme-border-highlight)] bg-[var(--theme-primary-subtle)] text-[var(--theme-primary)]",
         compliance:
           "border-emerald-900/60 bg-emerald-950/60 text-emerald-400",
         amber:
