@@ -70,6 +70,7 @@ export function PostEditor({ initialData }: PostEditorProps) {
     control,
     setValue,
     watch,
+    getValues,
     formState: { errors, isDirty },
   } = useForm<PostInput>({
     resolver: zodResolver(postSchema),
@@ -88,7 +89,6 @@ export function PostEditor({ initialData }: PostEditorProps) {
 
   const titleValue = watch("title");
   const slugValue = watch("slug");
-  const contentValue = watch("content");
   const metaDescriptionValue = watch("meta_description") || "";
 
   // Warn if leaving page with unsaved edits
@@ -103,19 +103,24 @@ export function PostEditor({ initialData }: PostEditorProps) {
     return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, [isDirty, isSubmitting, isDeleting]);
 
-  // Autosave to localStorage (debounced 1.5s)
+  // Autosave to localStorage (debounced 1.5s, decoupled from keystroke re-renders)
   useEffect(() => {
     if (!isDirty) return;
     const timer = setTimeout(() => {
       try {
+        const currentContent = getValues("content");
         localStorage.setItem(
           draftKey,
           JSON.stringify({
             savedAt: new Date().toISOString(),
             title: titleValue,
-            content: contentValue,
+            content: currentContent,
             meta_description: metaDescriptionValue,
             slug: slugValue,
+            tags: getValues("tags"),
+            cover_image_url: getValues("cover_image_url"),
+            author: getValues("author"),
+            source: getValues("source"),
           })
         );
       } catch {
@@ -123,20 +128,19 @@ export function PostEditor({ initialData }: PostEditorProps) {
       }
     }, 1500);
     return () => clearTimeout(timer);
-  }, [isDirty, draftKey, titleValue, contentValue, metaDescriptionValue, slugValue]);
+  }, [isDirty, draftKey, titleValue, metaDescriptionValue, slugValue, getValues]);
 
   // Draft recovery
   useEffect(() => {
     try {
       const raw = localStorage.getItem(draftKey);
       if (!raw) return;
-      const draft = JSON.parse(raw) as { savedAt: string };
-      const draftDate = new Date(draft.savedAt);
-      const dbDate = initialData?.updated_at ? new Date(initialData.updated_at) : null;
+      const draft = JSON.parse(raw);
+      if (!draft || (!draft.title && !draft.content)) return;
+      const draftDate = draft.savedAt ? new Date(draft.savedAt).getTime() : Date.now();
+      const dbDate = initialData?.updated_at ? new Date(initialData.updated_at).getTime() : 0;
       if (!dbDate || draftDate > dbDate) {
         setShowDraftBanner(true);
-      } else {
-        localStorage.removeItem(draftKey);
       }
     } catch {
       // ignore
@@ -189,8 +193,9 @@ export function PostEditor({ initialData }: PostEditorProps) {
 
       try {
         let finalSource = formData.source;
+        const currentContent = getValues("content");
         if (isAiGenerated) {
-          if (originalAiContent && contentValue !== originalAiContent) {
+          if (originalAiContent && currentContent !== originalAiContent) {
             finalSource = "ai-edited";
           } else if (!formData.source || formData.source === "manual") {
             finalSource = "ai";
@@ -320,17 +325,20 @@ export function PostEditor({ initialData }: PostEditorProps) {
                 try {
                   const raw = localStorage.getItem(draftKey);
                   if (!raw) return;
-                  const draft = JSON.parse(raw) as {
-                    title?: string;
-                    content?: string;
-                    meta_description?: string;
-                    slug?: string;
-                  };
+                  const draft = JSON.parse(raw);
                   if (draft.title) setValue("title", draft.title, { shouldDirty: true });
                   if (draft.slug) setValue("slug", draft.slug, { shouldDirty: true });
                   if (draft.content) setValue("content", draft.content, { shouldDirty: true });
                   if (draft.meta_description)
                     setValue("meta_description", draft.meta_description, { shouldDirty: true });
+                  if (draft.tags && Array.isArray(draft.tags))
+                    setValue("tags", draft.tags, { shouldDirty: true });
+                  if (draft.cover_image_url)
+                    setValue("cover_image_url", draft.cover_image_url, { shouldDirty: true });
+                  if (draft.author)
+                    setValue("author", draft.author, { shouldDirty: true });
+                  if (draft.source)
+                    setValue("source", draft.source, { shouldDirty: true });
                   toast.success("Draft restored into editor.");
                 } catch {
                   toast.error("Could not restore draft.");

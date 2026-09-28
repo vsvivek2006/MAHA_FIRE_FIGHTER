@@ -49,6 +49,13 @@ export default async function AdminBlogListPage() {
           </div>
           <div className="flex items-center gap-2.5 self-start sm:self-auto">
             <Link
+              href="/admin/blog/generate"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white border border-gray-300 text-gray-700 hover:text-red-600 hover:border-red-300 shadow-xs transition-all cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 text-red-600" />
+              AI Studio
+            </Link>
+            <Link
               href="/admin/blog/new"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-red-600 hover:bg-red-700 text-white shadow-xs transition-colors cursor-pointer"
             >

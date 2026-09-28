@@ -2,12 +2,12 @@ import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
 export function sanitizeAdminRedirect(path: string | null | undefined): string {
-  if (!path) return "/admin/blog/generate";
+  if (!path || path === "/admin" || path === "/admin/") return "/admin/blog";
   // Must start with /admin, cannot start with // (protocol-relative), and cannot have : (scheme injection)
   if (path.startsWith("/admin") && !path.startsWith("//") && !path.includes(":")) {
     return path;
   }
-  return "/admin/blog/generate";
+  return "/admin/blog";
 }
 
 export async function middleware(request: NextRequest) {
@@ -29,6 +29,13 @@ export async function middleware(request: NextRequest) {
   const isAdminPath = normalizedPath.startsWith("/admin");
   if (!isAdminPath) {
     return NextResponse.next();
+  }
+
+  // Route root /admin directly to /admin/blog
+  if (normalizedPath === "/admin") {
+    const destinationUrl = request.nextUrl.clone();
+    destinationUrl.pathname = "/admin/blog";
+    return NextResponse.redirect(destinationUrl);
   }
 
   const isLoginPage = normalizedPath === "/admin/login";

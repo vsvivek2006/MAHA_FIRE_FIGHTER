@@ -227,44 +227,51 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
         </div>
       )}
 
-      {/* Direct URL input fallback */}
-      {!value && !isUploading && (
-        <div className="flex items-center gap-2">
-          {showUrlInput ? (
-            <div className="flex items-center gap-2 w-full">
-              <input
-                type="url"
-                value={urlInputValue}
-                onChange={(e) => setUrlInputValue(e.target.value)}
-                placeholder="https://example.com/cover.webp"
-                className="flex-1 px-3 py-1.5 rounded-lg border border-gray-300 text-xs text-gray-900 focus:outline-none focus:border-red-500"
-              />
-              <button
-                type="button"
-                onClick={handleUrlSubmit}
-                className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors"
-              >
-                Apply
-              </button>
-              <button
-                type="button"
-                onClick={() => setShowUrlInput(false)}
-                className="px-2 py-1.5 rounded-lg text-xs text-gray-500 hover:text-gray-700"
-              >
-                Cancel
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => setShowUrlInput(true)}
-              className="text-[11px] text-gray-500 hover:text-red-600 flex items-center gap-1 transition-colors"
-            >
-              <LinkIcon className="w-3 h-3" />
-              Or paste direct image URL
-            </button>
-          )}
+      {/* Direct URL input bar */}
+      {!isUploading && showUrlInput && (
+        <div className="flex items-center gap-2 w-full p-2.5 rounded-xl bg-gray-50 border border-gray-300 animate-in fade-in duration-200">
+          <input
+            type="url"
+            value={urlInputValue}
+            onChange={(e) => setUrlInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                handleUrlSubmit();
+              }
+            }}
+            placeholder="https://example.com/cover.webp"
+            className="flex-1 px-3 py-1.5 rounded-lg bg-white border border-gray-300 text-xs text-gray-900 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500/20"
+          />
+          <button
+            type="button"
+            onClick={handleUrlSubmit}
+            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors cursor-pointer"
+          >
+            Apply
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowUrlInput(false)}
+            className="px-2.5 py-1.5 rounded-lg text-xs font-medium border border-gray-300 bg-white text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+          >
+            Cancel
+          </button>
         </div>
+      )}
+
+      {!value && !isUploading && !showUrlInput && (
+        <button
+          type="button"
+          onClick={() => {
+            setUrlInputValue(value || "");
+            setShowUrlInput(true);
+          }}
+          className="text-[11px] text-gray-500 hover:text-red-600 flex items-center gap-1 transition-colors cursor-pointer"
+        >
+          <LinkIcon className="w-3 h-3" />
+          Or paste direct image URL
+        </button>
       )}
     </div>
   );

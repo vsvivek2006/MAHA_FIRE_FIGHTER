@@ -45,9 +45,9 @@ export default function BlogAIGeneratePage() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-gray-200">
           <div className="flex items-center gap-3">
             <Link
-              href="/blog"
+              href="/admin/blog"
               className="p-2 rounded-lg bg-white border border-gray-300 text-gray-700 hover:text-[#C5221F] hover:border-[#C5221F] transition-all shadow-sm"
-              title="Back to Blog"
+              title="Back to Articles"
             >
               <ArrowLeft className="w-4 h-4" />
             </Link>
@@ -56,12 +56,6 @@ export default function BlogAIGeneratePage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-[#C5221F] bg-red-50 px-2.5 py-0.5 rounded-full border border-red-200">
                   AI Editorial Studio
                 </span>
-                {userEmail && (
-                  <span className="text-[11px] font-mono text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full flex items-center gap-1 border border-gray-200">
-                    <UserCheck className="w-3 h-3 text-green-600" />
-                    {userEmail}
-                  </span>
-                )}
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-[#1D1E20] tracking-tight mt-1">
                 Fire Safety Blog Generator
@@ -73,31 +67,18 @@ export default function BlogAIGeneratePage() {
           </div>
 
           <div className="flex items-center gap-2">
-            {userEmail ? (
-              <button
-                type="button"
-                onClick={handleSignOut}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-600 hover:text-red-600 px-3 py-2 rounded-lg bg-white border border-gray-300 shadow-sm transition-colors cursor-pointer"
-              >
-                <LogOut className="w-3.5 h-3.5" />
-                Sign Out
-              </button>
-            ) : (
-              <Link
-                href="/admin/login"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#C5221F] hover:bg-[#a51a18] px-3.5 py-2 rounded-lg shadow-sm transition-colors"
-              >
-                <LogIn className="w-3.5 h-3.5" />
-                Admin Login
-              </Link>
-            )}
-
             <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-xs font-bold text-gray-700 hover:text-[#C5221F] px-3.5 py-2 rounded-lg bg-white border border-gray-300 shadow-sm"
+              href="/admin/blog/new"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 hover:text-[#C5221F] px-3.5 py-2 rounded-lg bg-white border border-gray-300 shadow-sm transition-all"
+            >
+              Manual Editor
+            </Link>
+            <Link
+              href="/admin/blog"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#C5221F] bg-red-50 border border-red-200 px-3.5 py-2 rounded-lg shadow-sm"
             >
               <BookOpen className="w-3.5 h-3.5" />
-              View Knowledge Base
+              All Articles
             </Link>
           </div>
         </div>

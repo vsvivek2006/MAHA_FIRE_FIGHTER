@@ -4,7 +4,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import LinkExtension from "@tiptap/extension-link";
 import ImageExtension from "@tiptap/extension-image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, memo } from "react";
 import {
   Bold,
   Italic,
@@ -27,7 +27,10 @@ interface TiptapEditorProps {
   placeholder?: string;
 }
 
-export function TiptapEditor({ content, onChange }: TiptapEditorProps) {
+export const TiptapEditor = memo(function TiptapEditor({
+  content,
+  onChange,
+}: TiptapEditorProps) {
   const lastEmittedHtml = useRef<string>(content || "");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -315,4 +318,4 @@ export function TiptapEditor({ content, onChange }: TiptapEditorProps) {
       <EditorContent editor={editor} />
     </div>
   );
-}
+});

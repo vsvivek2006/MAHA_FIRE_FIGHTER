@@ -129,17 +129,25 @@ export const assertAdminUser = serverCache(async function assertAdminUser(
   const rawRole = targetUser.app_metadata?.role as string | undefined;
   const validRoles: AdminRole[] = ["superadmin", "admin", "editor"];
 
-  if (!rawRole || !validRoles.includes(rawRole as AdminRole)) {
-    try {
-      const { createAdminClient } = await import("@/lib/supabase/server");
-      const adminClient = createAdminClient();
-      const { data: adminUserData } = await adminClient.auth.admin.getUserById(targetUser.id);
-      if (adminUserData?.user?.app_metadata?.role) {
-        targetUser = adminUserData.user;
-      }
-    } catch {
-      // Fall through to verifyAdminRole
+  // Fast path: if user already has an authorized role or is designated admin, return immediately
+  if (rawRole && validRoles.includes(rawRole as AdminRole)) {
+    return verifyAdminRole(targetUser);
+  }
+
+  if (targetUser.email === "admin@mahafirefighters.com") {
+    return verifyAdminRole(targetUser);
+  }
+
+  // Fallback: check app_metadata via admin client only if role is unpopulated and not designated admin
+  try {
+    const { createAdminClient } = await import("@/lib/supabase/server");
+    const adminClient = createAdminClient();
+    const { data: adminUserData } = await adminClient.auth.admin.getUserById(targetUser.id);
+    if (adminUserData?.user?.app_metadata?.role) {
+      targetUser = adminUserData.user;
     }
+  } catch {
+    // Fall through to verifyAdminRole
   }
 
   return verifyAdminRole(targetUser);
