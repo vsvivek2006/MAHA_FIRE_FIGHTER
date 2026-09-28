@@ -117,6 +117,29 @@ export default function BlogAIGeneratePage() {
               <div className="flex items-center gap-2">
                 <button
                   type="button"
+                  onClick={() => {
+                    const draft = {
+                      title: generatedPost.title,
+                      slug: generatedPost.title
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/(^-|-$)/g, ""),
+                      content: generatedPost.content,
+                      meta_description: generatedPost.metaDescription,
+                      tags: generatedPost.suggestedTags,
+                      status: "draft",
+                      source: "ai",
+                    };
+                    localStorage.setItem("maha-fire-draft-new", JSON.stringify(draft));
+                    router.push("/admin/blog/new");
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#C5221F] text-white hover:bg-[#a51a18] shadow-xs transition-colors cursor-pointer"
+                >
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Edit in Tiptap Editor
+                </button>
+                <button
+                  type="button"
                   onClick={() => handleCopy(generatedPost.content, "content")}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-red-50 text-[#C5221F] hover:bg-red-100 transition-colors"
                 >
