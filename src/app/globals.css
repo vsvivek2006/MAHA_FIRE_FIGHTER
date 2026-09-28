@@ -131,3 +131,180 @@ body {
 .animate-radar-pulse {
   animation: radar-pulse 2s infinite;
 }
+
+/* === Blog Article & Tiptap Editor Typography Hierarchy === */
+.article-content,
+.tiptap-editor-surface {
+  color: #1e293b;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.article-content h2,
+.tiptap-editor-surface h2 {
+  color: #0f172a;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-top: 2.75rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 4px solid #C5221F;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .article-content h2,
+  .tiptap-editor-surface h2 {
+    font-size: 2rem;
+  }
+}
+
+.article-content h3,
+.tiptap-editor-surface h3 {
+  color: #0f172a;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.article-content p,
+.tiptap-editor-surface p {
+  margin-bottom: 1.5rem;
+  color: #334155;
+  line-height: 1.8;
+}
+
+.article-content a,
+.tiptap-editor-surface a {
+  color: #C5221F;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(197, 34, 31, 0.6);
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.article-content a:hover,
+.tiptap-editor-surface a:hover {
+  color: #991B1B;
+  text-decoration-color: #991B1B;
+}
+
+.article-content ul,
+.tiptap-editor-surface ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content ol,
+.tiptap-editor-surface ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content li,
+.tiptap-editor-surface li {
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+
+.article-content li::marker,
+.tiptap-editor-surface li::marker {
+  color: #C5221F;
+}
+
+.article-content blockquote,
+.tiptap-editor-surface blockquote {
+  border-left: 4px solid #C5221F;
+  background: #FEF2F2;
+  padding: 1.25rem 1.75rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  margin: 1.75rem 0;
+  font-style: italic;
+  color: #7F1D1D;
+}
+
+.article-content blockquote p,
+.tiptap-editor-surface blockquote p {
+  margin-bottom: 0;
+}
+
+.article-content strong,
+.tiptap-editor-surface strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.article-content em,
+.tiptap-editor-surface em {
+  color: #334155;
+  font-style: italic;
+}
+
+.article-content img,
+.tiptap-editor-surface img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 2rem auto;
+  display: block;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.article-content figure,
+.tiptap-editor-surface figure {
+  margin: 2rem auto;
+  display: block;
+  text-align: center;
+}
+
+.article-content figcaption,
+.tiptap-editor-surface figcaption {
+  font-size: 0.875rem;
+  color: #64748B;
+  margin-top: 0.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.article-content hr,
+.tiptap-editor-surface hr {
+  border: 0;
+  border-top: 1px solid #E2E8F0;
+  margin: 2.5rem 0;
+}
+
+.article-content table,
+.tiptap-editor-surface table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.article-content th,
+.tiptap-editor-surface th {
+  background: #F8FAFC;
+  color: #0f172a;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid #E2E8F0;
+}
+
+.article-content td,
+.tiptap-editor-surface td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #E2E8F0;
+  color: #334155;
+}

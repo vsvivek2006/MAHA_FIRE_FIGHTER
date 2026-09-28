@@ -1,13 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, BookOpen, Calendar, Clock, ShieldCheck, Tag } from 'lucide-react';
+import { format } from 'date-fns';
+import { ArrowRight, BookOpen, Calendar, Clock, ShieldCheck, User } from 'lucide-react';
 import { getAllBlogPosts } from '@/data/blog-content';
+import { createPublicClient } from '@/lib/supabase/public';
+import { getPostCoverImage } from '@/lib/blog/images';
 import { AuditCTA } from '@/components/sections/AuditCTA';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
+export const revalidate = 300;
+
 export const metadata: Metadata = {
-  title: 'Fire Safety Engineering Blog & Compliance Guides | Maha Firefighters',
+  title: 'Fire Safety Engineering Blog & Statutory Compliance Guides | Maha Firefighters',
   description: 'Technical articles, statutory inspection checklists, and compliance guides for industrial fire hydrant systems, automatic sprinklers, and NBC 2016 norms across Delhi NCR.',
   alternates: {
     canonical: 'https://mahafirefighters.com/blog',
@@ -28,26 +33,80 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogIndexPage() {
-  const posts = getAllBlogPosts();
+interface UnifiedPostItem {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  coverImage: string;
+  author: string;
+  tags: string[];
+  publishedAt: string;
+}
+
+export default async function BlogIndexPage() {
+  const staticPosts = getAllBlogPosts();
+
+  let dbPosts: UnifiedPostItem[] = [];
+  try {
+    const supabase = createPublicClient();
+    const { data: posts, error } = await supabase
+      .from('posts')
+      .select('id, title, slug, meta_description, cover_image_url, author, tags, published_at, created_at')
+      .eq('status', 'published')
+      .order('published_at', { ascending: false });
+
+    if (!error && posts) {
+      dbPosts = posts.map((p) => ({
+        id: p.id,
+        title: p.title,
+        slug: p.slug,
+        excerpt: p.meta_description || 'In-depth fire safety compliance and engineering guide.',
+        coverImage: getPostCoverImage(p.cover_image_url, p.title, p.tags),
+        author: p.author || 'Maha Firefighters Team',
+        tags: p.tags || ['Fire Safety'],
+        publishedAt: p.published_at || p.created_at,
+      }));
+    }
+  } catch (err) {
+    console.error('Error loading dynamic posts in /blog:', err);
+  }
+
+  // Merge posts ensuring no duplicate slugs (DB posts take priority)
+  const dbSlugs = new Set(dbPosts.map((p) => p.slug));
+  const mergedPosts: UnifiedPostItem[] = [
+    ...dbPosts,
+    ...staticPosts
+      .filter((sp) => !dbSlugs.has(sp.slug))
+      .map((sp) => ({
+        id: sp.slug,
+        title: sp.title,
+        slug: sp.slug,
+        excerpt: sp.excerpt,
+        coverImage: sp.image,
+        author: sp.author,
+        tags: [sp.category, ...(sp.standardsReferenced || [])],
+        publishedAt: sp.publishedAt,
+      })),
+  ];
 
   const blogJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    'name': 'Maha Firefighters Engineering Blog',
-    'description': 'Technical fire protection and compliance guides for industrial facilities in Delhi NCR.',
-    'url': 'https://mahafirefighters.com/blog',
-    'blogPost': posts.map((post) => ({
+    name: 'Maha Firefighters Engineering Blog',
+    description: 'Technical fire protection and compliance guides for industrial facilities in Delhi NCR.',
+    url: 'https://mahafirefighters.com/blog',
+    blogPost: mergedPosts.map((post) => ({
       '@type': 'BlogPosting',
-      'headline': post.title,
-      'description': post.excerpt,
-      'datePublished': post.publishedAt,
-      'author': {
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.publishedAt,
+      author: {
         '@type': 'Organization',
-        'name': post.author,
+        name: post.author,
       },
-      'url': `https://mahafirefighters.com/blog/${post.slug}`,
-      'image': `https://mahafirefighters.com${post.image}`,
+      url: `https://mahafirefighters.com/blog/${post.slug}`,
+      image: post.coverImage.startsWith('http') ? post.coverImage : `https://mahafirefighters.com${post.coverImage}`,
     })),
   };
 
@@ -58,137 +117,109 @@ export default function BlogIndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
       />
 
-      <main className="min-h-screen bg-white text-gray-900">
-        {/* Page Header */}
-        <section className="relative border-b border-gray-200 bg-gray-50 py-14 sm:py-20 px-4 sm:px-8">
-          <div className="max-w-7xl mx-auto">
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs text-gray-500">
-              <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-red-600 font-medium">Knowledge Base &amp; Blog</span>
-            </nav>
+      <main className="min-h-screen bg-gray-50 text-gray-900">
+        {/* Hero Section (Growth Service Style with Maha Firefighters Brand) */}
+        <section className="bg-gradient-to-br from-gray-950 via-slate-900 to-red-950 py-20 px-6 relative overflow-hidden text-center text-white">
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-red-600/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-amber-600/15 rounded-full blur-3xl pointer-events-none" />
 
-            <ScrollReveal animation="fade-down" delay={50} className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-200 text-red-600 text-xs font-semibold uppercase tracking-wider rounded-full">
-                <BookOpen className="w-3.5 h-3.5 text-red-600" />
-                <span>Technical Insights &amp; Regulatory Guides</span>
-              </div>
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-950 tracking-tight leading-tight">
-                Industrial Fire Protection &amp; Compliance Knowledge Base
-              </h1>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                Practical engineering articles, statutory inspection checklists, and standards-based guidance for factory heads, warehouse operators, and safety directors across Delhi, Noida, Gurugram, Faridabad, and Ghaziabad.
-              </p>
-            </ScrollReveal>
+          <div className="max-w-4xl mx-auto relative z-10 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/40 bg-red-950/60 text-xs font-semibold text-amber-300">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              Statutory Fire Engineering &amp; Compliance Hub
+            </div>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+              Knowledge Base &amp; <span className="text-amber-400">Engineering Blog</span>
+            </h1>
+            <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Authoritative guides on NBC 2016 statutory mandates, IS 3844 hydrant engineering, automatic sprinkler hydraulics, and turnkey Fire NOC certification in Delhi NCR.
+            </p>
           </div>
         </section>
 
-        {/* Blog Posts Grid */}
-        <section className="py-14 sm:py-20 px-4 sm:px-8 bg-white">
-          <div className="max-w-7xl mx-auto space-y-12">
-            {/* Category / Topic Filters Indicator */}
-            <div className="flex items-center justify-between border-b border-gray-200 pb-4">
-              <div className="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
-                <Tag className="w-3.5 h-3.5 text-red-600" />
-                <span>Featured Technical Guides ({posts.length})</span>
-              </div>
-              <div className="text-xs text-gray-500">
-                Ground Truth: NBC 2016 &amp; Indian Standards (IS)
-              </div>
-            </div>
+        {/* Posts Grid Container */}
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {mergedPosts.map((post) => (
+              <article
+                key={post.id}
+                className="rounded-2xl border border-gray-200 bg-white overflow-hidden flex flex-col justify-between hover:border-red-500/50 transition-all hover:shadow-xl group"
+              >
+                <div>
+                  {/* Cover Image */}
+                  <Link href={`/blog/${post.slug}`} className="block relative aspect-video w-full overflow-hidden bg-gray-100">
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </Link>
 
-            {/* Articles Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post, idx) => (
-                <ScrollReveal
-                  key={post.slug}
-                  animation="fade-up"
-                  delay={idx * 120}
-                  className="h-full"
-                >
-                  <article
-                    className="h-full group flex flex-col bg-white border border-gray-200 hover:border-red-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden rounded-2xl shadow-sm"
+                  {/* Body */}
+                  <div className="p-6 space-y-3">
+                    {/* Tags */}
+                    {post.tags && post.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {post.tags.slice(0, 3).map((tag: string) => (
+                          <span
+                            key={tag}
+                            className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-red-50 text-red-700 border border-red-200"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <h2 className="text-lg sm:text-xl font-bold text-gray-950 group-hover:text-red-600 transition-colors line-clamp-2">
+                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    </h2>
+
+                    {post.excerpt && (
+                      <p className="text-xs sm:text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Footer Metadata */}
+                <div className="p-6 pt-0 border-t border-gray-100 mt-4 flex items-center justify-between text-xs text-gray-500">
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1 font-medium text-gray-700">
+                      <User className="w-3.5 h-3.5 text-red-600" />
+                      {post.author}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-gray-400" />
+                      {(() => {
+                        try {
+                          const d = new Date(post.publishedAt);
+                          return isNaN(d.getTime()) ? post.publishedAt : format(d, 'MMM d, yyyy');
+                        } catch {
+                          return post.publishedAt;
+                        }
+                      })()}
+                    </span>
+                  </div>
+
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="font-bold text-red-600 group-hover:text-red-700 flex items-center gap-1 transition-colors"
                   >
-                    {/* Article Image Container */}
-                    <Link href={`/blog/${post.slug}`} className="relative h-52 w-full bg-gray-100 overflow-hidden block">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 bg-white/90 backdrop-blur-sm border border-gray-200 text-xs font-semibold text-gray-900 rounded-md">
-                          {post.category}
-                        </span>
-                      </div>
-                    </Link>
-
-                    {/* Content Container */}
-                    <div className="flex-1 p-6 flex flex-col justify-between space-y-4">
-                      <div className="space-y-3">
-                        {/* Meta stats */}
-                        <div className="flex items-center gap-4 text-xs text-gray-500">
-                          <span className="flex items-center gap-1.5">
-                            <Calendar className="w-3.5 h-3.5 text-gray-400" />
-                            {post.publishedAt}
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <Clock className="w-3.5 h-3.5 text-gray-400" />
-                            {post.readingTime}
-                          </span>
-                        </div>
-
-                        {/* Title */}
-                        <h2 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors line-clamp-2 leading-snug">
-                          <Link href={`/blog/${post.slug}`}>
-                            {post.title}
-                          </Link>
-                        </h2>
-
-                        {/* Excerpt */}
-                        <p className="text-xs sm:text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                          {post.excerpt}
-                        </p>
-                      </div>
-
-                      <div className="pt-4 border-t border-gray-100 space-y-3">
-                        {/* Standards tags */}
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          {post.standardsReferenced.slice(0, 2).map((std) => (
-                            <span
-                              key={std}
-                              className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-100 text-[10px] font-medium text-gray-700 rounded"
-                            >
-                              <ShieldCheck className="w-2.5 h-2.5 text-emerald-600" />
-                              {std}
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* Read CTA */}
-                        <Link
-                          href={`/blog/${post.slug}`}
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 group-hover:translate-x-0.5 transition-all"
-                        >
-                          <span>Read Technical Guide</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
-                </ScrollReveal>
-              ))}
-            </div>
+                    Read
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
-        </section>
+        </div>
 
-        {/* Bottom CTA Strip */}
-        <section className="border-t border-gray-200 bg-gray-50">
-          <AuditCTA />
-        </section>
+        {/* Global Audit CTA */}
+        <AuditCTA />
       </main>
     </>
   );
