@@ -54,16 +54,23 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
     [selectedModelInfo.name, selectedModelInfo.speed]
   );
 
-  // Animated progress state
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [progressPercent, setProgressPercent] = useState(0);
+  const [elapsedTime, setElapsedTime] = useState(0);
   const stepTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const elapsedTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Progress simulation during AI generation
+  // Progress simulation & live elapsed timer during AI generation
   useEffect(() => {
     if (isGenerating) {
       setCurrentStepIndex(0);
       setProgressPercent(15);
+      setElapsedTime(0);
+
+      const startTime = Date.now();
+      elapsedTimerRef.current = setInterval(() => {
+        setElapsedTime(Number(((Date.now() - startTime) / 1000).toFixed(1)));
+      }, 100);
 
       let step = 0;
       stepTimerRef.current = setInterval(() => {
@@ -72,21 +79,23 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
           setCurrentStepIndex(step);
           setProgressPercent(generationSteps[step].progress);
         } else {
-          // Creep forward slowly while waiting for final payload
-          setProgressPercent((prev) => Math.min(prev + 2, 94));
+          setProgressPercent((prev) => Math.min(prev + 1, 95));
         }
-      }, 1600);
+      }, 1400);
     } else {
       if (stepTimerRef.current) {
         clearInterval(stepTimerRef.current);
         stepTimerRef.current = null;
       }
+      if (elapsedTimerRef.current) {
+        clearInterval(elapsedTimerRef.current);
+        elapsedTimerRef.current = null;
+      }
     }
 
     return () => {
-      if (stepTimerRef.current) {
-        clearInterval(stepTimerRef.current);
-      }
+      if (stepTimerRef.current) clearInterval(stepTimerRef.current);
+      if (elapsedTimerRef.current) clearInterval(elapsedTimerRef.current);
     };
   }, [isGenerating, generationSteps]);
 
@@ -213,21 +222,76 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
         </div>
       )}
 
-      {/* Progress Bar during generation */}
+      {/* Live AI Synthesis Activity Hub during generation */}
       {isGenerating && (
-        <div className="p-4 rounded-lg bg-red-50/60 border border-red-100 space-y-2">
-          <div className="flex items-center justify-between text-xs">
-            <span className="font-medium text-gray-700 flex items-center gap-1.5">
-              <Loader2 className="w-3.5 h-3.5 animate-spin text-[#C5221F]" />
-              {generationSteps[currentStepIndex]?.label}
-            </span>
-            <span className="font-mono font-bold text-[#C5221F]">{progressPercent}%</span>
+        <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-red-950 via-slate-900 to-gray-950 border border-red-800/60 shadow-xl text-white space-y-4 animate-in fade-in duration-300">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-red-600/30 border border-red-500/50 text-amber-400">
+                <Sparkles className="w-5 h-5 animate-spin duration-3000 text-amber-300" />
+                <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                </span>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                  Actively Synthesizing Fire Safety Article
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-red-900/80 border border-red-700 text-amber-300">
+                    {selectedModelInfo.name}
+                  </span>
+                </h3>
+                <p className="text-xs text-gray-300">
+                  Streaming inference and validating NBC 2016 engineering standards...
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 self-end sm:self-auto font-mono text-xs">
+              <span className="px-2.5 py-1 rounded-lg bg-white/10 text-amber-300 border border-white/10">
+                ⏱ {elapsedTime.toFixed(1)}s
+              </span>
+              <span className="text-red-400 font-bold text-sm">{progressPercent}%</span>
+            </div>
           </div>
-          <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+
+          {/* Shimmering Progress Bar */}
+          <div className="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden p-0.5 border border-red-900/40">
             <div
-              className="h-full bg-[#C5221F] transition-all duration-500 ease-out rounded-full"
+              className="h-full bg-gradient-to-r from-red-600 via-amber-500 to-red-500 transition-all duration-300 ease-out rounded-full shadow-lg shadow-red-500/50"
               style={{ width: `${progressPercent}%` }}
             />
+          </div>
+
+          {/* Live Step Checklist */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+            {generationSteps.map((step, idx) => {
+              const isPast = idx < currentStepIndex;
+              const isCurrent = idx === currentStepIndex;
+              return (
+                <div
+                  key={idx}
+                  className={`flex items-center gap-2 p-2 rounded-lg text-xs transition-all ${
+                    isCurrent
+                      ? "bg-red-900/40 border border-red-500/50 text-white font-semibold"
+                      : isPast
+                      ? "text-emerald-400 bg-black/20"
+                      : "text-gray-500"
+                  }`}
+                >
+                  {isPast ? (
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  ) : isCurrent ? (
+                    <Loader2 className="w-4 h-4 animate-spin text-amber-400 shrink-0" />
+                  ) : (
+                    <div className="w-4 h-4 rounded-full border border-gray-700 flex items-center justify-center text-[10px] text-gray-600">
+                      {idx + 1}
+                    </div>
+                  )}
+                  <span className="truncate">{step.label}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

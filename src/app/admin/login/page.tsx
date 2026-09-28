@@ -19,7 +19,7 @@ import { createClient } from "@/lib/supabase/client";
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectTo = searchParams.get("redirectTo") || "/admin/blog/generate";
+  const redirectTo = searchParams.get("redirectTo") || "/admin/blog";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,11 +44,11 @@ function LoginForm() {
       }
 
       toast.success("Login Successful!", {
-        description: `Welcome back, ${data.user?.email}`,
+        description: `Welcome back, ${data.user?.email || "Admin"}`,
       });
 
-      router.push(redirectTo);
-      router.refresh();
+      // Full navigation ensures auth cookies are committed and transmitted in HTTP request to middleware
+      window.location.href = redirectTo;
     } catch (err: unknown) {
       // Generic message — never expose why auth failed (user enumeration prevention)
       const rawMsg = err instanceof Error ? err.message : "";

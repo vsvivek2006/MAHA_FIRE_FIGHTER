@@ -7,6 +7,7 @@ import { FloatingActions } from "@/components/layout/FloatingActions";
 import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 import { RouteScrollReset } from "@/components/navigation/RouteScrollReset";
 import { JsonLd, generateLocalBusinessSchema } from "@/components/seo/JsonLd";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -164,6 +165,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingActions />
+        <Toaster richColors position="top-right" closeButton />
       </body>
     </html>
   );
