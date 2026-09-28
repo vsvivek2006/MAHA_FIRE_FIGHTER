@@ -11,6 +11,7 @@ import {
   Cpu,
 } from "lucide-react";
 import { toast } from "sonner";
+import { createClient } from "@/lib/supabase/client";
 import type { GenerateBlogPostOutput } from "@/lib/ai/generateBlogPost";
 import { AVAILABLE_MODELS, DEFAULT_MODEL_ID } from "@/lib/ai/models";
 
@@ -111,9 +112,17 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
         .map((k) => k.trim())
         .filter(Boolean);
 
+      const supabase = createClient();
+      const { data: sessionData } = await supabase.auth.getSession();
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (sessionData?.session?.access_token) {
+        headers["Authorization"] = `Bearer ${sessionData.session.access_token}`;
+      }
+
       const response = await fetch("/api/blog/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
+        credentials: "include",
         body: JSON.stringify({
           topic: topic.trim(),
           tone,

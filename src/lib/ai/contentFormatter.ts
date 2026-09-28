@@ -80,14 +80,29 @@ export function cleanHtml(html: string): string {
         continue;
       }
 
-      // Check URL safety for href and src
-      if (attrName === "href" || attrName === "src") {
+      // Check URL safety for href and src (Strict protocol allowlist)
+      if (attrName === "href") {
         const trimmedVal = attrValue.trim().toLowerCase();
-        if (
-          trimmedVal.startsWith("javascript:") ||
-          trimmedVal.startsWith("vbscript:") ||
-          (trimmedVal.startsWith("data:") && (!trimmedVal.startsWith("data:image/") || attrName !== "src"))
-        ) {
+        const isSafeHref =
+          trimmedVal.startsWith("/") ||
+          trimmedVal.startsWith("#") ||
+          trimmedVal.startsWith("https://") ||
+          trimmedVal.startsWith("http://") ||
+          trimmedVal.startsWith("mailto:") ||
+          trimmedVal.startsWith("tel:");
+        if (!isSafeHref) {
+          continue;
+        }
+      }
+
+      if (attrName === "src") {
+        const trimmedVal = attrValue.trim().toLowerCase();
+        const isSafeSrc =
+          trimmedVal.startsWith("/") ||
+          trimmedVal.startsWith("https://") ||
+          trimmedVal.startsWith("http://") ||
+          trimmedVal.startsWith("data:image/");
+        if (!isSafeSrc) {
           continue;
         }
       }
