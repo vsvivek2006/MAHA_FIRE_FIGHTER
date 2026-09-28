@@ -2,36 +2,46 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-type AnimationType = 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'zoom-in' | 'fade';
+type AnimationType =
+  | 'fade-up'
+  | 'fade-down'
+  | 'fade-left'
+  | 'fade-right'
+  | 'zoom-in'
+  | 'zoom-out'
+  | 'flip-up'
+  | 'fade';
 
 interface ScrollRevealProps {
   children: React.ReactNode;
   animation?: AnimationType;
-  delay?: number; // Delay in milliseconds
-  duration?: number; // Duration in milliseconds
-  threshold?: number; // Intersection threshold (0.0 to 1.0)
+  delay?: number;   // ms
+  duration?: number; // ms
+  threshold?: number; // 0–1
   className?: string;
   as?: React.ElementType;
+  once?: boolean; // play animation only once (default: true)
 }
 
 export function ScrollReveal({
   children,
   animation = 'fade-up',
   delay = 0,
-  duration = 700,
-  threshold = 0.12,
+  duration = 750,
+  threshold = 0.08,
   className = '',
   as: Component = 'div',
+  once = true,
 }: ScrollRevealProps) {
-  const [isVisible, setIsVisible] = useState(() => typeof window !== 'undefined' && typeof IntersectionObserver === 'undefined');
+  const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const element = elementRef.current;
     if (!element) return;
 
-    // Check if IntersectionObserver is available
     if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
       return;
     }
 
@@ -39,45 +49,46 @@ export function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+          if (once) observer.unobserve(entry.target);
+        } else if (!once) {
+          setIsVisible(false);
         }
       },
       {
-        threshold: 0.02,
-        rootMargin: '100px 0px 50px 0px',
+        threshold,
+        // Generous root margin so elements start animating just before they
+        // scroll into view — feels smooth and proactive, not laggy.
+        rootMargin: '0px 0px -40px 0px',
       }
     );
 
     observer.observe(element);
+    return () => observer.disconnect();
+  }, [threshold, once]);
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [threshold]);
-
-  // Transform styles according to chosen animation
-  const getInitialTransform = (): string => {
+  const getHiddenTransform = (): string => {
     switch (animation) {
-      case 'fade-up':
-        return 'translate3d(0, 32px, 0)';
-      case 'fade-down':
-        return 'translate3d(0, -32px, 0)';
-      case 'fade-left':
-        return 'translate3d(36px, 0, 0)';
-      case 'fade-right':
-        return 'translate3d(-36px, 0, 0)';
-      case 'zoom-in':
-        return 'scale3d(0.95, 0.95, 1)';
+      case 'fade-up':    return 'translate3d(0, 40px, 0)';
+      case 'fade-down':  return 'translate3d(0, -40px, 0)';
+      case 'fade-left':  return 'translate3d(40px, 0, 0)';
+      case 'fade-right': return 'translate3d(-40px, 0, 0)';
+      case 'zoom-in':    return 'scale3d(0.92, 0.92, 1)';
+      case 'zoom-out':   return 'scale3d(1.08, 1.08, 1)';
+      case 'flip-up':    return 'perspective(400px) rotateX(12deg) translate3d(0, 24px, 0)';
       case 'fade':
-      default:
-        return 'none';
+      default:           return 'none';
     }
   };
 
+  // Use a premium spring-like cubic-bezier: ease out expo feel
+  const easing = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
   const style: React.CSSProperties = {
     opacity: isVisible ? 1 : 0,
-    transform: isVisible ? 'none' : getInitialTransform(),
-    transition: `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
+    transform: isVisible ? (animation === 'flip-up' ? 'perspective(400px) rotateX(0deg) translate3d(0,0,0)' : 'none') : getHiddenTransform(),
+    transition: isVisible
+      ? `opacity ${duration}ms ${easing} ${delay}ms, transform ${duration}ms ${easing} ${delay}ms`
+      : 'none',
     willChange: isVisible ? 'auto' : 'opacity, transform',
   };
 
