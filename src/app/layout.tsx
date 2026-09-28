@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: "Fire Hydrant and Sprinklers System Contractors In Delhi NCR | MAHA FIREFIGHTERS",
     template: "%s | MAHA FIREFIGHTERS Delhi NCR",
   },
-  description: "Leading fire protection systems contractor in Delhi NCR. Turnkey fire hydrant installations, automatic sprinklers, addressable fire alarms, and certified in-house extinguisher refilling.",
+  description: "Leading fire protection systems contractor in Delhi NCR. Turnkey fire hydrant installations, automatic sprinklers, addressable fire alarms, and certified in-house extinguisher refilling. 15+ years, 250+ clients.",
   keywords: [
     "fire hydrant system Delhi NCR",
     "fire sprinkler system contractor Delhi",
@@ -37,11 +37,17 @@ export const metadata: Metadata = {
     "fire safety audit Delhi NCR",
     "fire NOC contractor Delhi",
     "Maha Firefighters",
-    "fire safety company Delhi NCR"
+    "fire safety company Delhi NCR",
+    "fire hydrant AMC Delhi",
+    "automatic sprinkler system Noida",
+    "addressable fire alarm Delhi",
+    "fire extinguisher refilling Gurugram"
   ],
   authors: [{ name: "Maha Firefighters" }],
   creator: "Maha Firefighters",
   publisher: "Maha Firefighters",
+  category: "Fire Safety Services",
+  classification: "Fire Protection Contractor",
   robots: {
     index: true,
     follow: true,
@@ -59,13 +65,14 @@ export const metadata: Metadata = {
     url: "https://mahafirefighters.com",
     title: "Fire Hydrant and Sprinklers System Contractors In Delhi NCR | MAHA FIREFIGHTERS",
     description: "Protect your property with certified fire fighting system experts in Delhi NCR. Turnkey installation, AMC services, and high-quality fire safety equipment.",
-    siteName: "MAHA FIREFIGHTERS",
+    siteName: "MAHA FIREFIGHTERS | Fire Hydrant and Sprinklers System Contractor in Delhi NCR",
     images: [
       {
-        url: "/images/hero.webp",
+        url: "https://mahafirefighters.com/images/hero.webp",
         width: 1200,
         height: 630,
-        alt: "Maha Firefighters Fire Protection Engineering Delhi NCR",
+        alt: "Maha Firefighters – Fire Hydrant & Sprinkler System Contractors Delhi NCR",
+        type: "image/webp",
       },
     ],
   },
@@ -90,6 +97,15 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   alternates: {
     canonical: "https://mahafirefighters.com",
+    languages: {
+      "en-IN": "https://mahafirefighters.com",
+    },
+  },
+  other: {
+    "geo.region": "IN-DL",
+    "geo.placename": "New Delhi",
+    "geo.position": "28.6436;77.2347",
+    "ICBM": "28.6436, 77.2347",
   },
 };
 
@@ -125,10 +141,16 @@ export default function RootLayout({
   `;
 
   return (
-    <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${inter.variable} h-full`} suppressHydrationWarning>
       <head>
         <style id="site-theme-variables" dangerouslySetInnerHTML={{ __html: themeCss }} />
         <JsonLd schema={localBusinessSchema} />
+        {/* Performance: preconnect to critical origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+        <link rel="dns-prefetch" href="https://maps.gstatic.com" />
       </head>
       <body 
         className="min-h-full flex flex-col bg-[var(--theme-bg-page)] text-[var(--theme-text-secondary)] antialiased selection:bg-[var(--theme-primary)] selection:text-white pb-14 sm:pb-0"

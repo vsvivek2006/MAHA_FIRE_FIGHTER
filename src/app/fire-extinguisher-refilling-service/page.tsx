@@ -13,10 +13,15 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 const service = servicesData["fire-extinguisher-refilling-service"];
 
 export const metadata: Metadata = {
-  title: "Fire Extinguisher Refilling Service in Delhi,Noida,gurugram | MAHA FIREFIGHTERS",
-  description: "Professional fire extinguisher refilling in Delhi NCR. Free pickup & drop. In-house refilling plant, all cylinder types and brands. Call 9873337442 / 9873514657.",
+  title: "Fire Extinguisher Refilling Service Delhi NCR | Free Pickup & Drop | MAHA FIREFIGHTERS",
+  description: "Professional fire extinguisher refilling in Delhi, Noida & Gurugram. In-house refilling plant. Free pickup & drop. All brands & cylinder types.",
   alternates: {
     canonical: "https://mahafirefighters.com/fire-extinguisher-refilling-service",
+  },
+  openGraph: {
+    title: "Fire Extinguisher Refilling Service Delhi NCR | Free Pickup & Drop | MAHA FIREFIGHTERS",
+    description: "Professional fire extinguisher refilling in Delhi, Noida & Gurugram. In-house refilling plant. Free pickup & drop. All brands & cylinder types.",
+    images: [{ url: "https://mahafirefighters.com/images/extinguisher.webp", width: 1200, height: 630, alt: "Fire Extinguisher Refilling Service Delhi NCR | Free Pickup & Drop | MAHA FIREFIGHTERS" }],
   },
 };
 

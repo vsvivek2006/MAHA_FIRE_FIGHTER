@@ -13,10 +13,15 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 const service = servicesData["firealarmsystems"];
 
 export const metadata: Metadata = {
-  title: "firealarmsystems | MAHA FIREFIGHTERS | FIRE HYDRANT AND SPRINKLERS SYSTEM CONTRACTOR IN DELHI NOIDA GURGAON NCR",
-  description: "Advanced fire alarm & detection systems in Delhi NCR. Addressable and conventional fire alarm solutions, sensor installation, and AMC testing.",
+  title: "Fire Alarm System Installation Delhi NCR | Addressable & Conventional | MAHA FIREFIGHTERS",
+  description: "Advanced addressable & conventional fire alarm systems in Delhi NCR. IS: 2189 compliant. < 3 sec detection. AMC & testing services available.",
   alternates: {
     canonical: "https://mahafirefighters.com/firealarmsystems",
+  },
+  openGraph: {
+    title: "Fire Alarm System Installation Delhi NCR | Addressable & Conventional | MAHA FIREFIGHTERS",
+    description: "Advanced addressable & conventional fire alarm systems in Delhi NCR. IS: 2189 compliant. < 3 sec detection. AMC & testing services available.",
+    images: [{ url: "https://mahafirefighters.com/images/alarm.webp", width: 1200, height: 630, alt: "Fire Alarm System Installation Delhi NCR | Addressable & Conventional | MAHA FIREFIGHTERS" }],
   },
 };
 

@@ -14,10 +14,15 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 const service = servicesData["firehydrantsystems"];
 
 export const metadata: Metadata = {
-  title: "Fire Hydrant System Installation & Maintenance in Delhi NCR | MAHA FIREFIGHTERS",
-  description: "Protecting your assets with robust, high-pressure fire suppression solutions. End-to-end design, installation, and AMC maintenance of fire hydrant systems across Delhi NCR.",
+  title: "Fire Hydrant System Installation & Maintenance Delhi NCR | MAHA FIREFIGHTERS",
+  description: "Expert fire hydrant system installation, testing & AMC in Delhi NCR. IS: 3844 compliant. 15+ years. 250+ clients. Free site assessment. Call +91-9873514657.",
   alternates: {
     canonical: "https://mahafirefighters.com/firehydrantsystems",
+  },
+  openGraph: {
+    title: "Fire Hydrant System Installation & Maintenance Delhi NCR | MAHA FIREFIGHTERS",
+    description: "Expert fire hydrant system installation, testing & AMC in Delhi NCR. IS: 3844 compliant. 15+ years. 250+ clients. Free site assessment. Call +91-9873514657.",
+    images: [{ url: "https://mahafirefighters.com/images/hydrant.webp", width: 1200, height: 630, alt: "Fire Hydrant System Installation & Maintenance Delhi NCR | MAHA FIREFIGHTERS" }],
   },
 };
 

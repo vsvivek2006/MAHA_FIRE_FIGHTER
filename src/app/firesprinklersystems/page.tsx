@@ -13,10 +13,15 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 const service = servicesData["firesprinklersystems"];
 
 export const metadata: Metadata = {
-  title: "firesprinklersystems | MAHA FIREFIGHTERS | FIRE HYDRANT AND SPRINKLERS SYSTEM CONTRACTOR IN DELHI NOIDA GURGAON NCR",
-  description: "24/7 Unattended Protection. Extinguish Fires Before They Spread. Automatic fire sprinkler system design, installation, and AMC in Delhi NCR.",
+  title: "Automatic Fire Sprinkler System Installation Delhi NCR | MAHA FIREFIGHTERS",
+  description: "Automatic fire sprinkler system design, installation & AMC in Delhi NCR. IS: 15105 standard. UL/FM listed heads. Free layout consultation.",
   alternates: {
     canonical: "https://mahafirefighters.com/firesprinklersystems",
+  },
+  openGraph: {
+    title: "Automatic Fire Sprinkler System Installation Delhi NCR | MAHA FIREFIGHTERS",
+    description: "Automatic fire sprinkler system design, installation & AMC in Delhi NCR. IS: 15105 standard. UL/FM listed heads. Free layout consultation.",
+    images: [{ url: "https://mahafirefighters.com/images/sprinkler.webp", width: 1200, height: 630, alt: "Automatic Fire Sprinkler System Installation Delhi NCR | MAHA FIREFIGHTERS" }],
   },
 };
 

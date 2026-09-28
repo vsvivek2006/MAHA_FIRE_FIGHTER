@@ -1,30 +1,38 @@
-# MAHA FIREFIGHTERS
+# Maha Firefighters — AI/LLM Context
 
-> Industrial Fire Hydrant and Automatic Sprinklers System Contractors in Delhi NCR. NBC 2016 Part 4 & IS Code Compliant.
+## About
+Maha Firefighters is a leading fire protection systems contractor based in Daryaganj, New Delhi (Delhi-110002), serving Delhi NCR for 15+ years.
 
-Maha Firefighters (Maha Enterprises) is a premier fire protection engineering and contracting company based in Delhi NCR, India. With over 15 years of field experience and 250+ satisfied industrial and commercial clients, we specialize in turnkey design, installation, testing, commissioning, and AMC maintenance of industrial fire suppression and detection systems.
+## Services
+- Fire Hydrant System Installation & AMC
+- Automatic Fire Sprinkler System Design & Installation
+- Addressable & Conventional Fire Alarm Systems
+- Fire Extinguisher Refilling Service (in-house plant, free pickup & drop)
+- Fire Safety Training & Emergency Drills
 
-## Primary Fire Protection Services
-- [Fire Hydrant Systems](https://mahafirefighters.com/firehydrantsystems): Complete turnkey high-pressure water suppression networks, fire pumps, jockey pumps, landing valves, and hose cabinets aligned with IS 3844.
-- [Automatic Fire Sprinkler Systems](https://mahafirefighters.com/firesprinklersystems): 24/7 unattended automatic suppression networks, rapid-response sprinkler heads, zone control valves, and hydraulic pipe installations aligned with IS 15105.
-- [Fire Alarm & Detection Systems](https://mahafirefighters.com/firealarmsystems): Addressable and conventional intelligent alarm panels, smoke/heat/multi-sensor detectors, manual call points, and hooters compliant with IS 2189.
-- [Fire Extinguisher Refilling & Sales](https://mahafirefighters.com/fire-extinguisher-refilling-service): Dedicated in-house refilling plant, 35 Bar hydrostatic pressure testing (HPT), free doorstep pickup & delivery across Delhi NCR, and genuine chemical refills for ABC, CO2, Foam, Clean Agent, and Water CO2 cylinders (IS 2190).
-- [Fire Safety Drills & Training](https://mahafirefighters.com/firesafetydrill): Certified on-site fire evacuation drills, live fire extinguisher simulation, emergency response protocol training, and staff familiarization compliant with NBC Part 4.
-- [All Services Overview](https://mahafirefighters.com/services): Comprehensive directory of all fire engineering solutions and turnkey contracting services.
+## Coverage Area
+Delhi, Noida, Gurugram (Gurgaon), Faridabad, Ghaziabad
 
-## Technical Knowledge & Compliance Guides
-- [NBC Fire Safety Guidelines for Industrial Buildings](https://mahafirefighters.com/blog/nbc-fire-safety-guidelines-industrial-delhi-ncr): Mandatory NBC 2016 Part 4 compliance, occupant load calculations, and fire clearance requirements.
-- [Industrial Fire Hydrant Maintenance Checklist](https://mahafirefighters.com/blog/industrial-fire-hydrant-maintenance-checklist-testing-intervals): Statutory testing intervals, jockey pump cut-in pressure calibrations, and preventive maintenance guides.
-- [Automatic Sprinklers vs Fire Hydrants](https://mahafirefighters.com/blog/automatic-fire-sprinklers-vs-hydrants-dual-layer-protection): Dual-layer protection engineering for high-risk industrial facilities.
-- [Fire Protection Knowledge Base](https://mahafirefighters.com/blog): Complete library of engineering articles and standards guides.
+## Contact
+- Phone: +91-9873514657, +91-9873337442
+- Email: mahaenterprisesdelhi@gmail.com
+- Address: Daryaganj, New Delhi – 110002
 
-## Corporate & Operational Information
-- [About Us](https://mahafirefighters.com/about-us): Corporate history, mission, leadership, and credentials.
-- [Frequently Asked Questions](https://mahafirefighters.com/faq): Common inquiries regarding AMC contracts, Fire NOC, turnaround times, and refilling warranties.
-- [Contact Engineering Desk](https://mahafirefighters.com/contact): Direct hotline numbers, quotation requests, and facility assessment scheduling.
+## Standards
+- National Building Code (NBC) compliant
+- IS: 3844, IS: 15105, IS: 2189 standards
+- Delhi Fire Service approved
+- Fire NOC assistance provided
 
-## Direct Contact Information
-- Hotline: +91 9873337442 / +91 9873514657
-- Head Office: 3594, Netaji Subhash Marg, Daryaganj, New Delhi, Delhi 110002, India
-- Operational Territory: Delhi, Noida, Greater Noida, Gurugram, Faridabad, Ghaziabad (Delhi NCR)
-- Email: mahafirefighters@gmail.com
+## URLs
+- Home: https://mahafirefighters.com/
+- About: https://mahafirefighters.com/about-us
+- Services: https://mahafirefighters.com/services
+- Fire Hydrant Systems: https://mahafirefighters.com/firehydrantsystems
+- Fire Sprinkler Systems: https://mahafirefighters.com/firesprinklersystems
+- Fire Alarm Systems: https://mahafirefighters.com/firealarmsystems
+- Extinguisher Refilling: https://mahafirefighters.com/fire-extinguisher-refilling-service
+- Fire Safety Drills: https://mahafirefighters.com/firesafetydrill
+- Contact: https://mahafirefighters.com/contact
+- FAQ: https://mahafirefighters.com/faq
+- Blog: https://mahafirefighters.com/blog

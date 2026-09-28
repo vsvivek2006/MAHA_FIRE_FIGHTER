@@ -13,10 +13,15 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 const service = servicesData["firesafetydrill"];
 
 export const metadata: Metadata = {
-  title: "firesafetydrill | MAHA FIREFIGHTERS | FIRE HYDRANT AND SPRINKLERS SYSTEM CONTRACTOR IN DELHI NOIDA GURGAON NCR",
-  description: "Fire Safety Training & Emergency Drills in Delhi NCR. Hands-on fire extinguisher training, evacuation planning, and fixed system familiarization.",
+  title: "Fire Safety Training & Emergency Drills Delhi NCR | MAHA FIREFIGHTERS",
+  description: "Certified fire safety training, live fire extinguisher drill & NBC 2016 evacuation planning in Delhi NCR. Schedule your on-site training today.",
   alternates: {
     canonical: "https://mahafirefighters.com/firesafetydrill",
+  },
+  openGraph: {
+    title: "Fire Safety Training & Emergency Drills Delhi NCR | MAHA FIREFIGHTERS",
+    description: "Certified fire safety training, live fire extinguisher drill & NBC 2016 evacuation planning in Delhi NCR. Schedule your on-site training today.",
+    images: [{ url: "https://mahafirefighters.com/images/drill.webp", width: 1200, height: 630, alt: "Fire Safety Training & Emergency Drills Delhi NCR | MAHA FIREFIGHTERS" }],
   },
 };
 

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home -->
+  <url>
+    <loc>https://mahafirefighters.com/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mahafirefighters.com/images/hero.webp</image:loc>
+      <image:title>Maha Firefighters Fire Protection Delhi NCR</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://mahafirefighters.com/about-us</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services Hub -->
+  <url>
+    <loc>https://mahafirefighters.com/services</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Fire Hydrant Systems -->
+  <url>
+    <loc>https://mahafirefighters.com/firehydrantsystems</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mahafirefighters.com/images/hydrant.webp</image:loc>
+      <image:title>Fire Hydrant System Installation Delhi NCR</image:title>
+    </image:image>
+  </url>
+
+  <!-- Fire Sprinkler Systems -->
+  <url>
+    <loc>https://mahafirefighters.com/firesprinklersystems</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mahafirefighters.com/images/sprinkler.webp</image:loc>
+      <image:title>Automatic Fire Sprinkler System Delhi NCR</image:title>
+    </image:image>
+  </url>
+
+  <!-- Fire Alarm Systems -->
+  <url>
+    <loc>https://mahafirefighters.com/firealarmsystems</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mahafirefighters.com/images/alarm.webp</image:loc>
+      <image:title>Advanced Fire Alarm System Delhi NCR</image:title>
+    </image:image>
+  </url>
+
+  <!-- Fire Extinguisher Refilling -->
+  <url>
+    <loc>https://mahafirefighters.com/fire-extinguisher-refilling-service</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://mahafirefighters.com/images/extinguisher.webp</image:loc>
+      <image:title>Fire Extinguisher Refilling Delhi NCR</image:title>
+    </image:image>
+  </url>
+
+  <!-- Fire Safety Drill -->
+  <url>
+    <loc>https://mahafirefighters.com/firesafetydrill</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://mahafirefighters.com/images/drill.webp</image:loc>
+      <image:title>Fire Safety Training Drills Delhi NCR</image:title>
+    </image:image>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://mahafirefighters.com/contact</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://mahafirefighters.com/faq</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://mahafirefighters.com/blog</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>
