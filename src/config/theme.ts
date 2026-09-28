@@ -7,37 +7,39 @@
  */
 
 export const siteTheme = {
-  // Brand Color Palette
+  // Brand Color Palette (Mirrored directly from live mahafirefighters.com)
   colors: {
     // Primary Fire Red (Accents, CTAs, Highlights)
-    primary: '#D32F2F',
-    primaryHover: '#B71C1C',
-    primarySubtle: 'rgba(211, 47, 47, 0.12)',
-    primaryBorder: 'rgba(211, 47, 47, 0.35)',
+    primary: '#C5221F',
+    primaryHover: '#A71B18',
+    primarySubtle: 'rgba(197, 34, 31, 0.08)',
+    primaryBorder: 'rgba(197, 34, 31, 0.3)',
 
-    // Background Layers
-    bgPage: '#0A0E17',                 // Main page background
-    bgTopBar: '#000000',               // Top announcement / hotline strip
-    bgHeader: 'rgba(11, 18, 32, 0.95)', // Sticky navigation header
-    bgSurface: '#101826',              // Cards, workbench, timeline
-    bgSurfaceElevated: '#162236',      // Hovered cards, dropdowns, dialogs
-    bgSurfaceSubtle: '#0D1420',        // Input fields, nested panels
-    bgFooter: '#070C14',               // Bottom footer section
+    // Background Layers (Live site uses clean crisp white for main body, top bar, & header)
+    bgPage: '#FFFFFF',                 // Main page background
+    bgTopBar: '#FFFFFF',               // Top announcement strip (white on live site)
+    bgHeader: '#FFFFFF',               // Navigation header (white on live site)
+    bgSurface: '#FFFFFF',              // Card surfaces
+    bgSurfaceElevated: '#F9FAFB',      // Subtle elevated panels
+    bgSurfaceSubtle: '#F3F4F6',        // Subtle pill backgrounds
+    bgDarkSection: '#16202A',          // Specialized dark accent sections (services cards)
+    bgFooter: '#111822',              // Bottom footer section (dark charcoal navy on live site)
 
     // Text & Content Colors
-    textPrimary: '#FFFFFF',            // High-contrast headings
-    textSecondary: '#E2E8F0',          // Readable body copy
-    textMuted: '#94A3B8',              // Subtitles, metadata, captions
-    textSubtle: '#64748B',             // Placeholders, disabled states
+    textPrimary: '#1D1E20',            // High-contrast headings (from live site computed styles)
+    textSecondary: '#374151',          // Readable body copy
+    textMuted: '#6B7280',              // Subtitles, metadata, captions
+    textSubtle: '#9CA3AF',             // Placeholders
+    textOnDark: '#FFFFFF',             // Text inside dark hero / footer / dark cards
 
     // Borders & Separators
-    borderSubtle: 'rgba(255, 255, 255, 0.08)',
-    borderMedium: 'rgba(255, 255, 255, 0.16)',
-    borderHighlight: 'rgba(211, 47, 47, 0.45)',
+    borderSubtle: '#E5E7EB',
+    borderMedium: '#D1D5DB',
+    borderHighlight: 'rgba(197, 34, 31, 0.35)',
 
     // Functional Accents
-    accentEmerald: '#10B981',          // Compliance checkmarks & status
-    accentAmber: '#F59E0B',            // Attention indicators & alerts
+    accentEmerald: '#10B981',          // Status & compliance
+    accentAmber: '#F59E0B',            // Attention indicators
   },
 
   // Brand Identity, Headlines & Live Contact Desk

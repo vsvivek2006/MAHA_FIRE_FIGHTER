@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0a0e17",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -125,7 +125,7 @@ export default function RootLayout({
   `;
 
   return (
-    <html lang="en" className={`${inter.variable} h-full dark`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning>
       <head>
         <style id="site-theme-variables" dangerouslySetInnerHTML={{ __html: themeCss }} />
         <JsonLd schema={localBusinessSchema} />

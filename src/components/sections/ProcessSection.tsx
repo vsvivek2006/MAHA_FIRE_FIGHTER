@@ -98,59 +98,52 @@ export function ProcessSection() {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 bg-[#0B1220] border-b border-slate-800 bg-drafting-grid text-white font-sans relative overflow-hidden"
+      className="py-24 bg-gray-50 border-b border-gray-200 text-[#1D1E20] font-sans relative overflow-hidden"
     >
-      {/* Ambient background glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-red-950/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-950/20 rounded-full blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         {/* Section Masthead */}
         <ScrollReveal animation="fade-down" delay={50}>
           <div className="space-y-3 mb-16 max-w-3xl">
             <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-950/80 border border-red-800/80 text-red-400 text-xs font-semibold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-200 text-[#C5221F] text-xs font-semibold uppercase tracking-wider rounded-full">
+                <span className="w-2 h-2 rounded-full bg-[#C5221F] animate-pulse" />
                 <span>Turnkey Execution Architecture</span>
               </div>
               {displayProgress >= 95.5 ? (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-950/90 border border-emerald-500 text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(16,185,129,0.3)] animate-pulse">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-300 text-emerald-700 text-xs font-mono font-bold uppercase tracking-wider rounded-full">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Pipeline 100% Operational</span>
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-900 border border-slate-700 text-slate-300 text-xs font-mono font-medium uppercase tracking-wider">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-gray-200 text-gray-700 text-xs font-mono font-medium uppercase tracking-wider rounded-full shadow-sm">
                   <span>Stage 0{activeStep + 1} of 04 Active</span>
                 </span>
               )}
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1D1E20]">
               Our 4-Stage Operational Advantage
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               From in-house certified equipment to statutory fire department liaison, observe how each stage of our turnkey lifecycle connects seamlessly:
             </p>
           </div>
         </ScrollReveal>
 
-        {/* ========================================================================= */}
-        {/* PROPERLY GEOMETRICALLY ALIGNED PIPELINE: 1 ----- 2 ----- 3 ----- 4         */}
-        {/* (No text overlap! Line passes strictly through node centers at top-7)      */}
-        {/* ========================================================================= */}
+        {/* PROPERLY GEOMETRICALLY ALIGNED PIPELINE: 1 ----- 2 ----- 3 ----- 4 */}
         <div className="hidden lg:block relative mb-14">
           
-          {/* Base Background Track Line (From Center of Col 1 [12.5%] to Center of Col 4 [87.5%]) */}
-          <div className="absolute top-7 left-[12.5%] right-[12.5%] h-1 bg-slate-800 -translate-y-1/2 z-0 rounded-full" />
+          {/* Base Background Track Line */}
+          <div className="absolute top-7 left-[12.5%] right-[12.5%] h-1 bg-gray-200 -translate-y-1/2 z-0 rounded-full" />
 
-          {/* Dynamic Glowing Laser Progress Line (Hardware Lerp Interpolated) */}
+          {/* Dynamic Progress Line */}
           <div 
-            className="absolute top-7 left-[12.5%] h-1 bg-gradient-to-r from-red-600 via-amber-500 to-red-500 -translate-y-1/2 z-10 rounded-full shadow-[0_0_18px_rgba(239,68,68,0.95)] pointer-events-none"
+            className="absolute top-7 left-[12.5%] h-1 bg-gradient-to-r from-[#C5221F] via-red-500 to-[#C5221F] -translate-y-1/2 z-10 rounded-full shadow-[0_0_12px_rgba(197,34,31,0.6)] pointer-events-none"
             style={{ width: `${laserLineWidthPercent}%` }}
           >
             {/* Glowing laser head */}
             {displayProgress > 1 && displayProgress < 98.5 && (
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-red-400 shadow-[0_0_16px_#ef4444,0_0_24px_#ef4444] animate-pulse -mr-2 z-20 pointer-events-none" />
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#C5221F] shadow-[0_0_12px_#C5221F] animate-pulse -mr-2 z-20 pointer-events-none" />
             )}
           </div>
 
@@ -168,19 +161,19 @@ export function ProcessSection() {
                   onMouseLeave={() => setHoveredStep(null)}
                   onClick={() => setHoveredStep(hoveredStep === idx ? null : idx)}
                 >
-                  {/* Outer Node Shield with solid background to mask the track line */}
-                  <div className="p-1.5 bg-[#0B1220] rounded-full transition-transform duration-400 group-hover:scale-105 relative">
+                  {/* Outer Node Shield */}
+                  <div className="p-1.5 bg-gray-50 rounded-full transition-transform duration-300 group-hover:scale-105 relative">
                     <div 
-                      className={`w-12 h-12 rounded-full flex items-center justify-center font-mono font-bold text-sm transition-all duration-400 ${
+                      className={`w-12 h-12 rounded-full flex items-center justify-center font-mono font-bold text-sm transition-all duration-300 ${
                         isCurrent
-                          ? 'bg-red-600 text-white shadow-[0_0_24px_rgba(239,68,68,0.95)] scale-110 border-2 border-white ring-4 ring-red-500/30'
+                          ? 'bg-[#C5221F] text-white shadow-lg scale-110 border-2 border-white ring-4 ring-red-500/20'
                           : isPassed
-                          ? 'bg-red-950 border-2 border-red-600 text-red-400 shadow-[0_0_12px_rgba(239,68,68,0.4)]'
-                          : 'bg-slate-900 text-slate-500 border border-slate-700'
+                          ? 'bg-red-50 border-2 border-[#C5221F] text-[#C5221F] shadow-sm'
+                          : 'bg-white text-gray-400 border border-gray-300 shadow-sm'
                       }`}
                     >
                       {isPassed ? (
-                        <CheckCircle2 className="w-5 h-5 text-white" />
+                        <CheckCircle2 className="w-5 h-5 text-[#C5221F]" />
                       ) : (
                         `0${idx + 1}`
                       )}
@@ -188,23 +181,23 @@ export function ProcessSection() {
 
                     {/* Completion ping on the active node */}
                     {isCurrent && (
-                      <span className="absolute inset-1.5 rounded-full border border-white animate-ping opacity-40 pointer-events-none" />
+                      <span className="absolute inset-1.5 rounded-full border border-[#C5221F] animate-ping opacity-30 pointer-events-none" />
                     )}
                   </div>
 
-                  {/* Stage Label & Subtitle - Cleanly below the node and completely off the line */}
+                  {/* Stage Label & Subtitle */}
                   <div className="mt-3.5 space-y-1">
-                    <span className={`inline-block text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 border transition-all duration-300 ${
+                    <span className={`inline-block text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border transition-all duration-300 ${
                       isCurrent 
-                        ? 'bg-red-950/90 border-red-600 text-red-400 shadow-sm'
+                        ? 'bg-red-50 border-red-200 text-[#C5221F] shadow-sm'
                         : isPassed
-                        ? 'bg-slate-900 border-slate-700 text-slate-300'
-                        : 'bg-transparent border-transparent text-slate-500'
+                        ? 'bg-white border-gray-200 text-gray-700'
+                        : 'bg-transparent border-transparent text-gray-400'
                     }`}>
                       STAGE 0{idx + 1}
                     </span>
                     <div className={`text-xs font-semibold tracking-tight transition-colors duration-300 line-clamp-1 max-w-[180px] ${
-                      isCurrent ? 'text-white font-bold' : isPassed ? 'text-slate-300' : 'text-slate-400'
+                      isCurrent ? 'text-[#1D1E20] font-bold' : isPassed ? 'text-gray-700' : 'text-gray-500'
                     }`}>
                       {diff.title}
                     </div>
@@ -215,7 +208,7 @@ export function ProcessSection() {
           </div>
         </div>
 
-        {/* 4 Dynamic Process Cards (Aligned with the 4 Columns) */}
+        {/* 4 Dynamic Process Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {companyInfo.coreDifferentiators.map((diff, idx) => {
             const IconComponent = icons[idx] || Wrench;
@@ -228,44 +221,44 @@ export function ProcessSection() {
                 onMouseEnter={() => setHoveredStep(idx)}
                 onMouseLeave={() => setHoveredStep(null)}
                 onClick={() => setHoveredStep(hoveredStep === idx ? null : idx)}
-                className={`p-6 border transition-all duration-400 flex flex-col justify-between space-y-5 rounded-none relative cursor-pointer ${
+                className={`p-6 border transition-all duration-300 flex flex-col justify-between space-y-5 rounded-2xl relative cursor-pointer ${
                   isCurrent 
-                    ? 'bg-slate-900 border-red-500/90 shadow-[0_16px_36px_-8px_rgba(239,68,68,0.35)] -translate-y-1.5' 
+                    ? 'bg-white border-[#C5221F] shadow-xl -translate-y-1.5 ring-2 ring-red-500/10' 
                     : isPassed
-                    ? 'bg-[#0E1626] border-slate-700 hover:border-slate-600 text-slate-200'
-                    : 'bg-[#0B1220] border-slate-800/80 text-slate-400 hover:border-slate-700 opacity-80'
+                    ? 'bg-white border-red-200 hover:border-red-300 text-gray-800 shadow-sm'
+                    : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300 shadow-sm opacity-90'
                 }`}
               >
                 {/* Active Indicator Top Pill */}
                 {isCurrent && (
-                  <div className="absolute -top-3 left-4 px-2.5 py-0.5 bg-red-600 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-md">
+                  <div className="absolute -top-3 left-6 px-3 py-0.5 bg-[#C5221F] text-[10px] font-mono font-bold uppercase tracking-wider text-white rounded-full shadow-sm">
                     {displayProgress >= 95.5 && idx === 3 ? 'Stage Complete' : 'Active Phase'}
                   </div>
                 )}
 
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                    <span className={`text-xs font-mono font-bold ${isPassed ? 'text-red-500' : 'text-slate-500'}`}>
+                  <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+                    <span className={`text-xs font-mono font-bold ${isPassed ? 'text-[#C5221F]' : 'text-gray-400'}`}>
                       0{idx + 1} • STAGE
                     </span>
-                    <div className={`p-2 transition-colors duration-300 ${isPassed ? 'bg-red-950/80 text-red-500' : 'bg-slate-900 text-slate-600'}`}>
+                    <div className={`p-2 rounded-lg transition-colors duration-300 ${isPassed ? 'bg-red-50 text-[#C5221F]' : 'bg-gray-100 text-gray-500'}`}>
                       <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className={`text-lg font-bold tracking-tight transition-colors duration-300 ${isPassed ? 'text-white' : 'text-slate-300'}`}>
+                  <h3 className={`text-lg font-bold tracking-tight transition-colors duration-300 ${isPassed ? 'text-[#1D1E20]' : 'text-gray-800'}`}>
                     {diff.title}
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {diff.desc}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                  <span className="text-[11px] font-mono text-slate-400">Delhi NCR Service</span>
+                <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                  <span className="text-[11px] font-mono text-gray-400">Delhi NCR Service</span>
                   {isPassed && (
-                    <span className="text-emerald-400 text-[11px] font-semibold flex items-center gap-1">
+                    <span className="text-emerald-600 text-[11px] font-semibold flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       Verified
                     </span>

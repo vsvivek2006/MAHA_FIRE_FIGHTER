@@ -47,80 +47,59 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-[var(--theme-border-subtle)] bg-[var(--theme-bg-header)] backdrop-blur-md">
-        {/* Top Utility Bar (Live Site: CaLL NOW 9873514657/9873337442) */}
-        <div className="border-b border-[var(--theme-border-subtle)] bg-[var(--theme-bg-topbar)] text-slate-300 text-[11px] py-1.5 px-4 sm:px-8">
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-2 sm:gap-6 flex-wrap">
-              <span className="flex items-center gap-1.5 text-[var(--theme-primary)] font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">
-                <span className="w-1.5 h-1.5 bg-[var(--theme-primary)] rounded-none animate-pulse" />
-                <span>{siteTheme.branding.topBarNotice}</span>
-              </span>
-              <a 
-                href={`tel:${siteTheme.branding.phones[0].raw}`} 
-                className="hover:text-white font-semibold transition-colors flex items-center gap-1 text-[11px] sm:text-xs"
-              >
-                <Phone className="w-3 h-3 text-[var(--theme-primary)]" />
-                {siteTheme.branding.phones[0].display}
-              </a>
-              <a 
-                href={`tel:${siteTheme.branding.phones[1].raw}`} 
-                className="hidden md:flex items-center gap-1 hover:text-white font-semibold transition-colors"
-              >
-                <Phone className="w-3 h-3 text-[var(--theme-primary)]" />
-                {siteTheme.branding.phones[1].display}
-              </a>
-            </div>
-
-            <div className="hidden lg:flex items-center gap-6 text-slate-400 text-xs">
-              <div className="flex items-center gap-1.5">
-                <MapPin className="w-3 h-3 text-slate-400" />
-                <span>{siteTheme.branding.address}</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
-                <ShieldCheck className="w-3 h-3" />
-                <span>NBC &amp; IS Standards</span>
-              </div>
-              <a 
-                href={`mailto:${siteTheme.branding.email}`} 
-                className="hover:text-white transition-colors"
-              >
-                {siteTheme.branding.email}
-              </a>
-            </div>
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+        {/* Top Utility Bar (Live Site: CALL NOW 9873514657/9873337442) */}
+        <div className="border-b border-gray-100 bg-white text-[#1D1E20] text-xs py-2 px-4 text-center">
+          <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
+            <span className="font-bold tracking-wide text-xs sm:text-sm text-[#1D1E20]">
+              CALL NOW
+            </span>
+            <a 
+              href={`tel:${siteTheme.branding.phones[0].raw}`} 
+              className="font-bold text-xs sm:text-sm text-[#1D1E20] hover:text-[#C5221F] transition-colors"
+            >
+              9873514657
+            </a>
+            <span className="text-gray-400">/</span>
+            <a 
+              href={`tel:${siteTheme.branding.phones[1].raw}`} 
+              className="font-bold text-xs sm:text-sm text-[#1D1E20] hover:text-[#C5221F] transition-colors"
+            >
+              9873337442
+            </a>
           </div>
         </div>
 
-        {/* Corporate Navigation */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 sm:py-3.5 flex items-center justify-between">
+        {/* Navigation Bar */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
           {/* Logo & Corporate Identity */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="Maha Firefighters Home">
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-sm bg-white p-0.5 shrink-0 border border-slate-700/80 shadow-sm flex items-center justify-center overflow-hidden">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center">
               <Image
                 src="/images/logo.webp"
                 alt="Maha Firefighters Logo"
-                width={40}
-                height={40}
-                className="object-contain w-full h-full"
+                width={48}
+                height={48}
+                className="object-contain w-full h-full drop-shadow-sm"
                 priority
               />
             </div>
-            <div className="hidden sm:block">
-              <div className="font-extrabold tracking-tight text-white text-base sm:text-lg leading-none">
+            <div>
+              <div className="font-extrabold tracking-tight text-[#1D1E20] text-base sm:text-xl leading-none">
                 <span>MAHA</span>
-                <span className="text-[var(--theme-primary)] ml-1">FIREFIGHTERS</span>
+                <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
               </div>
-              <div className="text-[10px] text-slate-400 tracking-wider uppercase mt-1">
+              <div className="text-[10px] text-gray-500 tracking-wider uppercase mt-1 hidden sm:block">
                 {siteTheme.branding.tagline}
               </div>
             </div>
           </Link>
 
-          {/* Desktop Links */}
-          <nav className="hidden lg:flex items-center gap-1">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
-              
+
               if (link.hasDropdown) {
                 return (
                   <div 
@@ -131,48 +110,48 @@ export function Header() {
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center gap-1 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors ${
-                        isActive || servicesDropdownOpen
-                          ? 'text-white bg-slate-800'
-                          : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                      className={`flex items-center gap-1 text-sm font-medium transition-colors py-1 ${
+                        isActive
+                          ? 'text-[#1D1E20] border-b-2 border-[#1D1E20] font-semibold'
+                          : 'text-[#374151] hover:text-[#1D1E20]'
                       }`}
                     >
                       {link.name}
                       <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        servicesDropdownOpen ? 'rotate-180 text-red-500' : 'text-slate-500'
+                        servicesDropdownOpen ? 'rotate-180 text-[#C5221F]' : 'text-gray-400'
                       }`} />
                     </Link>
 
-                    {/* Mega Flyout */}
+                    {/* Services Dropdown */}
                     {servicesDropdownOpen && (
-                      <div className="absolute top-full left-0 w-80 pt-2 z-50">
-                        <div className="bg-[#0B1220] border border-slate-700 shadow-2xl p-2 rounded-none">
-                          <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-800 mb-1">
+                      <div className="absolute top-full left-0 w-80 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                        <div className="bg-white border border-gray-200 shadow-xl rounded-lg p-2 overflow-hidden">
+                          <div className="px-3 py-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-1">
                             Fire Protection Services
                           </div>
                           {Object.values(servicesData).map((service) => (
                             <Link
                               key={service.slug}
                               href={`/${service.slug}`}
-                              className="flex items-start gap-3 p-2.5 hover:bg-slate-800 text-slate-200 hover:text-white transition-colors group"
+                              className="flex items-start gap-3 p-2.5 rounded-md hover:bg-red-50/60 text-[#374151] hover:text-[#C5221F] transition-colors group"
                             >
-                              <span className="text-xs font-bold text-red-500 mt-0.5">
+                              <span className="text-xs font-bold text-[#C5221F] mt-0.5">
                                 {service.idNumber}
                               </span>
                               <div>
-                                <div className="text-xs font-bold text-white group-hover:text-red-400 transition-colors">
+                                <div className="text-xs font-bold text-[#1D1E20] group-hover:text-[#C5221F] transition-colors">
                                   {service.navTitle}
                                 </div>
-                                <div className="text-[11px] text-slate-400">
+                                <div className="text-[11px] text-gray-500">
                                   {service.badge}
                                 </div>
                               </div>
                             </Link>
                           ))}
-                          <div className="mt-1 pt-1.5 border-t border-slate-800">
+                          <div className="mt-1 pt-1.5 border-t border-gray-100">
                             <Link
                               href="/services"
-                              className="flex items-center justify-between px-3 py-1.5 text-xs font-bold text-red-400 hover:text-red-300 transition-colors"
+                              className="flex items-center justify-between px-3 py-1.5 text-xs font-bold text-[#C5221F] hover:text-[#A71B18] transition-colors"
                             >
                               <span>View Complete Services Page</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -189,10 +168,10 @@ export function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors ${
+                  className={`text-sm font-medium transition-colors py-1 ${
                     isActive
-                      ? 'text-white bg-slate-800'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                      ? 'text-[#1D1E20] border-b-2 border-[#1D1E20] font-semibold'
+                      : 'text-[#374151] hover:text-[#1D1E20]'
                   }`}
                 >
                   {link.name}
@@ -201,57 +180,49 @@ export function Header() {
             })}
           </nav>
 
-          {/* Header Action Buttons */}
+          {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="sm"
-              asChild
-              className="hidden xl:inline-flex text-xs font-semibold"
+            <a
+              href={`tel:${siteTheme.branding.phones[0].raw}`}
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-[#1D1E20] bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
             >
-              <a href={`tel:${companyInfo.phones[0].raw}`}>
-                <Phone className="w-3.5 h-3.5 mr-1.5 text-red-500" />
-                <span>Call Us</span>
-              </a>
-            </Button>
+              <Phone className="w-3.5 h-3.5 text-[#C5221F]" />
+              <span>Call Now</span>
+            </a>
 
-            <Button
-              variant="default"
-              size="sm"
+            <button
               onClick={() => setAuditModalOpen(true)}
-              className="text-xs font-semibold"
+              className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-semibold text-white bg-[#C5221F] hover:bg-[#A71B18] rounded-full shadow-sm hover:shadow transition-all"
             >
-              <ShieldAlert className="w-3.5 h-3.5 mr-1.5" />
-              <span>Request Safety Audit</span>
-            </Button>
+              <ShieldAlert className="w-3.5 h-3.5" />
+              <span>Free Fire Audit</span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex sm:hidden items-center gap-2">
-            <Button
-              variant="default"
-              size="sm"
+            <button
               onClick={() => setAuditModalOpen(true)}
-              className="h-8 px-2.5 text-[11px]"
+              className="px-3 py-1.5 text-xs font-semibold text-white bg-[#C5221F] rounded-full"
             >
               Free Audit
-            </Button>
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-slate-300 hover:text-white hover:bg-slate-800"
+              className="p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-md"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Slide-down Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-800 bg-[#0B1220] px-4 py-5 space-y-4">
+          <div className="lg:hidden border-t border-gray-100 bg-white px-5 py-5 space-y-4 shadow-xl">
             {/* Mobile Branding inside drawer */}
-            <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
-              <div className="relative w-10 h-10 rounded-sm bg-white p-0.5 shrink-0 border border-slate-700/80 shadow-sm flex items-center justify-center overflow-hidden">
+            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+              <div className="relative w-10 h-10 shrink-0 flex items-center justify-center">
                 <Image
                   src="/images/logo.webp"
                   alt="Maha Firefighters Logo"
@@ -261,11 +232,11 @@ export function Header() {
                 />
               </div>
               <div>
-                <div className="font-extrabold tracking-tight text-white text-base leading-none">
+                <div className="font-extrabold tracking-tight text-[#1D1E20] text-base leading-none">
                   <span>MAHA</span>
                   <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
                 </div>
-                <div className="text-[10px] text-slate-400 tracking-wider uppercase mt-1">
+                <div className="text-[10px] text-gray-500 tracking-wider uppercase mt-1">
                   Fire Protection Systems Delhi NCR
                 </div>
               </div>
@@ -274,22 +245,22 @@ export function Header() {
             <nav className="flex flex-col space-y-1">
               <Link
                 href="/"
-                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
               >
                 Home
               </Link>
               <Link
                 href="/services"
-                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
               >
                 Services Overview
               </Link>
-              <div className="pl-4 space-y-1 border-l-2 border-slate-800 my-1">
+              <div className="pl-4 space-y-1 border-l-2 border-red-100 my-1">
                 {Object.values(servicesData).map((s) => (
                   <Link
                     key={s.slug}
                     href={`/${s.slug}`}
-                    className="block px-3 py-1.5 text-xs text-slate-400 hover:text-white"
+                    className="block px-3 py-1.5 text-xs text-gray-600 hover:text-[#C5221F]"
                   >
                     {s.idNumber}. {s.navTitle}
                   </Link>
@@ -297,49 +268,41 @@ export function Header() {
               </div>
               <Link
                 href="/about-us"
-                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
               >
                 About Us
               </Link>
               <Link
-                href="/blog"
-                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
-              >
-                Blog &amp; Knowledge Base
-              </Link>
-              <Link
-                href="/faq"
-                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
-              >
-                FAQ
-              </Link>
-              <Link
                 href="/contact"
-                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-slate-200 hover:bg-slate-800"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
               >
                 Contact
               </Link>
+              <Link
+                href="/faq"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
+              >
+                FAQ
+              </Link>
             </nav>
 
-            <div className="pt-4 border-t border-slate-800 space-y-2">
+            <div className="pt-4 border-t border-gray-100 space-y-2">
               <a
                 href={`tel:${companyInfo.phones[0].raw}`}
-                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-white bg-slate-900 border border-slate-800"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#1D1E20] bg-gray-100 rounded-full"
               >
-                <Phone className="w-3.5 h-3.5 text-red-500" />
+                <Phone className="w-3.5 h-3.5 text-[#C5221F]" />
                 <span>Call {companyInfo.phones[0].display}</span>
               </a>
-              <Button
-                variant="default"
-                size="default"
+              <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   setAuditModalOpen(true);
                 }}
-                className="w-full text-xs font-semibold"
+                className="w-full py-2.5 text-xs font-semibold text-white bg-[#C5221F] rounded-full shadow-sm"
               >
                 Request Free Fire Safety Audit
-              </Button>
+              </button>
             </div>
           </div>
         )}
