@@ -41,7 +41,7 @@ export function LiveEstimateSection() {
 
         {/* Direct Call Numbers */}
         <ScrollReveal animation="fade-up" delay={200}>
-          <div className="flex items-center justify-center gap-2 text-base sm:text-lg font-bold text-gray-800">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-base sm:text-lg font-bold text-gray-800">
             <span>Call Us @</span>
             <a 
               href={`tel:${siteTheme.branding.phones[1].raw}`}

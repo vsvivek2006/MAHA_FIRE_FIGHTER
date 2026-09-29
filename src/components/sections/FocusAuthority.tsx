@@ -15,13 +15,13 @@ export function FocusAuthority() {
           <div className="lg:col-span-6 space-y-6">
             <ScrollReveal animation="fade-right" delay={100}>
               <div className="space-y-2">
-                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug text-balance">
                   Expert Fire Hydrant Installation
                 </h2>
-                <h3 className="text-2xl sm:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug text-balance">
                   Fire Extinguisher Refilling &amp; Sales
                 </h3>
-                <h3 className="text-2xl sm:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug text-balance">
                   Fire Sprinkler Systems
                 </h3>
               </div>
@@ -66,7 +66,7 @@ export function FocusAuthority() {
                 </div>
 
                 {/* Signature Red Wave Badge directly matching live site */}
-                <div className="absolute bottom-6 left-0 right-12 sm:right-24 bg-[#C5221F] text-white py-4 px-6 sm:px-8 rounded-r-3xl shadow-xl flex items-center justify-around gap-6">
+                <div className="absolute bottom-4 sm:bottom-6 left-0 right-4 sm:right-24 bg-[#C5221F] text-white py-3 sm:py-4 px-4 sm:px-8 rounded-r-3xl shadow-xl flex items-center justify-around gap-2 sm:gap-6">
                   <div>
                     <div className="text-3xl sm:text-4xl font-extrabold tracking-tight">15+</div>
                     <div className="text-xs sm:text-sm font-medium text-white/90">Years of Experience</div>

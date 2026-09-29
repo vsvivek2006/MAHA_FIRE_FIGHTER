@@ -50,7 +50,7 @@ export function Header() {
       <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
         {/* Top Utility Bar (Live Site: CALL NOW 9873514657/9873337442) */}
         <div className="border-b border-gray-100 bg-white text-[#1D1E20] text-xs py-2 px-4 text-center">
-          <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
             <span className="font-bold tracking-wide text-xs sm:text-sm text-[#1D1E20]">
               CALL NOW
             </span>

@@ -24,6 +24,15 @@
   --color-border-highlight: var(--theme-border-highlight);
 }
 
+@layer utilities {
+  .text-justify {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
 :root {
   --theme-primary: #C5221F;
   --theme-primary-hover: #A71B18;
