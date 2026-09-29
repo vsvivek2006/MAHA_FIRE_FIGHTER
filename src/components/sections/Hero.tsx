@@ -47,15 +47,14 @@ export function Hero() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center flex flex-col items-center">
           {/* Main Headline */}
           <ScrollReveal animation="fade-down" delay={100} duration={800}>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
-              Trusted Fire Safety Experts<br />
-              <span className="text-red-400">Delhi / NCR</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
+              Trusted Fire Safety Experts Delhi/NCR
             </h1>
           </ScrollReveal>
 
           {/* Subtitle Copy */}
           <ScrollReveal animation="fade-up" delay={220} duration={800}>
-            <p className="mt-6 text-sm sm:text-base lg:text-lg text-white/95 max-w-2xl font-normal leading-relaxed drop-shadow-sm text-center">
+            <p className="mt-5 text-sm sm:text-base lg:text-lg text-white max-w-2xl font-bold leading-snug drop-shadow-sm text-center">
               From Detection to Suppression: End-to-End Fire Safety Solutions for a Safer Workspace. Get Your Fire Safety Audit Today Free!
             </p>
           </ScrollReveal>
