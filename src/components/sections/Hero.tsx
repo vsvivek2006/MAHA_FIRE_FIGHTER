@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Phone, ShieldAlert } from 'lucide-react';
 import { siteTheme } from '@/config/theme';
 import { AuditModal } from '@/components/ui/AuditModal';
@@ -9,6 +9,16 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 export function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(e => {
+        console.log("Autoplay prevented:", e);
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -19,6 +29,7 @@ export function Hero() {
             ref={videoRef}
             autoPlay
             muted
+            defaultMuted
             loop
             playsInline
             poster="/images/hero-video-poster.jpeg"
@@ -37,7 +48,7 @@ export function Hero() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center flex flex-col items-center">
           {/* Main Headline */}
           <ScrollReveal animation="fade-down" delay={100} duration={800}>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] drop-shadow-md text-balance">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] drop-shadow-md text-balance">
               Trusted Fire Safety Experts
               <br className="hidden sm:block" />
               <span className="text-white sm:mt-0 mt-1 block sm:inline">Delhi/NCR</span>

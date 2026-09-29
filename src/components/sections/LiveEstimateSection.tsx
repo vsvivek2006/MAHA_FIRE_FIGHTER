@@ -34,7 +34,7 @@ export function LiveEstimateSection() {
         
         {/* Title */}
         <ScrollReveal animation="fade-down" delay={100}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1D1E20] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1D1E20] tracking-tight">
             For a Free Estimate | Fire Audit
           </h2>
         </ScrollReveal>
