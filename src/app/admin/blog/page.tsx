@@ -43,7 +43,7 @@ export default async function AdminBlogListPage() {
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-950">
               Blog &amp; Knowledge Base Posts
             </h1>
-            <p className="text-xs sm:text-sm text-gray-500 mt-1 text-left md:text-justify">
+            <p className="text-xs sm:text-sm text-gray-500 mt-1 text-justify">
               Manage, draft, edit with rich WYSIWYG editor, and publish articles to mahafirefighters.com.
             </p>
           </div>

@@ -59,7 +59,7 @@ export default async function EditBlogPostPage({ params }: EditBlogPostPageProps
             <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-950">
               Edit Article: {post.title}
             </h1>
-            <p className="text-xs text-gray-500 mt-0.5 text-left md:text-justify">
+            <p className="text-xs text-gray-500 mt-0.5 text-justify">
               Modify article content, update cover asset, or change publishing status.
             </p>
           </div>

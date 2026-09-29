@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1D1E20]">
                     Get in Touch
                   </h1>
-                  <p className="text-base text-gray-600 leading-relaxed max-w-md text-left md:text-justify">
+                  <p className="text-base text-gray-600 leading-relaxed max-w-md text-justify">
                     Reach out to Maha Firefighters for expert fire safety solutions in Delhi NCR.
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                         <CheckCircle2 className="w-8 h-8" />
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">Thank You, {name}!</h3>
-                      <p className="text-gray-600 max-w-md mx-auto text-sm text-left md:text-justify">
+                      <p className="text-gray-600 max-w-md mx-auto text-sm text-justify">
                         Your request has been received. Our senior fire engineer will review your requirements and reach out on {phone}.
                       </p>
                       <button
@@ -223,7 +223,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-extrabold tracking-tight text-[#1D1E20]">
                 Location
               </h2>
-              <p className="text-sm text-gray-600 leading-relaxed max-w-md text-left md:text-justify">
+              <p className="text-sm text-gray-600 leading-relaxed max-w-md text-justify">
                 Serving Delhi NCR with expert fire safety solutions for commercial spaces and factories.
               </p>
             </div>
@@ -242,7 +242,7 @@ export default function ContactPage() {
           <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-200 aspect-[21/9] sm:aspect-[21/8]">
             <iframe
               title="Maha Firefighters Head Office Daryaganj Delhi"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14006.136423985559!2d77.23467615!3d28.64364125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd21f8a8459b%3A0xe54ef84fcf1fefc!2sDaryaganj%2C%20New%20Delhi%2C%20Delhi%20110002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=Maha+Firefighters+Darya+Ganj+Delhi&t=m&z=17&ie=UTF8&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

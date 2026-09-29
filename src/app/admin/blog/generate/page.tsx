@@ -60,7 +60,7 @@ export default function BlogAIGeneratePage() {
               <h1 className="text-2xl sm:text-3xl font-extrabold text-[#1D1E20] tracking-tight mt-1">
                 Fire Safety Blog Generator
               </h1>
-              <p className="text-xs sm:text-sm text-gray-500 mt-0.5 text-left md:text-justify">
+              <p className="text-xs sm:text-sm text-gray-500 mt-0.5 text-justify">
                 Generate technical NBC 2016 articles with validated IS codes, internal links, and SEO schema.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function BlogAIGeneratePage() {
                   <span>{generatedPost.title.length} chars</span>
                 </div>
                 <div className="flex items-center justify-between gap-3 pt-1">
-                  <p className="text-base sm:text-lg font-bold text-gray-900 text-left md:text-justify">{generatedPost.title}</p>
+                  <p className="text-base sm:text-lg font-bold text-gray-900 text-justify">{generatedPost.title}</p>
                   <button
                     type="button"
                     onClick={() => handleCopy(generatedPost.title, "title")}
@@ -158,7 +158,7 @@ export default function BlogAIGeneratePage() {
                   <span>{generatedPost.metaDescription.length} chars</span>
                 </div>
                 <div className="flex items-center justify-between gap-3 pt-1">
-                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed text-left md:text-justify">{generatedPost.metaDescription}</p>
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed text-justify">{generatedPost.metaDescription}</p>
                   <button
                     type="button"
                     onClick={() => handleCopy(generatedPost.metaDescription, "meta")}
@@ -219,7 +219,7 @@ export default function BlogAIGeneratePage() {
 
               {activeTab === "preview" ? (
                 <div
-                  className="prose prose-sm sm:prose max-w-none p-6 rounded-xl bg-white border border-gray-200 text-gray-800 leading-relaxed space-y-4 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-gray-800 [&_blockquote]:border-l-4 [&_blockquote]:border-[#C5221F] [&_blockquote]:bg-red-50/50 [&_blockquote]:p-4 [&_blockquote]:rounded-r-lg [&_a]:text-[#C5221F] [&_a]:font-semibold [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 text-left md:text-justify"
+                  className="prose prose-sm sm:prose max-w-none p-6 rounded-xl bg-white border border-gray-200 text-gray-800 leading-relaxed space-y-4 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 [&_h2]:mt-6 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-gray-800 [&_blockquote]:border-l-4 [&_blockquote]:border-[#C5221F] [&_blockquote]:bg-red-50/50 [&_blockquote]:p-4 [&_blockquote]:rounded-r-lg [&_a]:text-[#C5221F] [&_a]:font-semibold [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 text-justify"
                   dangerouslySetInnerHTML={{ __html: generatedPost.content }}
                 />
               ) : (

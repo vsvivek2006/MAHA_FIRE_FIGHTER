@@ -41,7 +41,7 @@ export function AuthorityStrip() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
               {siteTheme.branding.focusHeadline}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl text-left md:text-justify">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl text-justify">
               {siteTheme.branding.focusDescription}
             </p>
           </div>
@@ -60,7 +60,7 @@ export function AuthorityStrip() {
                       {card.title}
                     </h3>
                   </div>
-                  <p className="text-[11px] text-slate-600 leading-relaxed text-left md:text-justify">
+                  <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
                     {card.desc}
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export function AuthorityStrip() {
                   <h4 className="font-bold text-xs text-slate-900 mb-1 group-hover:text-[var(--theme-primary)] transition-colors">
                     {std.title}
                   </h4>
-                  <p className="text-[11px] text-slate-600 leading-relaxed text-left md:text-justify">
+                  <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
                     {std.desc}
                   </p>
                 </div>

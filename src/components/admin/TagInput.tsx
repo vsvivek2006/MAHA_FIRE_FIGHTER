@@ -67,7 +67,7 @@ export function TagInput({
           className="flex-1 bg-transparent text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none min-w-[140px]"
         />
       </div>
-      <p className="text-[11px] text-gray-500 text-left md:text-justify">
+      <p className="text-[11px] text-gray-500 text-justify">
         Separate tags with commas or press Enter.
       </p>
     </div>

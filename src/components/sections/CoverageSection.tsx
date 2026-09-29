@@ -22,7 +22,7 @@ export function CoverageSection() {
               <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
                 Fire Safety Systems &amp; Services Across Delhi NCR
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-left md:text-justify">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                 Headquartered in Daryaganj, New Delhi, Maha Firefighters delivers turnkey hydrant installations, sprinkler networks, fire alarm systems, and in-house extinguisher refilling with complimentary doorstep pickup and delivery across Delhi NCR.
               </p>
             </div>
@@ -41,7 +41,7 @@ export function CoverageSection() {
                         {area.name}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-600 pl-5 text-left md:text-justify">{area.desc}</p>
+                    <p className="text-xs text-slate-600 pl-5 text-justify">{area.desc}</p>
                   </div>
                   <span className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider pl-5 sm:pl-0">
                     Active Hub 0{idx + 1}
@@ -73,7 +73,7 @@ export function CoverageSection() {
                 <span className="text-xs font-bold text-amber-500 tracking-widest">★ ★ ★ ★ ★</span>
               </div>
 
-              <blockquote className="text-sm sm:text-base text-slate-800 italic leading-relaxed text-left md:text-justify">
+              <blockquote className="text-sm sm:text-base text-slate-800 italic leading-relaxed text-justify">
                 &quot;{verifiedTestimonial.quote}&quot;
               </blockquote>
 
@@ -101,7 +101,7 @@ export function CoverageSection() {
                   <div className="text-xs text-slate-400 uppercase mt-0.5">Satisfied Clients</div>
                 </div>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed pt-1 text-left md:text-justify">
+              <p className="text-xs text-slate-300 leading-relaxed pt-1 text-justify">
                 {companyInfo.establishedDetail}
               </p>
               <Button variant="default" size="default" asChild className="w-full rounded-none text-xs font-semibold">

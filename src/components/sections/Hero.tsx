@@ -45,7 +45,7 @@ export function Hero() {
 
           {/* Subtitle Copy */}
           <ScrollReveal animation="fade-up" delay={220} duration={800}>
-            <p className="mt-6 text-sm sm:text-base lg:text-lg text-white/95 max-w-2xl font-normal leading-relaxed drop-shadow-sm text-left md:text-justify">
+            <p className="mt-6 text-sm sm:text-base lg:text-lg text-white/95 max-w-2xl font-normal leading-relaxed drop-shadow-sm text-justify">
               From Detection to Suppression: End-to-End Fire Safety Solutions for a Safer Workspace. Get Your Fire Safety Audit Today Free!
             </p>
           </ScrollReveal>

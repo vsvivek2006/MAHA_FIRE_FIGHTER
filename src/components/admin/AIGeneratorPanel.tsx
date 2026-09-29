@@ -195,7 +195,7 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
                 Groq Ultra-Fast
               </span>
             </h2>
-            <p className="text-xs text-gray-500 text-left md:text-justify">
+            <p className="text-xs text-gray-500 text-justify">
               Generates NBC 2016-compliant, high-CTR technical articles with semantic headings and internal backlinks.
             </p>
           </div>
@@ -207,7 +207,7 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
         <div className="p-3.5 rounded-lg border border-red-200 bg-red-50 flex items-start gap-3">
           <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
           <div className="flex-1 text-xs">
-            <p className="font-semibold text-red-900 text-left md:text-justify">{errorBanner}</p>
+            <p className="font-semibold text-red-900 text-justify">{errorBanner}</p>
             {isRateLimited && selectedModel !== FALLBACK_MODEL_ID && (
               <button
                 type="button"
@@ -241,7 +241,7 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
                     {selectedModelInfo.name}
                   </span>
                 </h3>
-                <p className="text-xs text-gray-300 text-left md:text-justify">
+                <p className="text-xs text-gray-300 text-justify">
                   Streaming inference and validating NBC 2016 engineering standards...
                 </p>
               </div>
@@ -325,7 +325,7 @@ export function AIGeneratorPanel({ onGenerated, disabled }: AIGeneratorPanelProp
                     {model.badge}
                   </span>
                 </div>
-                <p className="text-[11px] text-gray-500 leading-snug mb-2 text-left md:text-justify">
+                <p className="text-[11px] text-gray-500 leading-snug mb-2 text-justify">
                   {model.description}
                 </p>
                 <div className="flex items-center justify-between text-[10px] font-mono text-gray-400 pt-1.5 border-t border-gray-100">

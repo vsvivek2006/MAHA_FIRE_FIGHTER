@@ -56,7 +56,7 @@ export default function HomePage() {
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1D1E20]">
                   Consult Directly with Our Fire Safety Team
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-left md:text-justify">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">
                   Whether you need a new turnkey fire hydrant system, automatic sprinkler grid, extinguisher refilling, or a building safety compliance audit, our team is ready to assist.
                 </p>
               </div>
@@ -104,7 +104,7 @@ export default function HomePage() {
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   Statutory Fire NOC Compliance Assistance
                 </div>
-                <p className="text-gray-500 text-xs leading-relaxed text-left md:text-justify">
+                <p className="text-gray-500 text-xs leading-relaxed text-justify">
                   We bring your fire protection equipment up to Delhi Fire Service standards for smooth Fire NOC approvals and renewals.
                 </p>
               </div>

@@ -70,10 +70,10 @@ export default function FireHydrantPage() {
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Fire Hydrant System Installation &amp; Maintenance in Delhi NCR
               </h1>
-              <p className="text-base sm:text-lg text-red-500 font-semibold text-left md:text-justify">
+              <p className="text-base sm:text-lg text-red-500 font-semibold text-justify">
                 Protecting Your Assets with Robust, High-Pressure Fire Suppression Solutions.
               </p>
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left md:text-justify">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-justify">
                 At Maha Firefighters, we specialize in the end-to-end design, installation, and maintenance of industrial-grade fire hydrant systems. With over 15 years of experience and a portfolio of 250+ satisfied clients, we ensure your premises are equipped with a powerful first line of defense against large-scale fire hazards.
               </p>
 
@@ -139,7 +139,7 @@ export default function FireHydrantPage() {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
               Complete Turnkey Installation
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 text-left md:text-justify">
+            <p className="text-xs sm:text-sm text-slate-600 text-justify">
               We handle everything from initial site mapping to the final commissioning of the system. Our installations include:
             </p>
           </ScrollReveal>
@@ -158,7 +158,7 @@ export default function FireHydrantPage() {
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-4 text-left md:text-justify">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-4 text-justify">
                   {item.desc}
                 </p>
               </ScrollReveal>
@@ -176,7 +176,7 @@ export default function FireHydrantPage() {
                   Annual Maintenance Contracts (AMC)
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 text-left md:text-justify">
+              <p className="text-xs sm:text-sm text-slate-600 text-justify">
                 A fire hydrant system is only useful if it works during an emergency. Our AMC services include:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
@@ -188,7 +188,7 @@ export default function FireHydrantPage() {
                     className="p-4 bg-white border border-slate-200 flex items-start gap-3 hover:border-slate-300 hover:shadow-sm transition-all"
                   >
                     <Activity className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-700 leading-relaxed text-left md:text-justify">{amc}</p>
+                    <p className="text-xs text-slate-700 leading-relaxed text-justify">{amc}</p>
                   </ScrollReveal>
                 ))}
               </div>
@@ -209,7 +209,7 @@ export default function FireHydrantPage() {
             <h3 className="text-2xl font-bold text-white tracking-tight">
               Failing Fire Safety Audits or Old Infrastructure?
             </h3>
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left md:text-justify">
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-justify">
               {service.upgrades}
             </p>
             <div className="pt-2">

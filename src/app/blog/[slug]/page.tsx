@@ -321,7 +321,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.keyTakeaways.map((takeaway, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="leading-relaxed text-left md:text-justify">{takeaway}</span>
+                  <span className="leading-relaxed text-justify">{takeaway}</span>
                 </li>
               ))}
             </ul>
@@ -365,7 +365,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <h2 className="text-2xl sm:text-3xl font-black text-white">
             Need Expert Fire Safety Compliance in <span className="text-amber-400">Delhi NCR</span>?
           </h2>
-          <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed text-left md:text-justify">
+          <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed text-justify">
             From Fire NOC inspections and hydraulic pressure testing to turnkey industrial hydrant &amp; sprinkler installations — get trusted engineering support.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">

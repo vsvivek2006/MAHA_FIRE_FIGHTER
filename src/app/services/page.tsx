@@ -74,7 +74,7 @@ export default function ServicesPage() {
             </ScrollReveal>
             
             <ScrollReveal animation="fade-up" delay={200}>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-left md:text-justify">
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-justify">
                 With 15+ years of excellence, Maha Firefighters is a leading name in fire safety across Delhi and NCR. We provide end-to-end fire fighting services, from advanced hydrant systems installations,Fire sprinklers Systems to expert audits and training.
               </p>
             </ScrollReveal>
@@ -109,7 +109,7 @@ export default function ServicesPage() {
                           {service.title}
                         </h2>
                       </Link>
-                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-left md:text-justify">
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">
                         {service.description}
                       </p>
                     </div>
@@ -142,7 +142,7 @@ export default function ServicesPage() {
               <h2 className="text-4xl sm:text-5xl font-extrabold text-[#1D1E20] tracking-tight">
                 Gallery
               </h2>
-              <p className="text-sm sm:text-base text-gray-500 max-w-xl mx-auto text-left md:text-justify">
+              <p className="text-sm sm:text-base text-gray-500 max-w-xl mx-auto text-justify">
                 Verified fieldwork, hydraulic pump room installations, factory cylinder testing, and emergency drills across Delhi NCR.
               </p>
             </div>

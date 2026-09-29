@@ -131,7 +131,7 @@ export default async function BlogIndexPage() {
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
               Knowledge Base &amp; <span className="text-amber-400">Engineering Blog</span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed text-left md:text-justify">
+            <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed text-justify">
               Authoritative guides on NBC 2016 statutory mandates, IS 3844 hydrant engineering, automatic sprinkler hydraulics, and turnkey Fire NOC certification in Delhi NCR.
             </p>
           </div>
@@ -178,7 +178,7 @@ export default async function BlogIndexPage() {
                     </h2>
 
                     {post.excerpt && (
-                      <p className="text-xs sm:text-sm text-gray-600 line-clamp-3 leading-relaxed text-left md:text-justify">
+                      <p className="text-xs sm:text-sm text-gray-600 line-clamp-3 leading-relaxed text-justify">
                         {post.excerpt}
                       </p>
                     )}

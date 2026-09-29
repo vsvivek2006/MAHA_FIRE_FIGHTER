@@ -50,10 +50,10 @@ export default function FireDrillPage() {
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Fire Safety Training &amp; Emergency Drills in Delhi NCR
               </h1>
-              <p className="text-base sm:text-lg text-red-500 font-semibold text-left md:text-justify">
+              <p className="text-base sm:text-lg text-red-500 font-semibold text-justify">
                 Equipment is only as effective as the people who operate it. Empower your team with the skills to save lives.
               </p>
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left md:text-justify">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-justify">
                 At Maha Firefighters, we believe that professional-grade fire systems require professional-grade training. We provide comprehensive, hands-on fire safety training programs designed to transform your employees into a confident, first-response team.
               </p>
 
@@ -115,7 +115,7 @@ export default function FireDrillPage() {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
               Our Training Modules
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 text-left md:text-justify">
+            <p className="text-xs sm:text-sm text-slate-600 text-justify">
               Hands-on training sessions covering fire extinguisher operation, evacuation protocols, and emergency response coordination:
             </p>
           </ScrollReveal>
@@ -134,7 +134,7 @@ export default function FireDrillPage() {
                 <h3 className="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
                   {mod.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-left md:text-justify">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                   {mod.desc}
                 </p>
               </ScrollReveal>

@@ -43,7 +43,7 @@ export function LiveServicesSection() {
           </ScrollReveal>
           
           <ScrollReveal animation="fade-up" delay={200}>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-left md:text-justify">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-justify">
               Serving Delhi &amp; NCR for 15+ Years Maha Firefighters delivers premier fire safety solutions across the Delhi-NCR region. we specialize in turnkey installations, maintenance, and compliance for corporate and industrial clients.
             </p>
           </ScrollReveal>
@@ -80,7 +80,7 @@ export function LiveServicesSection() {
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#C5221F]" />
                     </h3>
                   </Link>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-left md:text-justify">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-justify">
                     {item.description}
                   </p>
                 </div>

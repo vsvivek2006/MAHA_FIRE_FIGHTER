@@ -60,7 +60,7 @@ export default function AboutPage() {
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#C5221F] tracking-tight uppercase leading-tight">
                     ABOUT MAHA FIREFIGHTERS
                   </h1>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-left md:text-justify">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
                     At <strong>MAHA FIRE FIGHTERS</strong>, we believe that Fire safety is not just a service—it
                     is a promise. Based in the heart of the <strong>Delhi NCR</strong> region, we have
                     established ourselves as a premier provider of integrated fire fighting systems and safety
@@ -74,7 +74,7 @@ export default function AboutPage() {
               <ScrollReveal animation="fade-up" delay={180}>
                 <div className="space-y-2">
                   <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1E20]">Our Mission</h2>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-left md:text-justify">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
                     Our mission is to create fire-resilient environments by providing world-class fire
                     detection, suppression, and prevention systems. We aim to be the most trusted name in the
                     industry by delivering projects that exceed <strong>National Building Code (NBC)</strong>{' '}
@@ -86,7 +86,7 @@ export default function AboutPage() {
               <ScrollReveal animation="fade-up" delay={280}>
                 <div className="space-y-3">
                   <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1E20]">What Sets Us Apart?</h2>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-left md:text-justify">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify">
                     In a region as fast-paced as Delhi NCR, you need a fire safety partner who is responsive
                     and knowledgeable. Our edge lies in:
                   </p>
@@ -141,7 +141,7 @@ export default function AboutPage() {
                       title={photo.alt} />
                       {/* Caption overlay */}
                       <div className="absolute bottom-0 left-0 right-0 px-2 py-1.5 bg-black/50 backdrop-blur-[2px]">
-                        <p className="text-[10px] font-semibold text-white/90 truncate text-left md:text-justify">{photo.alt}</p>
+                        <p className="text-[10px] font-semibold text-white/90 truncate text-justify">{photo.alt}</p>
                       </div>
                     </div>
                   ))}
@@ -171,7 +171,7 @@ export default function AboutPage() {
                   <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                     Our Location
                   </h2>
-                  <p className="text-base text-gray-300 text-left md:text-justify">
+                  <p className="text-base text-gray-300 text-justify">
                     Serving Delhi NCR with expert firefighting solutions for over 20 years.
                   </p>
                 </div>
@@ -183,11 +183,11 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-[#C5221F] shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-gray-400 text-left md:text-justify">
+                      <p className="text-xs font-bold uppercase tracking-wider text-gray-400 text-justify">
                         Headquarters Address
                       </p>
-                      <p className="text-base font-bold text-white mt-1 text-left md:text-justify">Daryaganj, Delhi-110002</p>
-                      <p className="text-xs text-gray-400 mt-0.5 text-left md:text-justify">
+                      <p className="text-base font-bold text-white mt-1 text-justify">Daryaganj, Delhi-110002</p>
+                      <p className="text-xs text-gray-400 mt-0.5 text-justify">
                         Delhi, Noida, Gurugram, Faridabad, Ghaziabad
                       </p>
                     </div>
@@ -197,10 +197,10 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3 pt-4 border-t border-white/10">
                     <Phone className="w-5 h-5 text-[#C5221F] shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-gray-400 text-left md:text-justify">
+                      <p className="text-xs font-bold uppercase tracking-wider text-gray-400 text-justify">
                         Phone Support
                       </p>
-                      <p className="text-sm font-bold text-white mt-1 flex flex-wrap gap-3 text-left md:text-justify">
+                      <p className="text-sm font-bold text-white mt-1 flex flex-wrap gap-3 text-justify">
                         <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors" title={siteTheme.branding.phones[0].display}>
                           {siteTheme.branding.phones[0].display}
                         </a>
@@ -219,11 +219,11 @@ export default function AboutPage() {
                 <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10">
                   {/* Red shape accent (mimics live site) */}
                   <div className="absolute top-4 right-4 w-10 h-10 bg-[#C5221F]/20 rounded-full blur-xl pointer-events-none" />
-                  <p className="text-yellow-400 text-lg mb-3 text-left md:text-justify">★★★★★</p>
-                  <p className="text-sm text-gray-200 leading-relaxed italic text-left md:text-justify">
+                  <p className="text-yellow-400 text-lg mb-3 text-justify">★★★★★</p>
+                  <p className="text-sm text-gray-200 leading-relaxed italic text-justify">
                     "Maha Firefighters provided flawless fire safety installation for our factory. Highly reliable!"
                   </p>
-                  <p className="mt-3 text-xs font-bold text-gray-400 text-left md:text-justify">— Raj K.</p>
+                  <p className="mt-3 text-xs font-bold text-gray-400 text-justify">— Raj K.</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -234,7 +234,7 @@ export default function AboutPage() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
                   <iframe
                     title="Maha Firefighters Headquarters Daryaganj Delhi"
-                    src="https://maps.google.com/maps?q=delhi%20daryaganj&t=m&z=13&ie=UTF8&output=embed"
+                    src="https://maps.google.com/maps?q=Maha+Firefighters+Darya+Ganj+Delhi&t=m&z=17&ie=UTF8&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

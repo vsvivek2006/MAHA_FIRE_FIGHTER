@@ -50,7 +50,7 @@ export default function FireAlarmPage() {
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Advanced Fire Alarm &amp; Detection Systems in Delhi NCR
               </h1>
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left md:text-justify">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-justify">
                 At Maha Firefighters, we provide smart fire alarm solutions that act as the eyes and ears of your facility. From small offices to sprawling industrial complexes, our detection systems are designed to provide the earliest possible warning, allowing for safe evacuation and immediate response.
               </p>
 
@@ -112,7 +112,7 @@ export default function FireAlarmPage() {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
               Our Fire Alarm Solutions
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 text-left md:text-justify">
+            <p className="text-xs sm:text-sm text-slate-600 text-justify">
               From small offices to sprawling industrial complexes, our detection systems provide early warning:
             </p>
           </ScrollReveal>
@@ -131,7 +131,7 @@ export default function FireAlarmPage() {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-red-700 transition-colors">
                   {sol.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-left md:text-justify">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                   {sol.desc}
                 </p>
               </ScrollReveal>
@@ -145,7 +145,7 @@ export default function FireAlarmPage() {
                 <Radio className="w-5 h-5 text-red-600" />
                 Comprehensive Detection Technology
               </h3>
-              <p className="text-xs text-slate-600 mt-1 text-left md:text-justify">
+              <p className="text-xs text-slate-600 mt-1 text-justify">
                 We install a variety of sensors tailored to your specific environment:
               </p>
             </ScrollReveal>
@@ -161,7 +161,7 @@ export default function FireAlarmPage() {
                   <h4 className="text-xs font-bold text-red-600 uppercase mb-1">
                     {sensor.name}
                   </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed text-left md:text-justify">
+                  <p className="text-xs text-slate-600 leading-relaxed text-justify">
                     {sensor.desc}
                   </p>
                 </ScrollReveal>
@@ -176,7 +176,7 @@ export default function FireAlarmPage() {
                 <Volume2 className="w-5 h-5 text-red-600" />
                 AMC &amp; System Testing
               </h3>
-              <p className="text-xs text-slate-600 text-left md:text-justify">
+              <p className="text-xs text-slate-600 text-justify">
                 An alarm that doesn&apos;t sound is a life-safety risk. Our maintenance services include:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
@@ -188,7 +188,7 @@ export default function FireAlarmPage() {
                     className="p-4 bg-white border border-slate-200 flex items-start gap-3 hover:border-emerald-600/30 hover:shadow-sm transition-all"
                   >
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-700 leading-relaxed text-left md:text-justify">{detail}</p>
+                    <p className="text-xs text-slate-700 leading-relaxed text-justify">{detail}</p>
                   </ScrollReveal>
                 ))}
               </div>

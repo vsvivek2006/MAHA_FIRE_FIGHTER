@@ -21,7 +21,7 @@ export function BlogPreview() {
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
                 Fire Safety Guidelines &amp; Technical Insights
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed text-left md:text-justify">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed text-justify">
                 In-depth engineering articles on NBC 2016 Part 4 compliance, fire hydrant inspection intervals, and dual-layer suppression systems across Delhi NCR.
               </p>
             </div>
@@ -83,7 +83,7 @@ export function BlogPreview() {
                     </Link>
                   </h3>
 
-                  <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed text-left md:text-justify">
+                  <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed text-justify">
                     {post.excerpt}
                   </p>
                 </div>

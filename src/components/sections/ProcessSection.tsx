@@ -41,7 +41,7 @@ export function ProcessSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1D1E20] tracking-tight leading-tight">
             Our 4-Stage Process
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-gray-500 leading-relaxed text-left md:text-justify">
+          <p className="mt-4 text-sm sm:text-base text-gray-500 leading-relaxed text-justify">
             From first assessment to ongoing AMC — every step is engineered for precision and compliance.
           </p>
         </div>
@@ -131,7 +131,7 @@ export function ProcessSection() {
                   <h3 className={`text-base font-bold mb-2 ${passed ? 'text-[#1D1E20]' : 'text-gray-600'}`}>
                     {diff.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed text-left md:text-justify">
+                  <p className="text-sm text-gray-500 leading-relaxed text-justify">
                     {diff.desc}
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export function ProcessSection() {
                     Step {String(idx + 1).padStart(2, '0')}
                   </span>
                   <h3 className="text-base font-bold text-[#1D1E20] mt-1 mb-2">{diff.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed text-left md:text-justify">{diff.desc}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed text-justify">{diff.desc}</p>
                 </div>
               </div>
             );

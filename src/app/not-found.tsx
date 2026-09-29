@@ -14,7 +14,7 @@ export default function NotFound() {
         <div className="space-y-2">
           <span className="text-4xl sm:text-5xl font-black font-mono text-red-500">404</span>
           <h1 className="text-2xl font-bold text-white">Page Not Found</h1>
-          <p className="text-xs sm:text-sm text-gray-400 text-left md:text-justify">
+          <p className="text-xs sm:text-sm text-gray-400 text-justify">
             The safety resource or page you requested could not be found. Please return to the homepage or contact our engineering desk.
           </p>
         </div>

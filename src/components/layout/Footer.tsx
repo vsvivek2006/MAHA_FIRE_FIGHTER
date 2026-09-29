@@ -40,7 +40,7 @@ export function Footer() {
               <h3 className="text-xl font-bold text-white tracking-tight">
                 Contact
               </h3>
-              <p className="text-xs text-gray-400 leading-relaxed max-w-sm text-left md:text-justify">
+              <p className="text-xs text-gray-400 leading-relaxed max-w-sm text-justify">
                 Serving Delhi NCR for 15+ years with expert turnkey hydrant installations, automatic sprinklers, addressable fire alarms, and certified in-house extinguisher refilling.
               </p>
             </div>
@@ -164,7 +164,7 @@ export function Footer() {
               <div className="text-[10px] uppercase text-gray-400 font-bold tracking-wider">
                 ADDRESS
               </div>
-              <p className="mt-1 text-gray-300 text-left md:text-justify">
+              <p className="mt-1 text-gray-300 text-justify">
                 {siteTheme.branding.address} (Delhi, Noida, Gurugram, Faridabad, Ghaziabad)
               </p>
             </div>

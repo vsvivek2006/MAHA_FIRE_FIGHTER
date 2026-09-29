@@ -31,7 +31,7 @@ export function FaqPreview() {
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1D1E20]">
               Common Fire Safety &amp; Compliance Questions
             </h2>
-            <p className="text-xs sm:text-sm text-gray-600 max-w-xl mx-auto leading-relaxed text-left md:text-justify">
+            <p className="text-xs sm:text-sm text-gray-600 max-w-xl mx-auto leading-relaxed text-justify">
               Essential clarity regarding NBC provisions, Delhi Fire Service compliance, Fire NOC renewal, and preventative maintenance schedules.
             </p>
           </div>
@@ -49,7 +49,7 @@ export function FaqPreview() {
                       <span>{faq.question}</span>
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 text-xs sm:text-sm font-normal pl-6 leading-relaxed text-left md:text-justify">
+                  <AccordionContent className="text-gray-600 text-xs sm:text-sm font-normal pl-6 leading-relaxed text-justify">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
