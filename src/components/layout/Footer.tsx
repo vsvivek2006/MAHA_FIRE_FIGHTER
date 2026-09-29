@@ -88,7 +88,7 @@ export function Footer() {
 
               {/* Google My Business */}
               <a 
-                href="https://www.google.com/maps/search/Maha+Firefighters+Darya+Ganj+Delhi" 
+                href="https://www.google.com/maps/place/Maha+fire+fighters/@28.6479313,77.242642,17z" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-white transition-colors"

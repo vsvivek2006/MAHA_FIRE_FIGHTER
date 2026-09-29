@@ -242,7 +242,7 @@ export default function ContactPage() {
           <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-200 aspect-[21/9] sm:aspect-[21/8]">
             <iframe
               title="Maha Firefighters Head Office Daryaganj Delhi"
-              src="https://maps.google.com/maps?q=Maha+Firefighters+Darya+Ganj+Delhi&t=m&z=17&ie=UTF8&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155.0!2d77.2420991!3d28.6479845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfdd60ac232f7%3A0x15b2410a70c13ded!2sMaha%20fire%20fighters!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
