@@ -114,7 +114,7 @@ export default function FaqPage() {
                           <h3 className="text-sm sm:text-base font-bold text-[#1D1E20] leading-snug">
                             Q: {item.q}
                           </h3>
-                          <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-gray-700 leading-relaxed text-left md:text-justify">
                             A: {item.a}
                           </p>
                         </div>
@@ -140,7 +140,7 @@ export default function FaqPage() {
                           <h3 className="text-sm sm:text-base font-bold text-[#1D1E20] leading-snug">
                             Q: {item.q}
                           </h3>
-                          <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-gray-700 leading-relaxed text-left md:text-justify">
                             A: {item.a}
                           </p>
                         </div>
@@ -158,7 +158,7 @@ export default function FaqPage() {
             <h3 className="text-xl sm:text-2xl font-bold text-[#1D1E20]">
               Have a Specific Compliance or Engineering Question?
             </h3>
-            <p className="text-sm text-gray-600 max-w-xl mx-auto">
+            <p className="text-sm text-gray-600 max-w-xl mx-auto text-left md:text-justify">
               Speak directly with our senior fire engineers for bespoke system calculations and free safety audit bookings.
             </p>
             <div className="pt-2">

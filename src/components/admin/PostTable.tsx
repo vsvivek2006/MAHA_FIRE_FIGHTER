@@ -170,8 +170,8 @@ export function PostTable({ initialPosts }: PostTableProps) {
               <FileText className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <p className="text-sm font-bold text-gray-900">No blog posts found</p>
-              <p className="text-xs text-gray-500 max-w-sm mx-auto">
+              <p className="text-sm font-bold text-gray-900 text-left md:text-justify">No blog posts found</p>
+              <p className="text-xs text-gray-500 max-w-sm mx-auto text-left md:text-justify">
                 {searchQuery || statusFilter !== "all"
                   ? "Try clearing your search query or filters to find what you're looking for."
                   : "Get started by generating an AI-backed post or writing one from scratch."}
@@ -240,7 +240,7 @@ export function PostTable({ initialPosts }: PostTableProps) {
                             </span>
                           )}
                         </div>
-                        <p className="text-[11px] font-mono text-gray-400 truncate max-w-xs">
+                        <p className="text-[11px] font-mono text-gray-400 truncate max-w-xs text-left md:text-justify">
                           /blog/{post.slug}
                         </p>
                       </div>

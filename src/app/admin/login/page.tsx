@@ -82,7 +82,7 @@ function LoginForm() {
         <h2 className="text-2xl font-extrabold text-[#1D1E20] tracking-tight">
           Admin Portal Sign In
         </h2>
-        <p className="mt-1 text-xs sm:text-sm text-gray-500">
+        <p className="mt-1 text-xs sm:text-sm text-gray-500 text-left md:text-justify">
           Sign in to access the AI Editorial Studio &amp; Content Management Desk
         </p>
       </div>

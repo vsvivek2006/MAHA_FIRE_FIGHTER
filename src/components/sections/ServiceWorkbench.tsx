@@ -29,7 +29,7 @@ export function ServiceWorkbench() {
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
                 Turnkey Fire Safety Systems &amp; Maintenance
               </h2>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed text-left md:text-justify">
                 Serving Delhi &amp; NCR for {siteTheme.branding.experienceYears} Years Maha Firefighters delivers premier fire safety solutions across the Delhi-NCR region. We specialize in turnkey installations, maintenance, and compliance for corporate and industrial clients.
               </p>
             </div>
@@ -119,7 +119,7 @@ export function ServiceWorkbench() {
                         <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
                           Scope &amp; Overview:
                         </div>
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed text-left md:text-justify">
                           {svc.fullDesc}
                         </p>
                       </div>

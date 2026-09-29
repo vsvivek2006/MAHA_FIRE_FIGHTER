@@ -113,8 +113,10 @@ export function generateLocalBusinessSchema() {
       "worstRating": "1"
     },
     "sameAs": [
-      "https://www.facebook.com/",
-      "https://www.instagram.com/"
+      "https://www.facebook.com/share/1HLPmrFyhu/",
+      "https://www.instagram.com/MAHAFIREFIGHTERS",
+      "https://youtube.com/@mahafirefighters?si=1cmcuDz5709rPTJp",
+      "https://www.google.com/maps/search/Maha+Firefighters+Darya+Ganj+Delhi"
     ]
   };
 }

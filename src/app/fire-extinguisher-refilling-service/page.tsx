@@ -53,7 +53,7 @@ export default function ExtinguisherRefillingPage() {
               <div className="inline-block px-3 py-1 bg-red-600 text-white border border-red-700 text-xs font-bold uppercase rounded-full">
                 Our In-House Refilling Plant • Free Pickup &amp; Drop Delhi NCR
               </div>
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left md:text-justify">
                 Professional refilling in our in-house factory. All types &amp; brands. Fast pickup &amp; delivery. Don&apos;t let your safety expire. Expert refilling &amp; sales at the best rates in Delhi/NCR. We ensure your extinguishers work when it matters with genuine materials.
               </p>
 
@@ -115,7 +115,7 @@ export default function ExtinguisherRefillingPage() {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
               All Types &amp; Brands Handled
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="text-xs sm:text-sm text-slate-600 text-left md:text-justify">
               We handle all types of extinguishing agents with genuine materials and certified pressure testing:
             </p>
           </ScrollReveal>
@@ -134,7 +134,7 @@ export default function ExtinguisherRefillingPage() {
                 <h3 className="text-base font-bold text-slate-900 group-hover:text-red-700 transition-colors">
                   {agent.type}
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed text-left md:text-justify">
                   {agent.desc}
                 </p>
               </ScrollReveal>
@@ -150,7 +150,7 @@ export default function ExtinguisherRefillingPage() {
                   In-House Inspection &amp; Hydrostatic Pressure Testing (HPT)
                 </h3>
               </div>
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-slate-600 text-left md:text-justify">
                 Every cylinder undergoes a thorough inspection before it leaves our facility:
               </p>
 
@@ -163,7 +163,7 @@ export default function ExtinguisherRefillingPage() {
                     className="p-4 bg-white border border-slate-200 flex items-start gap-3 hover:border-emerald-600/30 hover:shadow-sm transition-all"
                   >
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-700 leading-relaxed">{qa}</p>
+                    <p className="text-xs text-slate-700 leading-relaxed text-left md:text-justify">{qa}</p>
                   </ScrollReveal>
                 ))}
               </div>

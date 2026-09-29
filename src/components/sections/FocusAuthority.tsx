@@ -28,7 +28,7 @@ export function FocusAuthority() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={200}>
-              <p className="text-[#374151] text-base sm:text-lg leading-relaxed max-w-xl">
+              <p className="text-[#374151] text-base sm:text-lg leading-relaxed max-w-xl text-left md:text-justify">
                 Serving Delhi NCR for 15 years with expert fire hydrant systems Installation , Fire alarms, and Fire extinguisher sales &amp; Refilling,Fire sprinklers Systems, with our In-house team of expert Technicians.
               </p>
             </ScrollReveal>

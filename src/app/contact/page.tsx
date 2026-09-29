@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1D1E20]">
                     Get in Touch
                   </h1>
-                  <p className="text-base text-gray-600 leading-relaxed max-w-md">
+                  <p className="text-base text-gray-600 leading-relaxed max-w-md text-left md:text-justify">
                     Reach out to Maha Firefighters for expert fire safety solutions in Delhi NCR.
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                         <CheckCircle2 className="w-8 h-8" />
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">Thank You, {name}!</h3>
-                      <p className="text-gray-600 max-w-md mx-auto text-sm">
+                      <p className="text-gray-600 max-w-md mx-auto text-sm text-left md:text-justify">
                         Your request has been received. Our senior fire engineer will review your requirements and reach out on {phone}.
                       </p>
                       <button
@@ -223,7 +223,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-extrabold tracking-tight text-[#1D1E20]">
                 Location
               </h2>
-              <p className="text-sm text-gray-600 leading-relaxed max-w-md">
+              <p className="text-sm text-gray-600 leading-relaxed max-w-md text-left md:text-justify">
                 Serving Delhi NCR with expert fire safety solutions for commercial spaces and factories.
               </p>
             </div>

@@ -50,10 +50,10 @@ export default function FireSprinklersPage() {
               <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Automatic Fire Sprinkler Systems in Delhi NCR
               </h1>
-              <p className="text-base sm:text-lg text-red-500 font-semibold">
+              <p className="text-base sm:text-lg text-red-500 font-semibold text-left md:text-justify">
                 24/7 Unattended Protection. Extinguish Fires Before They Spread.
               </p>
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left md:text-justify">
                 At Maha Firefighters, we provide state-of-the-art automatic fire sprinkler systems that offer the most reliable defense against fire. While alarms alert you and hydrants help you fight fire, a sprinkler system works automatically to suppress a fire at its point of origin—even when no one is on-site.
               </p>
 
@@ -115,7 +115,7 @@ export default function FireSprinklersPage() {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
               Our Sprinkler System Expertise
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="text-xs sm:text-sm text-slate-600 text-left md:text-justify">
               Every building has a different hazard level. We design systems based on your specific occupancy:
             </p>
           </ScrollReveal>
@@ -132,7 +132,7 @@ export default function FireSprinklersPage() {
                   <h4 className="font-bold text-sm text-slate-900 mb-1">
                     {type.name}
                   </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed text-left md:text-justify">
                     {type.desc}
                   </p>
                 </div>
@@ -146,14 +146,14 @@ export default function FireSprinklersPage() {
               <span className="w-2 h-2 bg-red-600" />
               2. Professional Installation
             </h3>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-slate-600 text-left md:text-justify">
               Our in-house team handles the entire piping network, ensuring:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
               {service.installationSpecs?.map((spec, idx) => (
                 <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-3 hover:border-emerald-600/30 hover:shadow-sm transition-all">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <p className="text-xs text-slate-700 leading-relaxed">{spec}</p>
+                  <p className="text-xs text-slate-700 leading-relaxed text-left md:text-justify">{spec}</p>
                 </div>
               ))}
             </div>
@@ -165,14 +165,14 @@ export default function FireSprinklersPage() {
               <span className="w-2 h-2 bg-red-600" />
               3. Inspection &amp; AMC Services
             </h3>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-slate-600 text-left md:text-justify">
               A clogged or corroded sprinkler is a liability. Our maintenance includes:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
               {service.amcDetails?.map((detail, idx) => (
                 <div key={idx} className="p-4 bg-white border border-slate-200 flex items-start gap-3 hover:border-red-600/30 hover:shadow-sm transition-all">
                   <Droplets className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                  <p className="text-xs text-slate-700 leading-relaxed">{detail}</p>
+                  <p className="text-xs text-slate-700 leading-relaxed text-left md:text-justify">{detail}</p>
                 </div>
               ))}
             </div>

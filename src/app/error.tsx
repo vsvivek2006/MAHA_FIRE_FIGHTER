@@ -23,7 +23,7 @@ export default function ErrorBoundary({
         </div>
         <div className="space-y-2">
           <h1 className="text-2xl font-bold text-white">Temporary System Interruption</h1>
-          <p className="text-xs sm:text-sm text-gray-400">
+          <p className="text-xs sm:text-sm text-gray-400 text-left md:text-justify">
             An unexpected error occurred while rendering this page. Our technical team has been notified.
           </p>
         </div>

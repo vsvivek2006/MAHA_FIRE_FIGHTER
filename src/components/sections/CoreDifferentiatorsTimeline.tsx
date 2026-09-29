@@ -184,7 +184,7 @@ export function CoreDifferentiatorsTimeline() {
                   {diff.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2 text-left md:text-justify">
                   {diff.desc}
                 </p>
 

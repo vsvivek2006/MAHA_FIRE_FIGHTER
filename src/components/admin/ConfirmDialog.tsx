@@ -87,7 +87,7 @@ export function ConfirmDialog({
             >
               {title}
             </h3>
-            <p className="mt-1.5 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            <p className="mt-1.5 text-xs sm:text-sm text-gray-600 leading-relaxed text-left md:text-justify">
               {description}
             </p>
           </div>

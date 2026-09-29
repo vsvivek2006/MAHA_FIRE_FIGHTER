@@ -22,7 +22,7 @@ export default async function NewBlogPostPage() {
             <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-950">
               Create Engineering Article
             </h1>
-            <p className="text-xs text-gray-500 mt-0.5">
+            <p className="text-xs text-gray-500 mt-0.5 text-left md:text-justify">
               Draft with real-time slug generation, cover image upload, and rich Tiptap WYSIWYG editing.
             </p>
           </div>

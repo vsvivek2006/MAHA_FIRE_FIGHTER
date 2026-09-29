@@ -30,7 +30,7 @@ export function AuditCTA() {
                 <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#1D1E20] leading-tight">
                   {siteTheme.branding.estimateHeadline}
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-600 max-w-2xl leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 max-w-2xl leading-relaxed text-left md:text-justify">
                   Book a free on-site fire safety audit for your factory, warehouse, commercial building, or residential complex in Delhi NCR. {siteTheme.branding.estimateCallText}.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs text-gray-600 pt-2">

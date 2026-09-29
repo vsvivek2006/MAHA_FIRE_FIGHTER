@@ -85,7 +85,7 @@ export function OperationalFootage() {
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={250}>
-            <p className="text-sm sm:text-base lg:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed drop-shadow-md text-left md:text-justify">
               Continuous water reservoirs, automated pump pressure, and rapid perimeter hydrants engineered to contain flashovers and protect high-hazard facilities across Delhi NCR.
             </p>
           </ScrollReveal>

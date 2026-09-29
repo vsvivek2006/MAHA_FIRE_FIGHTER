@@ -52,7 +52,7 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <h3 className="text-xl font-bold text-white">Inquiry Details Ready</h3>
-          <p className="text-slate-300 text-xs sm:text-sm max-w-md mx-auto">
+          <p className="text-slate-300 text-xs sm:text-sm max-w-md mx-auto text-left md:text-justify">
             We&apos;ve opened WhatsApp with your details pre-filled — please tap <span className="text-white font-semibold">Send</span> to reach our team directly.
           </p>
           <div className="p-4 bg-slate-900 border border-slate-800 text-xs text-slate-300 max-w-sm mx-auto">
@@ -93,7 +93,7 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
           <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 tracking-tight">
             Request an Estimate or Free Fire Safety Audit
           </h3>
-          <p className="text-xs text-slate-400 mb-6">
+          <p className="text-xs text-slate-400 mb-6 text-left md:text-justify">
             Get an initial site assessment and tailored compliance quote for your Delhi NCR facility.
           </p>
 

@@ -200,8 +200,8 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
             <div className="flex flex-col items-center justify-center space-y-2 text-gray-700 py-3">
               <Loader2 className="w-6 h-6 animate-spin text-red-600" />
               <div>
-                <p className="text-xs font-semibold text-gray-900">Uploading cover image...</p>
-                <p className="text-[11px] text-gray-500 mt-0.5">Optimizing and storing asset.</p>
+                <p className="text-xs font-semibold text-gray-900 text-left md:text-justify">Uploading cover image...</p>
+                <p className="text-[11px] text-gray-500 mt-0.5 text-left md:text-justify">Optimizing and storing asset.</p>
               </div>
             </div>
           ) : (
@@ -219,7 +219,7 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
                 </span>{" "}
                 or drag & drop
               </div>
-              <p className="text-[11px] text-gray-400">
+              <p className="text-[11px] text-gray-400 text-left md:text-justify">
                 Supports WebP, PNG, JPG (Max 5MB)
               </p>
             </div>

@@ -313,7 +313,7 @@ export function PostEditor({ initialData }: PostEditorProps) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3">
           <div className="flex items-center gap-2.5">
             <Info className="w-4 h-4 text-red-600 shrink-0" />
-            <p className="text-xs text-red-900">
+            <p className="text-xs text-red-900 text-left md:text-justify">
               <span className="font-bold">Unsaved draft recovered.</span> You have a locally
               autosaved version newer than the last database save.
             </p>
@@ -520,7 +520,7 @@ export function PostEditor({ initialData }: PostEditorProps) {
               className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 text-base sm:text-lg font-bold placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-xs transition-all"
             />
             {errors.title && (
-              <p className="mt-1.5 text-xs text-rose-600">{errors.title.message}</p>
+              <p className="mt-1.5 text-xs text-rose-600 text-left md:text-justify">{errors.title.message}</p>
             )}
           </div>
 
@@ -564,7 +564,7 @@ export function PostEditor({ initialData }: PostEditorProps) {
               />
             </div>
             {errors.slug && (
-              <p className="mt-1.5 text-xs text-rose-600">{errors.slug.message}</p>
+              <p className="mt-1.5 text-xs text-rose-600 text-left md:text-justify">{errors.slug.message}</p>
             )}
           </div>
 
@@ -584,7 +584,7 @@ export function PostEditor({ initialData }: PostEditorProps) {
               )}
             />
             {errors.content && (
-              <p className="mt-1.5 text-xs text-rose-600">{errors.content.message}</p>
+              <p className="mt-1.5 text-xs text-rose-600 text-left md:text-justify">{errors.content.message}</p>
             )}
           </div>
         </div>
@@ -633,7 +633,7 @@ export function PostEditor({ initialData }: PostEditorProps) {
               className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-gray-300 text-xs sm:text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all resize-none shadow-xs"
             />
             {errors.meta_description && (
-              <p className="text-xs text-rose-600">{errors.meta_description.message}</p>
+              <p className="text-xs text-rose-600 text-left md:text-justify">{errors.meta_description.message}</p>
             )}
           </div>
 
@@ -665,12 +665,12 @@ export function PostEditor({ initialData }: PostEditorProps) {
               {...register("author")}
               className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-gray-300 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-xs transition-all"
             />
-            <p className="text-[11px] text-gray-500 flex items-center gap-1.5 mt-1">
+            <p className="text-[11px] text-gray-500 flex items-center gap-1.5 mt-1 text-left md:text-justify">
               <Info className="w-3 h-3 text-red-600 shrink-0" />
               Public author byline shown to readers on the article page.
             </p>
             {errors.author && (
-              <p className="text-xs text-rose-600">{errors.author.message}</p>
+              <p className="text-xs text-rose-600 text-left md:text-justify">{errors.author.message}</p>
             )}
           </div>
         </div>
