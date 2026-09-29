@@ -18,7 +18,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3" title="Maha Firefighters Home">
               <div className="relative w-10 h-10 rounded-sm bg-white p-0.5 shrink-0 border border-gray-700 shadow-sm flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/images/logo.webp"
+                  src="/images/logo.png"
                   alt="Maha Firefighters Logo"
                   width={40}
                   height={40}

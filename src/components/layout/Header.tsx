@@ -76,7 +76,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3 group" aria-label="Maha Firefighters Home" title="Maha Firefighters Home">
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center">
               <Image
-                src="/images/logo.webp"
+                src="/images/logo.png"
                 alt="Maha Firefighters Logo"
                 width={48}
                 height={48}
@@ -89,7 +89,7 @@ export function Header() {
                 <span>MAHA</span>
                 <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
               </div>
-              <div className="text-[10px] text-gray-500 tracking-wider uppercase mt-1 hidden sm:block">
+              <div className="text-xs font-semibold text-gray-500 tracking-wider uppercase mt-1 hidden sm:block">
                 {siteTheme.branding.tagline}
               </div>
             </div>
@@ -224,7 +224,7 @@ export function Header() {
             <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
               <div className="relative w-10 h-10 shrink-0 flex items-center justify-center">
                 <Image
-                  src="/images/logo.webp"
+                  src="/images/logo.png"
                   alt="Maha Firefighters Logo"
                   width={40}
                   height={40}
@@ -236,7 +236,7 @@ export function Header() {
                   <span>MAHA</span>
                   <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
                 </div>
-                <div className="text-[10px] text-gray-500 tracking-wider uppercase mt-1">
+                <div className="text-xs font-semibold text-gray-500 tracking-wider uppercase mt-1">
                   Fire Protection Systems Delhi NCR
                 </div>
               </div>
