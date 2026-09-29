@@ -70,7 +70,7 @@ export default function BlogAIGeneratePage() {
             <Link
               href="/admin/blog/new"
               className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 hover:text-[#C5221F] px-3.5 py-2 rounded-lg bg-white border border-gray-300 shadow-sm transition-all"
-            >
+             title="Manual Editor">
               Manual Editor
             </Link>
             <Link

@@ -67,11 +67,11 @@ export default function HomePage() {
                   <div>
                     <div className="text-[10px] text-gray-500 uppercase font-semibold">Direct Phone Lines</div>
                     <div className="text-sm font-bold text-[#1D1E20] mt-0.5 space-x-3">
-                      <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-[#C5221F] transition-colors">
+                      <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-[#C5221F] transition-colors" title="{siteTheme.branding.phones[0].display}">
                         {siteTheme.branding.phones[0].display}
                       </a>
                       <span>•</span>
-                      <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-[#C5221F] transition-colors">
+                      <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-[#C5221F] transition-colors" title="{siteTheme.branding.phones[1].display}">
                         {siteTheme.branding.phones[1].display}
                       </a>
                     </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
                   <Mail className="w-4 h-4 text-[#C5221F] shrink-0 mt-0.5" />
                   <div>
                     <div className="text-[10px] text-gray-500 uppercase font-semibold">Official Business Email</div>
-                    <a href={`mailto:${siteTheme.branding.email}`} className="text-sm font-bold text-[#1D1E20] hover:text-[#C5221F] transition-colors block mt-0.5">
+                    <a href={`mailto:${siteTheme.branding.email}`} className="text-sm font-bold text-[#1D1E20] hover:text-[#C5221F] transition-colors block mt-0.5" title="{siteTheme.branding.email}">
                       {siteTheme.branding.email}
                     </a>
                   </div>

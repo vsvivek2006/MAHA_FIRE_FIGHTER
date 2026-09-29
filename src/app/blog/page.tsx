@@ -154,7 +154,7 @@ export default async function BlogIndexPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    title={post.title} />
                   </Link>
 
                   {/* Body */}
@@ -174,7 +174,7 @@ export default async function BlogIndexPage() {
                     )}
 
                     <h2 className="text-lg sm:text-xl font-bold text-gray-950 group-hover:text-red-600 transition-colors line-clamp-2">
-                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                      <Link href={`/blog/${post.slug}`} title="{post.title}">{post.title}</Link>
                     </h2>
 
                     {post.excerpt && (

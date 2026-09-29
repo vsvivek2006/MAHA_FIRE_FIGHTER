@@ -38,13 +38,13 @@ export function FocusAuthority() {
                 <a
                   href={`tel:${siteTheme.branding.phones[0].raw}`}
                   className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#C5221F] text-white font-semibold text-sm tracking-wider uppercase hover:bg-[#A71B18] shadow-md hover:shadow-lg transition-all"
-                >
+                 title="Call Now: {siteTheme.branding.phones[0].display}">
                   Call Now: {siteTheme.branding.phones[0].display}
                 </a>
                 <a
                   href="/services"
                   className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-gray-300 text-[#1D1E20] font-semibold text-sm tracking-wider uppercase hover:border-[#1D1E20] hover:bg-gray-50 transition-all"
-                >
+                 title="Explore Services">
                   Explore Services
                 </a>
               </div>
@@ -62,7 +62,7 @@ export function FocusAuthority() {
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                  title="Maha Firefighters Expert Fire Hydrant Installation and Refilling" />
                 </div>
 
                 {/* Signature Red Wave Badge directly matching live site */}

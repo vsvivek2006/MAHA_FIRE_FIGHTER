@@ -77,11 +77,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
               <div className="font-semibold text-slate-200">Call Us Directly:</div>
               <div className="flex items-center gap-2 text-white text-xs pt-1">
                 <Phone className="w-3.5 h-3.5 text-[var(--theme-primary)]" />
-                <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-[var(--theme-primary)] transition-colors">
+                <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-[var(--theme-primary)] transition-colors" title="{companyInfo.phones[0].display}">
                   {companyInfo.phones[0].display}
                 </a>
                 <span>/</span>
-                <a href={`tel:${companyInfo.phones[1].raw}`} className="hover:text-[var(--theme-primary)] transition-colors">
+                <a href={`tel:${companyInfo.phones[1].raw}`} className="hover:text-[var(--theme-primary)] transition-colors" title="{companyInfo.phones[1].display}">
                   {companyInfo.phones[1].display}
                 </a>
               </div>

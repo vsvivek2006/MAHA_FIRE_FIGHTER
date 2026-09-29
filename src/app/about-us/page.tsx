@@ -109,13 +109,13 @@ export default function AboutPage() {
                   <a
                     href={`tel:${siteTheme.branding.phones[0].raw}`}
                     className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#C5221F] text-white font-semibold text-sm tracking-wider uppercase hover:bg-[#A71B18] shadow-md transition-all duration-300"
-                  >
+                   title="CALL NOW: {siteTheme.branding.phones[0].display}">
                     CALL NOW: {siteTheme.branding.phones[0].display}
                   </a>
                   <Link
                     href="/contact"
                     className="inline-flex items-center justify-center px-7 py-3.5 rounded-full border-2 border-gray-300 text-[#1D1E20] font-semibold text-sm tracking-wider uppercase hover:border-[#1D1E20] hover:bg-gray-50 transition-all duration-300"
-                  >
+                   title="CONTACT TEAM">
                     CONTACT TEAM
                   </Link>
                 </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                         sizes="(max-width: 768px) 45vw, 22vw"
-                      />
+                      title={photo.alt} />
                       {/* Caption overlay */}
                       <div className="absolute bottom-0 left-0 right-0 px-2 py-1.5 bg-black/50 backdrop-blur-[2px]">
                         <p className="text-[10px] font-semibold text-white/90 truncate text-left md:text-justify">{photo.alt}</p>
@@ -201,11 +201,11 @@ export default function AboutPage() {
                         Phone Support
                       </p>
                       <p className="text-sm font-bold text-white mt-1 flex flex-wrap gap-3 text-left md:text-justify">
-                        <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors">
+                        <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors" title="{siteTheme.branding.phones[0].display}">
                           {siteTheme.branding.phones[0].display}
                         </a>
                         <span className="text-gray-500">•</span>
-                        <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400 transition-colors">
+                        <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400 transition-colors" title="{siteTheme.branding.phones[1].display}">
                           {siteTheme.branding.phones[1].display}
                         </a>
                       </p>

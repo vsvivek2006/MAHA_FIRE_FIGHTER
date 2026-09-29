@@ -98,7 +98,7 @@ export default function ServicesPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    title={service.title} />
                   </div>
 
                   {/* Card Body */}
@@ -163,7 +163,7 @@ export default function ServicesPage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 50vw, 25vw"
-                  />
+                  title={img.alt} />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
                     <span className="text-[11px] font-semibold text-white leading-tight">
                       {img.alt}
@@ -179,7 +179,7 @@ export default function ServicesPage() {
             <a
               href={`tel:${siteTheme.branding.phones[0].raw}`}
               className="inline-flex items-center justify-center px-10 py-3.5 rounded-full bg-[#C5221F] text-white font-semibold text-sm tracking-wider uppercase hover:bg-[#A71B18] shadow-md transition-all"
-            >
+             title="Get Free Estimate On Your Project">
               Get Free Estimate On Your Project
             </a>
           </div>

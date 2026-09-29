@@ -113,7 +113,7 @@ export function ServiceWorkbench() {
                           fill
                           className="object-cover"
                           sizes="(max-width: 1024px) 100vw, 30vw"
-                        />
+                        title={svc.title} />
                       </div>
                       <div className="md:col-span-7 space-y-3">
                         <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">

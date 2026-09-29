@@ -46,14 +46,14 @@ export function LiveEstimateSection() {
             <a 
               href={`tel:${siteTheme.branding.phones[1].raw}`}
               className="text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-            >
+             title="9873337442">
               9873337442
             </a>
             <span className="text-gray-400">/</span>
             <a 
               href={`tel:${siteTheme.branding.phones[0].raw}`}
               className="text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-            >
+             title="9873514657">
               9873514657
             </a>
           </div>

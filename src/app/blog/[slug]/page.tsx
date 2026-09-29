@@ -306,7 +306,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               priority
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
-            />
+            title={post.title} />
           </div>
         )}
 
@@ -354,7 +354,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <Link
               href="/blog"
               className="text-xs font-semibold text-red-600 hover:text-red-700 flex items-center gap-1"
-            >
+             title="← Back to all articles">
               ← Back to all articles
             </Link>
           </div>

@@ -57,14 +57,14 @@ export function Header() {
             <a 
               href={`tel:${siteTheme.branding.phones[0].raw}`} 
               className="font-bold text-xs sm:text-sm text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-            >
+             title="9873514657">
               9873514657
             </a>
             <span className="text-gray-400">/</span>
             <a 
               href={`tel:${siteTheme.branding.phones[1].raw}`} 
               className="font-bold text-xs sm:text-sm text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-            >
+             title="9873337442">
               9873337442
             </a>
           </div>
@@ -73,7 +73,7 @@ export function Header() {
         {/* Navigation Bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
           {/* Logo & Corporate Identity */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="Maha Firefighters Home">
+          <Link href="/" className="flex items-center gap-3 group" aria-label="Maha Firefighters Home" title="Maha Firefighters Home">
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center">
               <Image
                 src="/images/logo.webp"
@@ -82,7 +82,7 @@ export function Header() {
                 height={48}
                 className="object-contain w-full h-full drop-shadow-sm"
                 priority
-              />
+              title="Maha Firefighters Logo" />
             </div>
             <div>
               <div className="font-extrabold tracking-tight text-[#1D1E20] text-base sm:text-xl leading-none">
@@ -173,7 +173,7 @@ export function Header() {
                       ? 'text-[#1D1E20] border-b-2 border-[#1D1E20] font-semibold'
                       : 'text-[#374151] hover:text-[#1D1E20]'
                   }`}
-                >
+                 title="{link.name}">
                   {link.name}
                 </Link>
               );
@@ -229,7 +229,7 @@ export function Header() {
                   width={40}
                   height={40}
                   className="object-contain w-full h-full"
-                />
+                title="Maha Firefighters Logo" />
               </div>
               <div>
                 <div className="font-extrabold tracking-tight text-[#1D1E20] text-base leading-none">
@@ -246,13 +246,13 @@ export function Header() {
               <Link
                 href="/"
                 className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
-              >
+               title="Home">
                 Home
               </Link>
               <Link
                 href="/services"
                 className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
-              >
+               title="Services Overview">
                 Services Overview
               </Link>
               <div className="pl-4 space-y-1 border-l-2 border-red-100 my-1">
@@ -261,7 +261,7 @@ export function Header() {
                     key={s.slug}
                     href={`/${s.slug}`}
                     className="block px-3 py-1.5 text-xs text-gray-600 hover:text-[#C5221F]"
-                  >
+                   title="{s.idNumber}. {s.navTitle}">
                     {s.idNumber}. {s.navTitle}
                   </Link>
                 ))}
@@ -269,19 +269,19 @@ export function Header() {
               <Link
                 href="/about-us"
                 className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
-              >
+               title="About Us">
                 About Us
               </Link>
               <Link
                 href="/contact"
                 className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
-              >
+               title="Contact">
                 Contact
               </Link>
               <Link
                 href="/faq"
                 className="px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#1D1E20] hover:bg-gray-50 rounded-md"
-              >
+               title="FAQ">
                 FAQ
               </Link>
             </nav>

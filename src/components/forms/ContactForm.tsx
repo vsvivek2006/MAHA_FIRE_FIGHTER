@@ -59,7 +59,7 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
             You can also call us directly:
             <div className="mt-2 text-sm font-bold text-white flex items-center justify-center gap-2">
               <Phone className="w-4 h-4 text-red-500" />
-              <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-red-400 transition-colors">
+              <a href={`tel:${companyInfo.phones[0].raw}`} className="hover:text-red-400 transition-colors" title="{companyInfo.phones[0].display}">
                 {companyInfo.phones[0].display}
               </a>
             </div>

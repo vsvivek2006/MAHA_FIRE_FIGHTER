@@ -25,10 +25,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://mahafirefighters.com"),
   title: {
-    default: "Fire Hydrant and Sprinklers System Contractors In Delhi NCR | MAHA FIREFIGHTERS",
+    default: "Fire Hydrant & Sprinkler Contractors Delhi NCR | Maha Firefighters",
     template: "%s | MAHA FIREFIGHTERS Delhi NCR",
   },
-  description: "Leading fire protection systems contractor in Delhi NCR. Turnkey fire hydrant installations, automatic sprinklers, addressable fire alarms, and certified in-house extinguisher refilling. 15+ years, 250+ clients.",
+  description: "Leading fire protection contractor in Delhi NCR. Expert fire hydrant, sprinkler & alarm installations, plus certified extinguisher refilling. Get a quote today!",
   keywords: [
     "fire hydrant system Delhi NCR",
     "fire sprinkler system contractor Delhi",
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://mahafirefighters.com",
-    title: "Fire Hydrant and Sprinklers System Contractors In Delhi NCR | MAHA FIREFIGHTERS",
-    description: "Protect your property with certified fire fighting system experts in Delhi NCR. Turnkey installation, AMC services, and high-quality fire safety equipment.",
+    title: "Fire Hydrant & Sprinkler Contractors Delhi NCR | Maha Firefighters",
+    description: "Leading fire protection contractor in Delhi NCR. Expert fire hydrant, sprinkler & alarm installations, plus certified extinguisher refilling. Get a quote today!",
     siteName: "MAHA FIREFIGHTERS | Fire Hydrant and Sprinklers System Contractor in Delhi NCR",
     images: [
       {
@@ -79,8 +79,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maha Firefighters | Fire Hydrant and Sprinklers System Contractors Delhi NCR",
-    description: "Turnkey fire protection engineering, automatic sprinklers, alarms, and in-house extinguisher refilling across Delhi NCR.",
+    title: "Fire Hydrant & Sprinkler Contractors Delhi NCR | Maha Firefighters",
+    description: "Leading fire protection contractor in Delhi NCR. Expert fire hydrant, sprinkler & alarm installations, plus certified extinguisher refilling. Get a quote today!",
     images: ["/images/hero.webp"],
   },
   icons: {

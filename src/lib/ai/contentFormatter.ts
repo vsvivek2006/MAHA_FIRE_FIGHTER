@@ -160,7 +160,7 @@ export function normalizeContentToHtml(raw: string): string {
 
   // 4. Normalize inline markdown (images, bold, italic, code, links)
   text = text.replace(/!\[([^\]]*)\]\(((?:https?:\/\/|\/|data:image\/)[^\s)]+)\)/g, '<img src="$2" alt="$1" loading="lazy" />');
-  text = text.replace(/(?<!!)\[([^\]]+)\]\(((?:https?:\/\/|\/|#)[^\s)]+)\)/g, '<a href="$2">$1</a>');
+  text = text.replace(/(?<!!)\[([^\]]+)\]\(((?:https?:\/\/|\/|#)[^\s)]+)\)/g, '<a href="$2" title="$1">$1</a>');
   text = text.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   text = text.replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, "<em>$1</em>");
   text = text.replace(/(?<![a-zA-Z0-9])_([^_]+)_(?![a-zA-Z0-9])/g, "<em>$1</em>");

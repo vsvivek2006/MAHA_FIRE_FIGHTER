@@ -71,14 +71,14 @@ Before writing, silently decide the search intent behind this topic — informat
 
 ### MANDATORY INTERNAL BACKLINKS
 Include exactly 2-3 contextual internal links, distributed naturally across different sections. Choose only from this canonical list — never invent a URL:
-- Fire Extinguisher Refilling: <a href='/services/fire-extinguisher-refilling-service'>fire extinguisher refilling and hydro-testing services</a>
-- Fire Hydrant Systems: <a href='/firehydrantsystems'>industrial fire hydrant systems</a>
-- Fire Sprinkler Systems: <a href='/firesprinklersystems'>automatic fire sprinkler systems</a>
-- Fire Alarm Systems: <a href='/firealarmsystems'>addressable fire alarm installation</a>
-- Fire Safety Drill: <a href='/firesafetydrill'>corporate fire safety drills and evacuation training</a>
-- Full Services: <a href='/services'>turnkey fire protection services</a>
-- Free Audit / Cost Estimate: <a href='/estimate'>free fire safety audit and cost estimate</a>
-- Expert Consultation: <a href='/contact-us'>contact Maha Firefighters compliance engineers</a>
+- Fire Extinguisher Refilling: <a href='/services/fire-extinguisher-refilling-service' title="fire extinguisher refilling and hydro-testing services">fire extinguisher refilling and hydro-testing services</a>
+- Fire Hydrant Systems: <a href='/firehydrantsystems' title="industrial fire hydrant systems">industrial fire hydrant systems</a>
+- Fire Sprinkler Systems: <a href='/firesprinklersystems' title="automatic fire sprinkler systems">automatic fire sprinkler systems</a>
+- Fire Alarm Systems: <a href='/firealarmsystems' title="addressable fire alarm installation">addressable fire alarm installation</a>
+- Fire Safety Drill: <a href='/firesafetydrill' title="corporate fire safety drills and evacuation training">corporate fire safety drills and evacuation training</a>
+- Full Services: <a href='/services' title="turnkey fire protection services">turnkey fire protection services</a>
+- Free Audit / Cost Estimate: <a href='/estimate' title="free fire safety audit and cost estimate">free fire safety audit and cost estimate</a>
+- Expert Consultation: <a href='/contact-us' title="contact Maha Firefighters compliance engineers">contact Maha Firefighters compliance engineers</a>
 
 Anchor text must read naturally in the sentence — never "click here" or "learn more." If none of these fits a section naturally, skip it rather than forcing one in.
 

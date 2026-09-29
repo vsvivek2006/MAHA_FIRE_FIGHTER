@@ -185,7 +185,7 @@ function LoginForm() {
             <Link
               href="/"
               className="text-xs text-gray-500 hover:text-[#C5221F] transition-colors"
-            >
+             title="← Back to Maha Firefighters Homepage">
               ← Back to Maha Firefighters Homepage
             </Link>
           </div>

@@ -153,7 +153,7 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
             unoptimized
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 800px"
-          />
+          title="Cover preview" />
           {/* Action Overlay */}
           <div className="absolute inset-0 bg-gray-950/70 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm flex items-center justify-center gap-3 p-4">
             <button

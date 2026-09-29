@@ -64,7 +64,7 @@ export default function ContactPage() {
                         <a 
                           href={`tel:${siteTheme.branding.phones[1].raw}`}
                           className="hover:text-[#C5221F] transition-colors"
-                        >
+                         title="+91-9873337442">
                           +91-9873337442
                         </a>
                       </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                         <a 
                           href={`tel:${siteTheme.branding.phones[0].raw}`}
                           className="hover:text-[#C5221F] transition-colors"
-                        >
+                         title="+91-9873514657">
                           +91-9873514657
                         </a>
                       </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                       <a 
                         href={`mailto:${siteTheme.branding.email}`}
                         className="hover:text-[#C5221F] transition-colors"
-                      >
+                       title="{siteTheme.branding.email}">
                         {siteTheme.branding.email}
                       </a>
                     </div>

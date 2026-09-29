@@ -55,7 +55,7 @@ export function BlogPreview() {
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                title={post.title} />
                 <div className="absolute top-3 left-3">
                   <span className="px-2.5 py-1 bg-slate-950/80 backdrop-blur-sm border border-slate-700 text-[11px] font-semibold text-white">
                     {post.category}
@@ -78,7 +78,7 @@ export function BlogPreview() {
                   </div>
 
                   <h3 className="text-base font-bold text-white group-hover:text-red-400 transition-colors line-clamp-2 leading-snug">
-                    <Link href={`/blog/${post.slug}`}>
+                    <Link href={`/blog/${post.slug}`} title="{post.title}">
                       {post.title}
                     </Link>
                   </h3>

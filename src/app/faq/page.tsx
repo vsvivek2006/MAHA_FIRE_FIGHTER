@@ -165,7 +165,7 @@ export default function FaqPage() {
               <a
                 href={`tel:${siteTheme.branding.phones[0].raw}`}
                 className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#C5221F] text-white font-semibold text-sm tracking-wider uppercase hover:bg-[#A71B18] shadow-md transition-all"
-              >
+               title="Call Engineer: {siteTheme.branding.phones[0].display}">
                 Call Engineer: {siteTheme.branding.phones[0].display}
               </a>
             </div>

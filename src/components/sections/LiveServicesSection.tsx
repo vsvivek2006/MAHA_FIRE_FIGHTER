@@ -63,7 +63,7 @@ export function LiveServicesSection() {
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                  title="Maha Firefighters Fire Safety Equipment Array in Delhi NCR" />
                 </div>
               </div>
             </ScrollReveal>

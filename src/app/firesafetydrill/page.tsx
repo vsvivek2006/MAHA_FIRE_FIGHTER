@@ -93,7 +93,7 @@ export default function FireDrillPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   priority
                   sizes="(max-width: 1024px) 100vw, 45vw"
-                />
+                title="Fire Safety Training and Drills Delhi NCR" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-gray-300 flex items-center justify-between">
                   <span className="px-2 py-0.5 bg-black/60 backdrop-blur-sm border border-gray-700">EMERGENCY DRILL SIMULATION</span>
