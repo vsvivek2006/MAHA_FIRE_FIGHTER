@@ -74,13 +74,13 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
           {/* Logo & Corporate Identity */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="Maha Firefighters Home" title="Maha Firefighters Home">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center">
               <Image
                 src="/images/logo.png"
                 alt="Maha Firefighters Logo"
-                width={48}
-                height={48}
-                className="object-contain w-full h-full drop-shadow-sm"
+                width={56}
+                height={56}
+                className="object-contain w-full h-full mix-blend-multiply"
                 priority
               title="Maha Firefighters Logo" />
             </div>
@@ -89,8 +89,8 @@ export function Header() {
                 <span>MAHA</span>
                 <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
               </div>
-              <div className="text-xs font-semibold text-gray-500 tracking-wider uppercase mt-1 hidden sm:block">
-                {siteTheme.branding.tagline}
+              <div className="text-[11px] font-semibold text-gray-500 tracking-wider uppercase mt-1 hidden lg:block">
+                Fire Protection Systems Delhi NCR
               </div>
             </div>
           </Link>
@@ -228,7 +228,7 @@ export function Header() {
                   alt="Maha Firefighters Logo"
                   width={40}
                   height={40}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-full h-full mix-blend-multiply"
                 title="Maha Firefighters Logo" />
               </div>
               <div>
