@@ -22,7 +22,7 @@ export function Footer() {
                   alt="Maha Firefighters Logo"
                   width={40}
                   height={40}
-                  className="object-contain w-full h-full mix-blend-multiply"
+                  className="object-contain w-full h-full"
                 title="Maha Firefighters Logo" />
               </div>
               <div>
