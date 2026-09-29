@@ -11,13 +11,28 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(e => {
-        console.log("Autoplay prevented:", e);
+    const video = videoRef.current;
+    if (!video) return;
+
+    // iOS Safari requires muted to be set imperatively (JSX muted attr is ignored)
+    video.muted = true;
+    video.volume = 0;
+
+    const tryPlay = () => {
+      video.play().catch(() => {
+        // If autoplay fails (e.g. user gesture required), show poster silently
       });
+    };
+
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener('canplay', tryPlay, { once: true });
     }
+
+    return () => {
+      video.removeEventListener('canplay', tryPlay);
+    };
   }, []);
 
   return (
@@ -31,6 +46,7 @@ export function Hero() {
             muted
             loop
             playsInline
+            preload="auto"
             poster="/images/hero-video-poster.jpeg"
             className="absolute inset-0 w-full h-full object-cover object-center"
           >
