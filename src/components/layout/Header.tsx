@@ -57,15 +57,15 @@ export function Header() {
             <a 
               href={`tel:${siteTheme.branding.phones[0].raw}`} 
               className="font-bold text-xs sm:text-sm text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-             title="9873514657">
-              9873514657
+             title="+91 9873514657">
+              +91 9873514657
             </a>
             <span className="text-gray-400">/</span>
             <a 
               href={`tel:${siteTheme.branding.phones[1].raw}`} 
               className="font-bold text-xs sm:text-sm text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-             title="9873337442">
-              9873337442
+             title="+91 9873337442">
+              +91 9873337442
             </a>
           </div>
         </div>

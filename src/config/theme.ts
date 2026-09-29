@@ -49,7 +49,7 @@ export const siteTheme = {
     tagline: 'Fire Hydrant and Sprinklers System Contractors in Delhi NCR',
     
     // Live Website Headlines
-    topBarNotice: 'CaLL NOW 9873514657/9873337442',
+    topBarNotice: 'CALL NOW +91 9873514657/+91 9873337442',
     heroEyebrow: 'Trusted Fire Safety Experts Delhi/NCR',
     heroHeadline: 'Trusted Fire Safety Experts Delhi/NCR',
     heroSubheadline: 'From Detection to Suppression: End-to-End Fire Safety Solutions for a Safer Workspace. Get Your Fire Safety Audit Today Free !',
@@ -70,7 +70,7 @@ export const siteTheme = {
 
     // Estimate & Fire Audit CTA (Live Site Section 5)
     estimateHeadline: 'For a Free Estimate | Fire Audit',
-    estimateCallText: 'Call Us @ 9873337442 / 9873514657',
+    estimateCallText: 'Call Us @ +91 9873337442 / +91 9873514657',
 
     // Contact Numbers & Locations
     phones: [

@@ -123,7 +123,7 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
                   type="tel"
                   required
                   pattern="[0-9]{10,12}"
-                  placeholder="e.g. 9873514657"
+                  placeholder="e.g. +91 9873514657"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full bg-slate-900 border border-slate-700 px-3.5 py-2.5 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-red-600 rounded-none"

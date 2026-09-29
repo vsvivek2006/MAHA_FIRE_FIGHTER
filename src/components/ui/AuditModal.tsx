@@ -132,7 +132,7 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                     type="tel"
                     required
                     pattern="[0-9]{10,12}"
-                    placeholder="e.g. 9873514657"
+                    placeholder="e.g. +91 9873514657"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full bg-white border border-gray-300 px-3 py-2 text-[#1D1E20] placeholder-gray-400 text-xs focus:outline-none focus:border-[#C5221F] focus:ring-1 focus:ring-[#C5221F] rounded-none transition-all"
