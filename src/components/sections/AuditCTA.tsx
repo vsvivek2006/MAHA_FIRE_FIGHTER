@@ -27,7 +27,7 @@ export function AuditCTA() {
                     </span>
                   </div>
                   {/* Live site exact match: For a Free Estimate | Fire Audit */}
-                  <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#1D1E20] leading-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#1D1E20] leading-tight text-balance">
                     {siteTheme.branding.estimateHeadline}
                   </h2>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">

@@ -29,7 +29,6 @@ export function Hero() {
             ref={videoRef}
             autoPlay
             muted
-            defaultMuted
             loop
             playsInline
             poster="/images/hero-video-poster.jpeg"
