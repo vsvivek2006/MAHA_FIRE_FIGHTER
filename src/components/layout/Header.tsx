@@ -220,28 +220,6 @@ export function Header() {
         {/* Mobile Slide-down Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-100 bg-white px-5 py-5 space-y-4 shadow-xl">
-            {/* Mobile Branding inside drawer */}
-            <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
-              <div className="relative w-10 h-10 shrink-0 flex items-center justify-center">
-                <Image
-                  src="/images/logo.png"
-                  alt="Maha Firefighters Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain w-full h-full"
-                title="Maha Firefighters Logo" />
-              </div>
-              <div>
-                <div className="font-extrabold tracking-tight text-[#1D1E20] text-base leading-none">
-                  <span>MAHA</span>
-                  <span className="text-[#C5221F] ml-1">FIREFIGHTERS</span>
-                </div>
-                <div className="text-xs font-semibold text-gray-500 tracking-wider uppercase mt-1">
-                  Fire Protection Systems Delhi NCR
-                </div>
-              </div>
-            </div>
-
             <nav className="flex flex-col space-y-1">
               <Link
                 href="/"

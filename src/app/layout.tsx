@@ -142,7 +142,7 @@ export default function RootLayout({
   `;
 
   return (
-    <html lang="en-IN" className={`${inter.variable} h-full`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${inter.variable} h-full overflow-x-hidden w-full`} suppressHydrationWarning>
       <head>
         <style id="site-theme-variables" dangerouslySetInnerHTML={{ __html: themeCss }} />
         <JsonLd schema={localBusinessSchema} />
@@ -152,7 +152,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://maps.gstatic.com" />
       </head>
       <body 
-        className="min-h-full flex flex-col bg-[var(--theme-bg-page)] text-[var(--theme-text-secondary)] antialiased selection:bg-[var(--theme-primary)] selection:text-white pb-14 sm:pb-0"
+        className="min-h-full flex flex-col bg-[var(--theme-bg-page)] text-[var(--theme-text-secondary)] antialiased selection:bg-[var(--theme-primary)] selection:text-white pb-14 sm:pb-0 overflow-x-hidden w-full"
         suppressHydrationWarning
       >
         <RouteScrollReset />
