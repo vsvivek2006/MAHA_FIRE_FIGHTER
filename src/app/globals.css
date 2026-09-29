@@ -27,8 +27,6 @@
 @layer utilities {
   .text-justify {
     text-align: justify;
-    text-align-last: center;
-    -moz-text-align-last: center;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
