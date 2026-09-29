@@ -21,7 +21,7 @@ export function Hero() {
             muted
             loop
             playsInline
-            poster="/images/hero.webp"
+            poster="/images/hero-video-poster.jpeg"
             className="absolute inset-0 w-full h-full object-cover object-center"
           >
             <source src="/videos/hero-video.mp4" type="video/mp4" />
