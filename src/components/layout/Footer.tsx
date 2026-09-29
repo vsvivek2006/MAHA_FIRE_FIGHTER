@@ -138,7 +138,7 @@ export function Footer() {
               <a 
                 href={`mailto:${siteTheme.branding.email}`}
                 className="text-white hover:text-red-400 text-sm font-semibold transition-colors block mt-1"
-               title="{siteTheme.branding.email}">
+               title={siteTheme.branding.email}>
                 {siteTheme.branding.email}
               </a>
             </div>
@@ -148,11 +148,11 @@ export function Footer() {
                 CALL US
               </div>
               <div className="flex flex-wrap gap-4 mt-1 text-sm font-bold text-white">
-                <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors" title="{siteTheme.branding.phones[0].display}">
+                <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors" title={siteTheme.branding.phones[0].display}>
                   {siteTheme.branding.phones[0].display}
                 </a>
                 <span>•</span>
-                <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400 transition-colors" title="{siteTheme.branding.phones[1].display}">
+                <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400 transition-colors" title={siteTheme.branding.phones[1].display}>
                   {siteTheme.branding.phones[1].display}
                 </a>
               </div>

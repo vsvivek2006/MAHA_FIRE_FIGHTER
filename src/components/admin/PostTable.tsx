@@ -227,7 +227,7 @@ export function PostTable({ initialPosts }: PostTableProps) {
                           <Link
                             href={`/admin/blog/${post.id}/edit`}
                             className="font-bold text-gray-900 hover:text-red-600 transition-colors line-clamp-1"
-                           title="{post.title}">
+                           title={post.title}>
                             {post.title}
                           </Link>
                           {post.source && post.source !== "manual" && (

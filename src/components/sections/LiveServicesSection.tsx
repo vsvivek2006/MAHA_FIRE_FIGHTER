@@ -74,7 +74,7 @@ export function LiveServicesSection() {
             {services.map((item, idx) => (
               <ScrollReveal key={item.title} animation="fade-left" delay={150 + idx * 80}>
                 <div className="space-y-1.5 group">
-                  <Link href={item.href} className="inline-block">
+                  <Link href={item.href} className="inline-block" title={item.title}>
                     <h3 className="text-lg sm:text-xl font-bold text-[#1D1E20] group-hover:text-[#C5221F] transition-colors flex items-center gap-2">
                       <span>{item.title}</span>
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#C5221F]" />
@@ -91,6 +91,7 @@ export function LiveServicesSection() {
               <div className="pt-2">
                 <Link
                   href="/services"
+                  title="View All Solutions & Engineering Specs"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#1D1E20] text-white text-sm font-semibold hover:bg-[#C5221F] transition-colors shadow-sm"
                 >
                   <span>View All Solutions &amp; Engineering Specs</span>

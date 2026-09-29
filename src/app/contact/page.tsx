@@ -87,7 +87,7 @@ export default function ContactPage() {
                       <a 
                         href={`mailto:${siteTheme.branding.email}`}
                         className="hover:text-[#C5221F] transition-colors"
-                       title="{siteTheme.branding.email}">
+                       title={siteTheme.branding.email}>
                         {siteTheme.branding.email}
                       </a>
                     </div>

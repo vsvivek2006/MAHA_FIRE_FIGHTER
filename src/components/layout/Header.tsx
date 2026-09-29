@@ -173,7 +173,7 @@ export function Header() {
                       ? 'text-[#1D1E20] border-b-2 border-[#1D1E20] font-semibold'
                       : 'text-[#374151] hover:text-[#1D1E20]'
                   }`}
-                 title="{link.name}">
+                 title={link.name}>
                   {link.name}
                 </Link>
               );
@@ -261,7 +261,7 @@ export function Header() {
                     key={s.slug}
                     href={`/${s.slug}`}
                     className="block px-3 py-1.5 text-xs text-gray-600 hover:text-[#C5221F]"
-                   title="{s.idNumber}. {s.navTitle}">
+                   title={`${s.idNumber}. ${s.navTitle}`}>
                     {s.idNumber}. {s.navTitle}
                   </Link>
                 ))}

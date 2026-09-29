@@ -78,7 +78,7 @@ export function BlogPreview() {
                   </div>
 
                   <h3 className="text-base font-bold text-white group-hover:text-red-400 transition-colors line-clamp-2 leading-snug">
-                    <Link href={`/blog/${post.slug}`} title="{post.title}">
+                    <Link href={`/blog/${post.slug}`} title={post.title}>
                       {post.title}
                     </Link>
                   </h3>

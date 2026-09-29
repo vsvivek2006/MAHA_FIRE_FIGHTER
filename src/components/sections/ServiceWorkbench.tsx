@@ -34,7 +34,7 @@ export function ServiceWorkbench() {
               </p>
             </div>
             <Button variant="outline" size="sm" asChild className="shrink-0 rounded-none text-xs font-semibold border-[var(--theme-border-medium)]">
-              <Link href="/services">
+              <Link href="/services" title="View Full Services Catalog">
                 <span>View Full Services Catalog</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Link>
@@ -97,7 +97,7 @@ export function ServiceWorkbench() {
                         </h3>
                       </div>
                       <Button variant="default" size="sm" asChild className="rounded-none text-xs font-semibold">
-                        <Link href={`/${svc.slug}`}>
+                        <Link href={`/${svc.slug}`} title={svc.title}>
                           <span>Dedicated Service Page</span>
                           <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                         </Link>
@@ -206,6 +206,7 @@ export function ServiceWorkbench() {
                       </span>
                       <Link
                         href={`/${svc.slug}`}
+                        title={svc.title}
                         className="text-xs font-bold text-red-400 hover:text-red-300 flex items-center gap-1 transition-colors"
                       >
                         <span>View System Details</span>

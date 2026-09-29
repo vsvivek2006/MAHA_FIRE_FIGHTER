@@ -174,7 +174,7 @@ export default async function BlogIndexPage() {
                     )}
 
                     <h2 className="text-lg sm:text-xl font-bold text-gray-950 group-hover:text-red-600 transition-colors line-clamp-2">
-                      <Link href={`/blog/${post.slug}`} title="{post.title}">{post.title}</Link>
+                      <Link href={`/blog/${post.slug}`} title={post.title}>{post.title}</Link>
                     </h2>
 
                     {post.excerpt && (

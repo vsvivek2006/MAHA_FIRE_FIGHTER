@@ -201,11 +201,11 @@ export default function AboutPage() {
                         Phone Support
                       </p>
                       <p className="text-sm font-bold text-white mt-1 flex flex-wrap gap-3 text-left md:text-justify">
-                        <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors" title="{siteTheme.branding.phones[0].display}">
+                        <a href={`tel:${siteTheme.branding.phones[0].raw}`} className="hover:text-red-400 transition-colors" title={siteTheme.branding.phones[0].display}>
                           {siteTheme.branding.phones[0].display}
                         </a>
                         <span className="text-gray-500">•</span>
-                        <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400 transition-colors" title="{siteTheme.branding.phones[1].display}">
+                        <a href={`tel:${siteTheme.branding.phones[1].raw}`} className="hover:text-red-400 transition-colors" title={siteTheme.branding.phones[1].display}>
                           {siteTheme.branding.phones[1].display}
                         </a>
                       </p>
