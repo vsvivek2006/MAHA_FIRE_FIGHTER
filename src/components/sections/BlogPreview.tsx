@@ -48,7 +48,7 @@ export function BlogPreview() {
               <article
                 className="h-full group flex flex-col bg-slate-950 border border-slate-800 hover:border-red-500/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-              <Link href={`/blog/${post.slug}`} className="relative h-48 w-full bg-slate-900 overflow-hidden block">
+              <Link href={`/blog/${post.slug}`} className="relative h-48 w-full bg-slate-900 overflow-hidden block" title={post.title}>
                 <Image
                   src={post.image}
                   alt={post.title}

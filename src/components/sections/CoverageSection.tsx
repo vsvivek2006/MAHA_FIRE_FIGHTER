@@ -105,7 +105,7 @@ export function CoverageSection() {
                 {companyInfo.establishedDetail}
               </p>
               <Button variant="default" size="default" asChild className="w-full rounded-none text-xs font-semibold">
-                <Link href="/contact">
+                <Link href="/contact" title="Contact Us">
                   <span>Contact Our Team</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </Link>

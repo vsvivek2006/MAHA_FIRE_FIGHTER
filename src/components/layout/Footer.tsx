@@ -15,7 +15,7 @@ export function Footer() {
           
           {/* Col 1: Brand & Contact Info directly matching live site */}
           <div className="lg:col-span-4 space-y-6">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3" title="Maha Firefighters Home">
               <div className="relative w-10 h-10 rounded-sm bg-white p-0.5 shrink-0 border border-gray-700 shadow-sm flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/logo.webp"
@@ -112,6 +112,7 @@ export function Footer() {
                   <Link 
                     href={`/${service.slug}`} 
                     className="hover:text-white transition-colors flex items-center gap-1 group"
+                    title={service.navTitle}
                   >
                     <span>{service.navTitle}</span>
                   </Link>
@@ -121,6 +122,7 @@ export function Footer() {
                 <Link 
                   href="/services" 
                   className="text-[#C5221F] font-semibold hover:underline flex items-center gap-1"
+                  title="View All Services"
                 >
                   <span>View All Services</span>
                   <ArrowRight className="w-3 h-3" />

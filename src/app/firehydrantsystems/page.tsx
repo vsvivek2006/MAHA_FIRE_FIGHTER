@@ -85,7 +85,7 @@ export default function FireHydrantPage() {
                   </a>
                 </Button>
                 <Button variant="outline" size="default" asChild className="rounded-none text-xs font-semibold hover:scale-[1.02] transition-transform">
-                  <Link href="/contact">
+                  <Link href="/contact" title="Contact Us">
                     <span>Request Site Assessment</span>
                   </Link>
                 </Button>
@@ -214,7 +214,7 @@ export default function FireHydrantPage() {
             </p>
             <div className="pt-2">
               <Button variant="default" size="default" asChild className="rounded-none text-xs font-semibold hover:scale-[1.02] transition-transform">
-                <Link href="/contact">
+                <Link href="/contact" title="Contact Us">
                   <span>Schedule Upgrade Inspection</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </Link>

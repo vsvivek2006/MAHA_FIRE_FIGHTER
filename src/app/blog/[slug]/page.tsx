@@ -370,7 +370,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
-              href="/contact"
+              href="/contact" title="Contact Us"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-red-600 via-red-500 to-amber-600 hover:from-red-700 hover:to-amber-700 text-white shadow-xl shadow-red-950/50 transition-all text-sm"
             >
               Book Statutory Site Audit

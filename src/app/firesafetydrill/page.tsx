@@ -65,7 +65,7 @@ export default function FireDrillPage() {
                   </a>
                 </Button>
                 <Button variant="outline" size="default" asChild className="rounded-none text-xs font-semibold hover:scale-[1.02] transition-transform">
-                  <Link href="/contact">
+                  <Link href="/contact" title="Contact Us">
                     <span>Schedule On-Site Training</span>
                   </Link>
                 </Button>

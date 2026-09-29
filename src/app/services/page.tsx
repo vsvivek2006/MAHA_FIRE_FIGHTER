@@ -104,7 +104,7 @@ export default function ServicesPage() {
                   {/* Card Body */}
                   <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4 text-left">
                     <div className="space-y-3">
-                      <Link href={service.slug} className="inline-block">
+                      <Link href={service.slug} className="inline-block" title={service.title}>
                         <h2 className="text-lg sm:text-xl font-bold text-[#1D1E20] underline underline-offset-4 decoration-[#C5221F] group-hover:text-[#C5221F] transition-colors leading-snug">
                           {service.title}
                         </h2>

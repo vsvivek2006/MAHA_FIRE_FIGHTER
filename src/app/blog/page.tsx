@@ -147,7 +147,7 @@ export default async function BlogIndexPage() {
               >
                 <div>
                   {/* Cover Image */}
-                  <Link href={`/blog/${post.slug}`} className="block relative aspect-video w-full overflow-hidden bg-gray-100">
+                  <Link href={`/blog/${post.slug}`} className="block relative aspect-video w-full overflow-hidden bg-gray-100" title={post.title}>
                     <Image
                       src={post.coverImage}
                       alt={post.title}
