@@ -41,21 +41,23 @@ export function LiveEstimateSection() {
 
         {/* Direct Call Numbers */}
         <ScrollReveal animation="fade-up" delay={200}>
-          <div className="flex flex-wrap items-center justify-center gap-2 text-base sm:text-lg font-bold text-gray-800">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 text-base sm:text-lg font-bold text-gray-800">
             <span>Call Us @</span>
-            <a 
-              href={`tel:${siteTheme.branding.phones[1].raw}`}
-              className="text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-             title="+91 9873337442">
-              +91 9873337442
-            </a>
-            <span className="text-gray-400">/</span>
-            <a 
-              href={`tel:${siteTheme.branding.phones[0].raw}`}
-              className="text-[#1D1E20] hover:text-[#C5221F] transition-colors"
-             title="+91 9873514657">
-              +91 9873514657
-            </a>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <a 
+                href={`tel:${siteTheme.branding.phones[1].raw}`}
+                className="text-[#1D1E20] hover:text-[#C5221F] transition-colors whitespace-nowrap"
+               title="+91 9873337442">
+                +91 9873337442
+              </a>
+              <span className="text-gray-400">/</span>
+              <a 
+                href={`tel:${siteTheme.branding.phones[0].raw}`}
+                className="text-[#1D1E20] hover:text-[#C5221F] transition-colors whitespace-nowrap"
+               title="+91 9873514657">
+                +91 9873514657
+              </a>
+            </div>
           </div>
         </ScrollReveal>
 

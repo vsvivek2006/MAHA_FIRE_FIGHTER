@@ -203,10 +203,10 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
 
             <Button
               type="submit"
-              className="w-full h-12 rounded-none text-xs font-semibold"
+              className="w-full h-auto min-h-[48px] py-3 rounded-none text-[10px] sm:text-xs font-semibold break-words whitespace-normal leading-snug"
             >
-              <Send className="w-4 h-4 mr-2" />
-              <span>Send Request For Free Estimate / Audit</span>
+              <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 shrink-0" />
+              <span>SEND REQUEST FOR FREE ESTIMATE / AUDIT</span>
             </Button>
           </form>
 
