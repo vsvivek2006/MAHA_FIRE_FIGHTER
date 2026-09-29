@@ -21,8 +21,8 @@ export function AuditCTA() {
               <div className="lg:col-span-3 border border-gray-200 bg-gray-50 p-8 sm:p-10 rounded-3xl shadow-sm flex flex-col justify-center">
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
-                    <ShieldAlert className="w-4 h-4 text-[#C5221F]" />
-                    <span className="text-xs font-bold tracking-wider uppercase text-[#C5221F]">
+                    <ShieldAlert className="w-4 h-4 text-[#C5221F] shrink-0" />
+                    <span className="text-xs font-bold tracking-wider uppercase text-[#C5221F] whitespace-nowrap">
                       Complimentary Initial Assessment
                     </span>
                   </div>
@@ -45,22 +45,22 @@ export function AuditCTA() {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                <div className="flex flex-col gap-3 pt-2">
                   <button
                     onClick={() => setModalOpen(true)}
-                    className="w-full sm:w-auto flex-1 h-12 px-6 rounded-full bg-[#C5221F] hover:bg-[#A71B18] text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                    className="w-full h-12 px-6 rounded-full bg-[#C5221F] hover:bg-[#A71B18] text-white text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
                   >
-                    <ShieldAlert className="w-4 h-4" />
+                    <ShieldAlert className="w-4 h-4 shrink-0" />
                     <span>Request Free Audit</span>
-                    <ArrowRight className="w-4 h-4 ml-1 hidden sm:block lg:hidden xl:block" />
+                    <ArrowRight className="w-4 h-4 shrink-0" />
                   </button>
 
                   <a
                     href={`tel:${companyInfo.phones[0].raw}`}
-                    className="w-full sm:w-auto flex-1 h-12 px-6 rounded-full border-2 border-gray-300 hover:border-black text-[#1D1E20] text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white transition-all"
+                    className="w-full h-12 px-6 rounded-full border-2 border-gray-300 hover:border-[#C5221F] text-[#1D1E20] hover:text-[#C5221F] text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-red-50 transition-all duration-200"
                   >
-                    <Phone className="w-4 h-4 text-[#C5221F]" />
-                    <span>Call {companyInfo.phones[0].display}</span>
+                    <Phone className="w-4 h-4 text-[#C5221F] shrink-0" />
+                    <span className="whitespace-nowrap">Call {companyInfo.phones[0].display}</span>
                   </a>
                 </div>
               </div>
