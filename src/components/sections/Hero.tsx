@@ -21,10 +21,11 @@ export function Hero() {
             muted
             loop
             playsInline
-            poster="/images/hero-video-poster.jpeg"
+            poster="/images/hero.webp"
             className="absolute inset-0 w-full h-full object-cover object-center"
           >
             <source src="/videos/hero-video.mp4" type="video/mp4" />
+            <track kind="captions" srcLang="en" label="English" default />
             {/* Fallback: keep GIF for browsers without video support */}
             Your browser does not support the video tag.
           </video>

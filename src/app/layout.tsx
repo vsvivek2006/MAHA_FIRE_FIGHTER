@@ -146,9 +146,7 @@ export default function RootLayout({
       <head>
         <style id="site-theme-variables" dangerouslySetInnerHTML={{ __html: themeCss }} />
         <JsonLd schema={localBusinessSchema} />
-        {/* Performance: preconnect to critical origins */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preconnects for Google Maps only, next/font handles Google Fonts */}
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         <link rel="dns-prefetch" href="https://maps.gstatic.com" />

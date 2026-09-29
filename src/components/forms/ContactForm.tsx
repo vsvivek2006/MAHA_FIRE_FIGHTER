@@ -99,10 +99,11 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1">
+              <label htmlFor="contact-name" className="block text-xs font-medium text-slate-300 mb-1">
                 Your Full Name <span className="text-red-500">*</span>
               </label>
               <input
+                id="contact-name"
                 type="text"
                 required
                 placeholder="e.g. Raj Sharma"
@@ -114,10 +115,11 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label htmlFor="contact-phone" className="block text-xs font-medium text-slate-300 mb-1">
                   Contact Number <span className="text-red-500">*</span>
                 </label>
                 <input
+                  id="contact-phone"
                   type="tel"
                   required
                   pattern="[0-9]{10,12}"
@@ -129,10 +131,11 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label htmlFor="contact-email" className="block text-xs font-medium text-slate-300 mb-1">
                   Email Address
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   placeholder="e.g. safety@company.com"
                   value={formData.email}
@@ -144,10 +147,11 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label htmlFor="contact-service" className="block text-xs font-medium text-slate-300 mb-1">
                   Service Required <span className="text-red-500">*</span>
                 </label>
                 <select
+                  id="contact-service"
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className="w-full bg-slate-900 border border-slate-700 px-3 py-2.5 text-white text-xs focus:outline-none focus:border-red-600 rounded-none"
@@ -164,10 +168,11 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label htmlFor="contact-location" className="block text-xs font-medium text-slate-300 mb-1">
                   Facility Location
                 </label>
                 <select
+                  id="contact-location"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                   className="w-full bg-slate-900 border border-slate-700 px-3 py-2.5 text-white text-xs focus:outline-none focus:border-red-600 rounded-none"
@@ -183,10 +188,11 @@ export function ContactForm({ initialService = 'Free Fire Safety Audit' }: Conta
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1">
+              <label htmlFor="contact-message" className="block text-xs font-medium text-slate-300 mb-1">
                 Project Parameters / Requirement Notes
               </label>
               <textarea
+                id="contact-message"
                 rows={3}
                 placeholder="Mention facility type, area, existing equipment, or requirement details..."
                 value={formData.message}

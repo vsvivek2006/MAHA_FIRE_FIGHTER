@@ -59,6 +59,7 @@ export function OperationalFootage() {
           >
             <source src="/videos/fire-incident-720p.mp4" type="video/mp4" />
             <source src="/videos/fire-incident-720p.webm" type="video/webm" />
+            <track kind="captions" srcLang="en" label="English" default />
           </video>
 
           {/* Cinematic Dark Gradient Scrim - Clean & High Contrast */}

@@ -108,10 +108,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
 
             <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1">
+                <label htmlFor="audit-name" className="block text-xs font-medium text-gray-700 mb-1">
                   Full Name <span className="text-[#C5221F]">*</span>
                 </label>
                 <input
+                  id="audit-name"
                   type="text"
                   required
                   placeholder="e.g. Ramesh Sharma"
@@ -123,10 +124,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label htmlFor="audit-phone" className="block text-xs font-medium text-gray-700 mb-1">
                     Contact Number <span className="text-[#C5221F]">*</span>
                   </label>
                   <input
+                    id="audit-phone"
                     type="tel"
                     required
                     pattern="[0-9]{10,12}"
@@ -137,10 +139,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label htmlFor="audit-email" className="block text-xs font-medium text-gray-700 mb-1">
                     Email Address
                   </label>
                   <input
+                    id="audit-email"
                     type="email"
                     placeholder="e.g. info@company.com"
                     value={formData.email}
@@ -152,10 +155,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label htmlFor="audit-property-type" className="block text-xs font-medium text-gray-700 mb-1">
                     Property Type
                   </label>
                   <select
+                    id="audit-property-type"
                     value={formData.propertyType}
                     onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
                     className="w-full bg-white border border-gray-300 px-3 py-2 text-[#1D1E20] text-xs focus:outline-none focus:border-[#C5221F] focus:ring-1 focus:ring-[#C5221F] rounded-none transition-all"
@@ -169,10 +173,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label htmlFor="audit-system" className="block text-xs font-medium text-gray-700 mb-1">
                     Primary System Required
                   </label>
                   <select
+                    id="audit-system"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full bg-white border border-gray-300 px-3 py-2 text-[#1D1E20] text-xs focus:outline-none focus:border-[#C5221F] focus:ring-1 focus:ring-[#C5221F] rounded-none transition-all"
@@ -189,10 +194,11 @@ export function AuditModal({ isOpen, onClose, defaultService }: AuditModalProps)
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1">
+                <label htmlFor="audit-message" className="block text-xs font-medium text-gray-700 mb-1">
                   Additional Notes
                 </label>
                 <textarea
+                  id="audit-message"
                   rows={2}
                   placeholder="Facility location, size, or specific requirements..."
                   value={formData.message}
