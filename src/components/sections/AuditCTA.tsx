@@ -27,19 +27,19 @@ export function AuditCTA() {
                     </span>
                   </div>
                   {/* Live site exact match: For a Free Estimate | Fire Audit */}
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#1D1E20] leading-tight text-balance">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-[#1D1E20] leading-tight">
                     {siteTheme.branding.estimateHeadline}
                   </h2>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     Book a free on-site fire safety audit for your factory, warehouse, commercial building, or residential complex in Delhi NCR. {siteTheme.branding.estimateCallText}.
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-gray-600 pt-1 pb-6">
+                  <div className="flex flex-col gap-2 text-xs text-gray-600 pt-1 pb-6">
                     <span className="flex items-center gap-1.5 text-emerald-600 font-semibold">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
                       Zero Cost, No Obligation
                     </span>
                     <span className="flex items-center gap-1.5 text-gray-700">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C5221F]" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C5221F] shrink-0" />
                       NBC Standards &amp; Delhi Fire Service Alignment
                     </span>
                   </div>

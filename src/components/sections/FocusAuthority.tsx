@@ -15,13 +15,13 @@ export function FocusAuthority() {
           <div className="lg:col-span-6 space-y-6">
             <ScrollReveal animation="fade-right" delay={100}>
               <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
+                <h2 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
                   Expert Fire Hydrant Installation
                 </h2>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
+                <h3 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
                   Fire Extinguisher Refilling &amp; Sales
                 </h3>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
+                <h3 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-[#C5221F] tracking-tight leading-snug">
                   Fire Sprinkler Systems
                 </h3>
               </div>
